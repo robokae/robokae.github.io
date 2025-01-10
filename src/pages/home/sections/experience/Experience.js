@@ -1,32 +1,41 @@
-import Card from "components/card/Card";
 import Typography from "components/typography/Typography";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Carousel from "components/carousel/Carousel";
-import { DeviceSize, Layout } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";
-import { CardHeader, CardLayout, Content, Section } from "./Experience.styles";
-import { useResize } from "hooks/useResize";
+import {
+  CardLayout,
+  CarouselContainer,
+  Content,
+  DetailsContainer,
+  ImageContainer,
+  Section,
+  StyledCard,
+} from "./Experience.styles";
+import { Color } from "constants/color";
 
 const Experience = ({ data }) => {
-  const { headings, subHeadings, text } = data;
+  const { headings, subHeadings, text, images } = data;
 
-  const [displayCarousel, setDisplayCarousel] = useState();
-  const { width } = useResize();
-
-  useEffect(() => {
-    setDisplayCarousel(width <= DeviceSize.TABLET);
-  }, [width]);
+  const imageBackgroundColors = [
+    Color.LIGHT_PURPLE_2,
+    Color.LIGHT_TURQUOISE_2,
+    Color.LIGHT_BLUE_2,
+  ];
 
   const cards = () =>
     subHeadings.map((subHeading, index) => (
-      <Card key={index}>
-        <CardHeader>
-          <Typography textAlign="left" tag={TypographyConstants.CARD_TITLE_TAG}>
-            {subHeading}
-          </Typography>
-        </CardHeader>
-        <p>{text[index]}</p>
-      </Card>
+      <StyledCard key={index}>
+        <ImageContainer backgroundColor={imageBackgroundColors[index]}>
+          <img
+            src={`images/${images[index].name}`}
+            alt={images[index].altText}
+          ></img>
+        </ImageContainer>
+        <DetailsContainer>
+          <Typography tag={TypographyConstants.H3}>{subHeading}</Typography>
+          <p>{text[index]}</p>
+        </DetailsContainer>
+      </StyledCard>
     ));
 
   return (
@@ -41,11 +50,10 @@ const Experience = ({ data }) => {
             {line}
           </Typography>
         ))}
-        {displayCarousel ? (
+        <CardLayout size={subHeadings.length}>{cards()}</CardLayout>
+        <CarouselContainer>
           <Carousel arrows>{cards()}</Carousel>
-        ) : (
-          <CardLayout size={subHeadings.length}>{cards()}</CardLayout>
-        )}
+        </CarouselContainer>
       </Content>
     </Section>
   );

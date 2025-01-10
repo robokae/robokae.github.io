@@ -58,7 +58,20 @@
                     "Experienced in developing large-scale microservices using various backend frameworks and technologies, like Spring Boot and Flask, and testing APIs using frameworks, such as JUnit and Karate", 
                     "Knowledgable in developing and deploying applications using Google Cloud Platform and cloud-native technologies, such as Kubernetes"
                 ],
-                "images": [],
+                "images": [
+                    {
+                        "name": "Website.svg",
+                        "altText": "Website"
+                    },
+                    {
+                        "name": "Server.svg",
+                        "altText": "Server"
+                    },
+                    {
+                        "name": "Cloud.svg",
+                        "altText": "Cloud"
+                    }
+                ],
                 "icons": [],
                 "buttons": [],
                 "listContent": []

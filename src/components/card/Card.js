@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Style } from "constants/style";
 import { Layout, Breakpoint } from "constants/layout";
 
