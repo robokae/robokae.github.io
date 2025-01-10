@@ -32,7 +32,7 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "echo \"alexhom.com\" > build/CNAME && gh-pages -d build"
+    "deploy": "echo www.alexhom.com > build/CNAME && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
