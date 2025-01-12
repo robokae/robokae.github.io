@@ -33,7 +33,7 @@ export const Content = styled.div`
   padding: 1.5rem 0;
   font-size: 0.9rem;
 
-  @media ${Breakpoint.LAPTOP} {
+  @media ${Breakpoint.TABLET} {
     flex-direction: column;
   }
 
@@ -49,7 +49,7 @@ export const LinkContainer = styled.div`
   flex-direction: row;
   gap: 1.5rem;
 
-  @media ${Breakpoint.LAPTOP} {
+  @media ${Breakpoint.TABLET} {
     justify-content: center;
   }
 
@@ -74,7 +74,7 @@ export const CaptionContainer = styled.div`
   gap: 0.5rem;
   color: ${({ theme }) => theme.secondaryFontColor};
 
-  @media ${Breakpoint.LAPTOP} {
+  @media ${Breakpoint.TABLET} {
     align-items: center;
   }
 
