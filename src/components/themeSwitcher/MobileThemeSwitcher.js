@@ -9,9 +9,9 @@ const Container = styled.div`
 `;
 
 const ThemeToggle = styled.button`
-  background-color: ${({ theme }) => theme.secondaryBgCol};
-  color: ${({ theme }) => theme.primaryFontCol};
-  border: 1px solid ${({ theme }) => theme.lineCol};
+  background-color: ${({ theme }) => theme.secondaryBackgroundColor};
+  color: ${({ theme }) => theme.primaryFontColor};
+  border: 1px solid ${({ theme }) => theme.lineColor};
   border-radius: 0.25rem;
   display: flex;
   align-items: center;

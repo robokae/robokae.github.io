@@ -3,7 +3,7 @@ import styled from "styled-components";
 const MenuPanel = styled.div`
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+  border-bottom: 1px solid ${({ theme }) => theme.lineColor};
   position: relative;
 `;
 
@@ -17,7 +17,7 @@ const MenuOption = styled.button`
   border-bottom-style: solid;
   border-bottom-color: ${(props) =>
     props.isSelected ? props.borderColor : "transparent"};
-  color: ${({ theme }) => theme.primaryFontCol};
+  color: ${({ theme }) => theme.primaryFontColor};
   cursor: pointer;
 `;
 
@@ -28,7 +28,7 @@ function HorizontalCategoryPanel({ content, currentlySelected, setCategory }) {
         return (
           <MenuOption
             isSelected={currentlySelected === item.id}
-            borderColor={({ theme }) => theme.accentCol}
+            borderColor={({ theme }) => theme.accentColor}
             key={item.id}
             onClick={() => setCategory(item.id)}
           >

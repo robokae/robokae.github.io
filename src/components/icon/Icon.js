@@ -5,7 +5,7 @@ import { Style, IconSize } from "constants/style";
 const Icon = styled(FontAwesomeIcon)`
   border-radius: ${Style.BORDER_RADIUS};
   font-size: ${IconSize.SIZE_SM};
-  color: ${({ theme }) => theme.primaryFontCol};
+  color: ${({ theme }) => theme.primaryFontColor};
   ${(props) =>
     props.$clickable &&
     css`

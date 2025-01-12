@@ -11,7 +11,7 @@ const ActionButton = styled.button`
   border-radius: 50%;
   opacity: 0.25;
   transition: opacity 0.2s ease-in-out;
-  color: ${({ theme }) => theme.secondaryFontCol};
+  color: ${({ theme }) => theme.secondaryFontColor};
   ${(props) =>
     props.active &&
     css`

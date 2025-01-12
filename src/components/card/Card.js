@@ -9,7 +9,7 @@ export const Card = styled.div`
   flex-direction: column;
   padding: ${Layout.CARD_PADDING};
   border-radius: ${Style.BORDER_RADIUS};
-  background-color: ${({ theme }) => theme.secondaryBgCol};
+  background-color: ${({ theme }) => theme.secondaryBackgroundColor};
   gap: ${Layout.GAP_MD};
 
   @media ${Breakpoint.TABLET} {

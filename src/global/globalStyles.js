@@ -14,18 +14,18 @@ export const GlobalStyles = createGlobalStyle`
         overflow: auto;
         box-sizing: border-box;
         overscroll-behavior-y: none;
-        background-color: ${({ theme }) => theme.primaryBgCol};
-        color: ${({ theme }) => theme.primaryFontCol};
+        background-color: ${({ theme }) => theme.primaryBackgroundColor};
+        color: ${({ theme }) => theme.primaryFontColor};
         font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
         line-height: 1.75;
     }
 
     ::placeholder {
-        color: ${({ theme }) => theme.secondaryFontCol};
+        color: ${({ theme }) => theme.secondaryFontColor};
     }
 
     .dot {
-        background-color: ${({ theme }) => theme.primaryFontCol};
+        background-color: ${({ theme }) => theme.primaryFontColor};
     }
 
     html {
@@ -149,36 +149,36 @@ export const GlobalStyles = createGlobalStyle`
 
     /* Resume page theme styling */
     .resume-page-content a:hover {
-        border-bottom: 1px solid ${({ theme }) => theme.primaryFontCol};
+        border-bottom: 1px solid ${({ theme }) => theme.primaryFontColor};
     }
 
     .contact-info a {
-        color: ${({ theme }) => theme.primaryFontCol};
+        color: ${({ theme }) => theme.primaryFontColor};
     }
 
     .resume-section-title {
-        border-bottom: 1px solid ${({ theme }) => theme.primaryFontCol};
+        border-bottom: 1px solid ${({ theme }) => theme.primaryFontColor};
     }
 
     /* Login page theme styling */
     .login-page {
         &__login-container {
-            border: 1px solid ${({ theme }) => theme.lineCol};
+            border: 1px solid ${({ theme }) => theme.lineColor};
         }
 
         &__input {
-            border: 1px solid ${({ theme }) => theme.lineCol};
-            background-color: ${({ theme }) => theme.primaryBgCol};
-            color: ${({ theme }) => theme.primaryFontCol};
+            border: 1px solid ${({ theme }) => theme.lineColor};
+            background-color: ${({ theme }) => theme.primaryBackgroundColor};
+            color: ${({ theme }) => theme.primaryFontColor};
 
             &:focus {
-                border-color: ${({ theme }) => theme.accentCol};
+                border-color: ${({ theme }) => theme.accentColor};
             }
         }
 
         &__submit-button {
-            color: ${({ theme }) => theme.primaryBgCol};
-            background-color: ${({ theme }) => theme.accentCol};
+            color: ${({ theme }) => theme.primaryBackgroundColor};
+            background-color: ${({ theme }) => theme.accentColor};
         }
     }
 
@@ -186,27 +186,27 @@ export const GlobalStyles = createGlobalStyle`
     .blog-page {
         input {
             border-color: transparent;
-            background-color: ${({ theme }) => theme.primaryBgCol};
-            color: ${({ theme }) => theme.primaryFontCol};
+            background-color: ${({ theme }) => theme.primaryBackgroundColor};
+            color: ${({ theme }) => theme.primaryFontColor};
         }
 
         a {
-            color: ${({ theme }) => theme.primaryFontCol};
+            color: ${({ theme }) => theme.primaryFontColor};
         }
 
         &__icon {
-            color: ${({ theme }) => theme.primaryFontCol};
+            color: ${({ theme }) => theme.primaryFontColor};
         }
 
         &__search-bar,
         &__email-updates-input-container {
-            border: 1px solid ${({ theme }) => theme.lineCol};
+            border: 1px solid ${({ theme }) => theme.lineColor};
         }
 
         @media screen and (max-width: 980px) {
             .blog-page {
                 &__side-menu-container {
-                    border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+                    border-bottom: 1px solid ${({ theme }) => theme.lineColor};
                 }
             } 
         }
@@ -214,33 +214,33 @@ export const GlobalStyles = createGlobalStyle`
 
     .create-post-page {
         input, textarea {
-            color: ${({ theme }) => theme.primaryFontCol};
-            background-color: ${({ theme }) => theme.primaryBgCol};
-            border: 1px solid ${({ theme }) => theme.lineCol};
+            color: ${({ theme }) => theme.primaryFontColor};
+            background-color: ${({ theme }) => theme.primaryBackgroundColor};
+            border: 1px solid ${({ theme }) => theme.lineColor};
         }
     }
 
     .text-editor {
         &__num-words {
-            color: ${({ theme }) => theme.secondaryFontCol};
+            color: ${({ theme }) => theme.secondaryFontColor};
         }        
 
         &__action-button {
-            border: 1px solid ${({ theme }) => theme.accentCol};
-            background-color: ${({ theme }) => theme.primaryBgCol};
-            color: ${({ theme }) => theme.accentCol};
+            border: 1px solid ${({ theme }) => theme.accentColor};
+            background-color: ${({ theme }) => theme.primaryBackgroundColor};
+            color: ${({ theme }) => theme.accentColor};
 
             &:hover {
-                background-color: ${({ theme }) => theme.accentCol};
-                color: ${({ theme }) => theme.primaryBgCol};
+                background-color: ${({ theme }) => theme.accentColor};
+                color: ${({ theme }) => theme.primaryBackgroundColor};
             }
 
             &--warning {
-                border-color: ${({ theme }) => theme.warningCol};
-                color: ${({ theme }) => theme.warningCol};
+                border-color: ${({ theme }) => theme.warningColor};
+                color: ${({ theme }) => theme.warningColor};
 
                 &:hover {
-                    background-color: ${({ theme }) => theme.warningCol};
+                    background-color: ${({ theme }) => theme.warningColor};
                 }
             }
 
@@ -249,16 +249,16 @@ export const GlobalStyles = createGlobalStyle`
 
     .post {
         /* &:hover {
-            border: 1px solid ${({ theme }) => theme.lineCol};
+            border: 1px solid ${({ theme }) => theme.lineColor};
         } */
-        border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+        border-bottom: 1px solid ${({ theme }) => theme.lineColor};
 
         &--no-border {
             border-bottom: none;
         }
 
         &__publish-date {
-            color: ${({ theme }) => theme.secondaryFontCol};
+            color: ${({ theme }) => theme.secondaryFontColor};
         }
     }
 `;

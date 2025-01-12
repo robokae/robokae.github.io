@@ -44,7 +44,7 @@ export const IconContainer = styled.div`
 
 export const ResponsiveIcon = styled(Icon)`
   background-color: ${(props) => props.backgroundColor ?? "transparent"};
-  color: ${(props) => props.color ?? (({ theme }) => theme.primaryFontCol)};
+  color: ${(props) => props.color ?? (({ theme }) => theme.primaryFontColor)};
   padding: 0.75rem;
 
   @media ${Breakpoint.MOBILE_LG} {

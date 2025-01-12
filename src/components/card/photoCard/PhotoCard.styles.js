@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.secondaryBgCol};
+  background-color: ${({ theme }) => theme.secondaryBackgroundColor};
   border-radius: ${Style.BORDER_RADIUS};
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;

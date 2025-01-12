@@ -40,7 +40,7 @@ export const StyledLink = styled(Link)`
   flex-direction: row;
   gap: ${Layout.GAP_SM};
   margin-top: auto;
-  color: ${({ theme }) => theme.accentCol};
+  color: ${({ theme }) => theme.accentColor};
 `;
 
 export const AnimatedIcon = styled(FontAwesomeIcon)`

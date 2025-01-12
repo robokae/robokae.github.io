@@ -30,12 +30,12 @@ export const NavContainer = styled.div`
 
   &.nav-container-enter-done {
     background-color: ${({ theme }) => theme.headerColor};
-    border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+    border-bottom: 1px solid ${({ theme }) => theme.lineColor};
   }
 
   &.nav-container-exit-active {
     background-color: ${({ theme }) => theme.headerColor};
-    border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+    border-bottom: 1px solid ${({ theme }) => theme.lineColor};
     transition-duration: 0.5s;
   }
 `;

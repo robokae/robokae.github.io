@@ -5,7 +5,7 @@ import { Breakpoint } from "constants/layout";
 const JumbotronLayout = styled(BaseLayout)`
   padding: 5rem 0;
   background-color: ${(props) =>
-    props.bgCol ? "" : ({ theme }) => theme.jumbotronBgCol};
+    props.bgCol ? "" : ({ theme }) => theme.jumbotronBgColor};
 `;
 
 const StyledText = styled.p`

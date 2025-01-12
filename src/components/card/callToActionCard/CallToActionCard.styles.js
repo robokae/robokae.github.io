@@ -7,7 +7,7 @@ import { Layout } from "constants/layout";
 export const Container = styled.div`
   height: 100%;
   padding: ${Layout.CARD_PADDING};
-  background-color: ${({ theme }) => theme.secondaryBgCol};
+  background-color: ${({ theme }) => theme.secondaryBackgroundColor};
   box-shadow: ${({ theme }) => theme.boxShadow};
   border-radius: ${Style.BORDER_RADIUS};
 `;
@@ -27,7 +27,7 @@ export const TagContainer = styled.div`
 
 export const Tag = styled.p`
   font-size: 0.9rem;
-  background-color: ${({ theme }) => theme.tagCol};
+  background-color: ${({ theme }) => theme.tagColor};
   padding: 0.1rem 0.75rem;
   border-radius: 5rem;
 `;
@@ -40,7 +40,7 @@ export const LinkContainer = styled.div`
 `;
 
 export const Link = styled(NavLink)`
-  color: ${({ theme }) => theme.accentCol};
+  color: ${({ theme }) => theme.accentColor};
   display: flex;
   flex-direction: row;
   align-items: center;

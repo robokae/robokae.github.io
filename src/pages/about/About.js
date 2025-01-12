@@ -47,7 +47,7 @@ const StyledCard = styled(Card)`
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
-  color: ${({ theme }) => theme.accentCol};
+  color: ${({ theme }) => theme.accentColor};
   font-size: ${IconSize.SIZE_LG};
 `;
 

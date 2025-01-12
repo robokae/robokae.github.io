@@ -35,7 +35,7 @@ export const Content = styled.section`
   position: absolute;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.primaryBgCol};
+  background-color: ${({ theme }) => theme.primaryBackgroundColor};
   background-color: #192229;
   transition: all 0.3s ease-out;
 
@@ -76,7 +76,7 @@ export const MenuOption = styled.li`
     padding: 1.25rem ${Layout.SECTION_PADDING};
 
     &:hover {
-      color: ${({ theme }) => theme.accentCol};
+      color: ${({ theme }) => theme.accentColor};
     }
   }
 

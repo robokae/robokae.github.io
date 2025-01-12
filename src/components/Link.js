@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Link = styled(NavLink)`
-  color: ${({ theme }) => theme.primaryFontCol};
+  color: ${({ theme }) => theme.primaryFontColor};
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -16,9 +16,9 @@ export const UnderlinedLink = styled(Link)`
 `;
 
 export const LinkButton = styled(Link)`
-  background-color: ${({ theme }) => theme.accentCol};
+  background-color: ${({ theme }) => theme.accentColor};
   padding: 0.75rem 2rem;
-  color: ${({ theme }) => theme.primaryBgCol};
+  color: ${({ theme }) => theme.primaryBackgroundColor};
   border: transparent;
   border-radius: 5rem;
   cursor: pointer;
@@ -34,10 +34,10 @@ export const LinkButton = styled(Link)`
 
 export const BorderedIconLinkButton = styled(Link)`
   width: 100%;
-  background-color: ${({ theme }) => theme.secondaryBgCol};
+  background-color: ${({ theme }) => theme.secondaryBackgroundColor};
   padding: 0.5rem 2rem;
-  color: ${({ theme }) => theme.primaryFontCol};
-  border: 1px solid ${({ theme }) => theme.lineCol};
+  color: ${({ theme }) => theme.primaryFontColor};
+  border: 1px solid ${({ theme }) => theme.lineColor};
   border-radius: 0.25rem;
   cursor: pointer;
 

@@ -72,7 +72,7 @@ export const CaptionContainer = styled.div`
   align-items: flex-end;
   justify-content: center;
   gap: 0.5rem;
-  color: ${({ theme }) => theme.secondaryFontCol};
+  color: ${({ theme }) => theme.secondaryFontColor};
 
   @media ${Breakpoint.LAPTOP} {
     align-items: center;

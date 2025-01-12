@@ -67,6 +67,6 @@ export const SlideIndicator = styled(FontAwesomeIcon)`
   cursor: pointer;
   color: ${(props) =>
     props.active
-      ? ({ theme }) => theme.accentCol
-      : ({ theme }) => theme.lineCol};
+      ? ({ theme }) => theme.accentColor
+      : ({ theme }) => theme.lineColor};
 `;
