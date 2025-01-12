@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: ${({ theme }) => theme.overlayCol};
+  background-color: ${({ theme }) => theme.overlayColor};
   transition: all ${Style.TRANSITION_DURATION} ease-out;
   opacity: 0;
 

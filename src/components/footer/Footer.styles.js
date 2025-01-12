@@ -11,7 +11,7 @@ export const Container = styled.footer`
   flex-direction: row;
   justify-content: center;
   margin-top: auto;
-  background-color: #192229;
+  background-color: ${({ theme }) => theme.footerColor};
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0;
