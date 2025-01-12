@@ -5,11 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "components/icon/Icon";
 
 export const SubHeading = styled.p`
+  width: 80%;
   text-align: center;
-
-  @media ${Breakpoint.LAPTOP} {
-    width: 80%;
-  }
 
   @media ${Breakpoint.MOBILE_LG} {
     width: 100%;

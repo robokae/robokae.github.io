@@ -28,11 +28,19 @@ const Description = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 2.5rem;
 `;
 
-const ResponsiveText = styled.p`
-  text-align: left;
+const ResponsiveText = styled.h5`
+  width: 90%;
+  font-weight: normal;
+  text-align: center;
+
+  @media ${Breakpoint.TABLET} {
+    width: 100%;
+    text-align: left;
+  }
 `;
 
 const Reflection = ({ data }) => {
