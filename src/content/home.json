@@ -7,7 +7,12 @@
                 "headings": ["Hi, my name is", "Alexander Hom"],
                 "subHeadings": ["I am a software engineer from", "San Francisco"],
                 "text": [],
-                "images": [],
+                "images": [
+                    {
+                        "name": "DeveloperSetup.svg",
+                        "altText": "Desk with chair and computer monitor"
+                    }
+                ],
                 "icons": [],
                 "buttons": [],
                 "listContent": []

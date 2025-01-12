@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
-import DeveloperSetup from "components/illustrations/DeveloperSetup.svg";
 import { Typography as TypographyConstants } from "constants/typography";
 import { Style } from "constants/style";
 import { useLayoutEffect, useRef, useState } from "react";
@@ -122,8 +121,8 @@ function Hero({ data }) {
         </HeadingContainer>
         <ImageContainer>
           <Image
-            src={DeveloperSetup}
-            alt="Desk with chair and computer monitor"
+            src={`images/${data.images[0].name}`}
+            alt={data.images[0].altText}
           />
         </ImageContainer>
       </Content>
