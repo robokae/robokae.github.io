@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
 import Icon from "components/icon/Icon";
 
@@ -22,21 +22,16 @@ export const NavContainer = styled.div`
   background-color: transparent;
   border-color: transparent;
   box-sizing: border-box;
-  transition: all 0.3s ease-out;
+  ${(props) =>
+    props.transitionBackground &&
+    css`
+      transition: all 0.35s ease;
+      background-color: ${({ theme }) => theme.headerColor};
+      border-bottom: 1px solid ${({ theme }) => theme.lineColor};
+    `}
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0 ${Layout.SECION_PADDING_SM};
-  }
-
-  &.nav-container-enter-done {
-    background-color: ${({ theme }) => theme.headerColor};
-    border-bottom: 1px solid ${({ theme }) => theme.lineColor};
-  }
-
-  &.nav-container-exit-active {
-    background-color: ${({ theme }) => theme.headerColor};
-    border-bottom: 1px solid ${({ theme }) => theme.lineColor};
-    transition-duration: 0.5s;
   }
 `;
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import header from "content/layout/header.json";
 import Footer from "components/footer/Footer";
 import Header from "./header/Header";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -12,7 +12,11 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-function MainLayout({ theme, onChangeTheme }) {
+function MainLayout({ theme, onChangeTheme, dynamicHeaderPages }) {
+  const [dynamicHeader, setDynamicHeader] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const { pathname } = useLocation();
+
   const ScrollToTop = () => {
     const { pathname } = useLocation();
 
@@ -23,6 +27,17 @@ function MainLayout({ theme, onChangeTheme }) {
     return null;
   };
 
+  useEffect(() => {
+    dynamicHeaderPages.includes(pathname)
+      ? setDynamicHeader(true)
+      : setDynamicHeader(false);
+    setIsLoading(false);
+  }, [pathname]);
+
+  if (isLoading) {
+    return null;
+  }
+
   return (
     <Container>
       <ScrollToTop />
@@ -30,7 +45,7 @@ function MainLayout({ theme, onChangeTheme }) {
         links={header.links}
         theme={theme}
         onChangeTheme={onChangeTheme}
-        transitionBackgroundOnScroll
+        dynamicHeader={dynamicHeader}
       />
       <Outlet />
       <Footer />

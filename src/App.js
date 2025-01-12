@@ -44,12 +44,20 @@ function App() {
 
   const [theme, changeTheme] = useTheme();
 
+  const dynamicHeaderPages = ["/"];
+
   const router = createHashRouter(
     createRoutesFromElements(
       <>
         <Route
           path="/"
-          element={<MainLayout theme={theme} onChangeTheme={changeTheme} />}
+          element={
+            <MainLayout
+              theme={theme}
+              onChangeTheme={changeTheme}
+              dynamicHeaderPages={dynamicHeaderPages}
+            />
+          }
         >
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />

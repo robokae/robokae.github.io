@@ -11,10 +11,9 @@ import Icon from "components/icon/Icon";
 import { useResize } from "hooks/useResize";
 import { DeviceSize } from "constants/layout";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
-import { CSSTransition } from "react-transition-group";
 import { Link } from "components/Link";
 
-function Header({ links, transitionBackgroundOnScroll }) {
+function Header({ links, dynamicHeader }) {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
   const [isBackgroundTransparent, setIsBackgroundTransparent] = useState(true);
 
@@ -32,10 +31,10 @@ function Header({ links, transitionBackgroundOnScroll }) {
   const toggleMenu = () => setShowHamburgerMenu((prev) => !prev);
 
   const handleScroll = useCallback(() => {
-    transitionBackgroundOnScroll
+    dynamicHeader
       ? setIsBackgroundTransparent(window.scrollY <= SCROLL_THRESHOLD)
       : setIsBackgroundTransparent(false);
-  }, [transitionBackgroundOnScroll]);
+  }, [dynamicHeader]);
 
   useEffect(() => {
     /**
@@ -52,10 +51,10 @@ function Header({ links, transitionBackgroundOnScroll }) {
     // When the hamburger menu is not displayed, enable the scroll event handler
     window.addEventListener(SCROLL, handleScroll);
 
-    setIsBackgroundTransparent(transitionBackgroundOnScroll);
+    setIsBackgroundTransparent(dynamicHeader);
 
     return () => window.removeEventListener(SCROLL, handleScroll);
-  }, [showHamburgerMenu, transitionBackgroundOnScroll, handleScroll]);
+  }, [showHamburgerMenu, dynamicHeader, handleScroll]);
 
   useEffect(() => {
     /**
@@ -69,35 +68,29 @@ function Header({ links, transitionBackgroundOnScroll }) {
 
   return (
     <Container>
-      <CSSTransition
-        in={!isBackgroundTransparent}
-        classNames="nav-container"
-        timeout={{ exit: 150 }}
-      >
-        <NavContainer>
-          <Nav>
-            {headerLinks.map((links, index) => (
-              <LinkContainer key={index}>
-                {links.map((link, index) => (
-                  <Link
-                    key={index}
-                    to={link.to}
-                    onClick={showHamburgerMenu && toggleMenu}
-                  >
-                    {link.label ?? <Icon name={link.icon} />}
-                  </Link>
-                ))}
-              </LinkContainer>
-            ))}
-            {isMobileHeader && (
-              <StyledIcon
-                onClick={toggleMenu}
-                icon={showHamburgerMenu ? faTimes : faBars}
-              />
-            )}
-          </Nav>
-        </NavContainer>
-      </CSSTransition>
+      <NavContainer transitionBackground={!isBackgroundTransparent}>
+        <Nav>
+          {headerLinks.map((links, index) => (
+            <LinkContainer key={index}>
+              {links.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.to}
+                  onClick={showHamburgerMenu && toggleMenu}
+                >
+                  {link.label ?? <Icon name={link.icon} />}
+                </Link>
+              ))}
+            </LinkContainer>
+          ))}
+          {isMobileHeader && (
+            <StyledIcon
+              onClick={toggleMenu}
+              icon={showHamburgerMenu ? faTimes : faBars}
+            />
+          )}
+        </Nav>
+      </NavContainer>
       <HamburgerMenu display={showHamburgerMenu} clickHandler={toggleMenu} />
     </Container>
   );
