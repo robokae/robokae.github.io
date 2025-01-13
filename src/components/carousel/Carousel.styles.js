@@ -45,6 +45,7 @@ export const Slide = styled.div`
   flex-shrink: 0;
   scroll-snap-align: center;
   scroll-snap-stop: always;
+  touch-action: pan-x;
 `;
 
 export const Bottom = styled.div`
