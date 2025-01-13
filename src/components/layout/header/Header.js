@@ -12,18 +12,22 @@ import { useResize } from "hooks/useResize";
 import { DeviceSize } from "constants/layout";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 import { Link } from "components/Link";
+import { useLocation } from "react-router-dom";
 
 function Header({ links, dynamicHeader }) {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
   const [isBackgroundTransparent, setIsBackgroundTransparent] = useState(true);
+  const [disableTransition, setDisableTransition] = useState(false);
 
   const { width } = useResize();
+  const { pathname } = useLocation();
 
   const leftLinks = links.filter((link) => link.position === "left");
   const rightLinks = links.filter((link) => link.position === "right");
 
   const SCROLL_THRESHOLD = 20;
   const SCROLL = "scroll";
+  const DISABLE_TRANSITION_DURATION = 1000;
 
   const isMobileHeader = width < DeviceSize.TABLET;
   const headerLinks = isMobileHeader ? [leftLinks] : [leftLinks, rightLinks];
@@ -35,6 +39,15 @@ function Header({ links, dynamicHeader }) {
       ? setIsBackgroundTransparent(window.scrollY <= SCROLL_THRESHOLD)
       : setIsBackgroundTransparent(false);
   }, [dynamicHeader]);
+
+  useEffect(() => {
+    /**
+     * Temporarily disable the transition when navigating from a page where the
+     * header is not dynamic to a page where the header is dynamic
+     */
+    setDisableTransition(true);
+    setTimeout(() => setDisableTransition(false), DISABLE_TRANSITION_DURATION);
+  }, [pathname]);
 
   useEffect(() => {
     /**
@@ -68,7 +81,10 @@ function Header({ links, dynamicHeader }) {
 
   return (
     <Container>
-      <NavContainer transitionBackground={!isBackgroundTransparent}>
+      <NavContainer
+        transitionBackground={!isBackgroundTransparent}
+        disableTransition={disableTransition}
+      >
         <Nav>
           {headerLinks.map((links, index) => (
             <LinkContainer key={index}>

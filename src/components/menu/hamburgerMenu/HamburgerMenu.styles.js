@@ -1,7 +1,11 @@
 import { Link } from "components/Link";
 import { Style } from "constants";
 import { Breakpoint, Layout } from "constants/layout";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const disableTransition = css`
+  transition: none;
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -21,6 +25,7 @@ export const Overlay = styled.div`
   background-color: ${({ theme }) => theme.overlayColor};
   transition: all ${Style.TRANSITION_DURATION} ease-out;
   opacity: 0;
+  ${(props) => props.disableTransition && disableTransition}
 
   &.overlay-enter-done {
     opacity: 1;
@@ -38,6 +43,7 @@ export const Content = styled.section`
   background-color: ${({ theme }) => theme.primaryBackgroundColor};
   background-color: #192229;
   transition: all 0.3s ease-out;
+  ${(props) => props.disableTransition && disableTransition}
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0 ${Layout.SECION_PADDING_SM};

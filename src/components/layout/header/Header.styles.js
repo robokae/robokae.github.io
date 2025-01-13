@@ -22,12 +22,18 @@ export const NavContainer = styled.div`
   background-color: transparent;
   border-color: transparent;
   box-sizing: border-box;
+  transition: all 0.35s ease;
   ${(props) =>
     props.transitionBackground &&
     css`
-      transition: all 0.35s ease;
+      transition-property: all;
       background-color: ${({ theme }) => theme.headerColor};
       border-bottom: 1px solid ${({ theme }) => theme.lineColor};
+    `}
+  ${(props) =>
+    props.disableTransition &&
+    css`
+      transition: none;
     `}
 
   @media ${Breakpoint.MOBILE_LG} {
