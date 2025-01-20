@@ -5,13 +5,11 @@ import {
   MenuLink,
   MenuOption,
   MenuOptionsContainer,
-  Overlay,
 } from "./HamburgerMenu.styles";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { useLocation } from "react-router-dom";
 
-function HamburgerMenu({ display, clickHandler }) {
+function HamburgerMenu({ display, toggleCallback }) {
   const { links } = content;
   const { pathname } = useLocation();
   const [height, setHeight] = useState(null);
@@ -32,46 +30,24 @@ function HamburgerMenu({ display, clickHandler }) {
   }, [pathname]);
 
   return (
-    <TransitionGroup component={null}>
-      <Container>
-        <CSSTransition
-          in={display}
-          classNames="overlay"
-          timeout={{ enter: 100, exit: 250 }}
-        >
-          <Overlay
-            onClick={clickHandler}
-            disableTransition={disableTransition}
-          />
-        </CSSTransition>
-        <CSSTransition in={display} classNames="content" timeout={100}>
-          <Content
-            ref={menuRef}
-            height={height}
-            disableTransition={disableTransition}
-          >
-            <MenuOptionsContainer>
-              {links.map((link, index) => (
-                <CSSTransition
-                  key={index}
-                  in={display}
-                  classNames="link"
-                  timeout={350}
-                >
-                  <MenuOption>
-                    {
-                      <MenuLink onClick={clickHandler} to={link.to}>
-                        {link.label}
-                      </MenuLink>
-                    }
-                  </MenuOption>
-                </CSSTransition>
-              ))}
-            </MenuOptionsContainer>
-          </Content>
-        </CSSTransition>
-      </Container>
-    </TransitionGroup>
+    <Container display={display}>
+      <Content
+        ref={menuRef}
+        height={height}
+        disableTransition={disableTransition}
+        display={display}
+      >
+        <MenuOptionsContainer>
+          {links.map((link, index) => (
+            <MenuOption key={index}>
+              <MenuLink onClick={toggleCallback} to={link.to}>
+                {link.label}
+              </MenuLink>
+            </MenuOption>
+          ))}
+        </MenuOptionsContainer>
+      </Content>
+    </Container>
   );
 }
 

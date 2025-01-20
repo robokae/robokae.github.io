@@ -1,19 +1,20 @@
+import { Style } from "constants/style";
 import { useEffect, useState } from "react";
 
 const THEME = "theme";
-const DARK = "dark";
-const LIGHT = "light";
 
 const useTheme = () => {
-  const [theme, setTheme] = useState(DARK);
+  const [theme, setTheme] = useState(Style.DARK_THEME);
 
   const updateThemeValue = (newTheme) => {
     setTheme(newTheme);
     localStorage.setItem(THEME, newTheme);
   };
 
-  const changeTheme = () => {
-    theme === LIGHT ? updateThemeValue(DARK) : updateThemeValue(LIGHT);
+  const toggleTheme = () => {
+    theme === Style.LIGHT_THEME
+      ? updateThemeValue(Style.DARK_THEME)
+      : updateThemeValue(Style.LIGHT_THEME);
   };
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const useTheme = () => {
     persistedTheme && setTheme(persistedTheme);
   }, []);
 
-  return [theme, changeTheme];
+  return [theme, toggleTheme];
 };
 
 export default useTheme;

@@ -8,7 +8,8 @@ import { HeroLayout } from "components/layout/Layout";
 const Container = styled(HeroLayout)`
   width: 100%;
   padding: 0 ${Layout.SECTION_PADDING};
-  background-color: #3b4c58;
+  background-color: ${(props) =>
+    props.theme === Style.DARK_THEME ? "#3B4C58" : "#8DA4B4"};
   padding-bottom: 0;
 `;
 
@@ -41,17 +42,18 @@ const HeadingContainer = styled.div`
 const headingStyle = css`
   width: 100%;
   text-align: center;
-  text-shadow: ${TypographyConstants.TEXT_SHADOW};
 `;
 
 const Heading = styled.div`
   ${headingStyle}
+  text-shadow: ${TypographyConstants.TEXT_SHADOW};
 `;
 
 const SubHeading = styled.div`
   ${headingStyle}
   & > * {
-    color: #a1b6c4;
+    color: ${(props) =>
+      props.theme === Style.DARK_THEME ? "#A1B6C4" : "#3C5565"};
     font-weight: normal;
   }
 `;
@@ -75,7 +77,7 @@ const Image = styled.img`
   }
 `;
 
-function Hero({ data }) {
+function Hero({ data, theme }) {
   const [multiLineHeading, setMultiLineHeading] = useState(false);
   const sectionRef = useRef(null);
 
@@ -105,7 +107,7 @@ function Hero({ data }) {
     : [data.subHeadings.join(" ")];
 
   return (
-    <Container ref={sectionRef}>
+    <Container ref={sectionRef} theme={theme}>
       <Content>
         <HeadingContainer>
           <Heading>
@@ -113,7 +115,7 @@ function Hero({ data }) {
               <h1 key={index}>{line}</h1>
             ))}
           </Heading>
-          <SubHeading>
+          <SubHeading theme={theme}>
             {subHeadings.map((line, index) => (
               <h4 key={index}>{line}</h4>
             ))}

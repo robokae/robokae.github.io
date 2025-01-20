@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
 import Icon from "components/icon/Icon";
+import { Style } from "constants";
 
 export const Container = styled.header`
   width: 100%;
@@ -20,7 +21,7 @@ export const NavContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   background-color: transparent;
-  border-color: transparent;
+  border: 1px solid transparent;
   box-sizing: border-box;
   transition: all 0.35s ease;
   ${(props) =>
@@ -28,7 +29,7 @@ export const NavContainer = styled.div`
     css`
       transition-property: all;
       background-color: ${({ theme }) => theme.headerColor};
-      border-bottom: 1px solid ${({ theme }) => theme.lineColor};
+      border-color: ${({ theme }) => theme.lineColor};
     `}
   ${(props) =>
     props.disableTransition &&
@@ -46,12 +47,21 @@ export const Nav = styled.nav`
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
+  gap: 1.5rem;
+
+  & > :first-child {
+    margin-right: auto;
+  }
 `;
 
 export const StyledIcon = styled(Icon)`
   cursor: pointer;
+`;
+
+export const SmallStyledIcon = styled(StyledIcon)`
+  font-size: 1.1rem;
 `;
 
 export const LinkContainer = styled.section`
@@ -59,4 +69,28 @@ export const LinkContainer = styled.section`
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
+`;
+
+export const HamburgerMenuContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: ${Layout.HEADER_HEIGHT};
+  left: 0;
+  z-index: 1;
+  display: none;
+  ${(props) =>
+    props.display &&
+    css`
+      display: block;
+    `}
+`;
+
+export const Overlay = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: ${({ theme }) => theme.overlayColor};
+  transition: all ${Style.TRANSITION_DURATION} ease-out;
+  z-index: 2;
 `;

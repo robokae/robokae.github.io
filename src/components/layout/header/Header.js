@@ -1,20 +1,28 @@
 import { useCallback, useEffect, useState } from "react";
 import {
   Container,
+  HamburgerMenuContainer,
   LinkContainer,
   Nav,
   NavContainer,
+  Overlay,
   StyledIcon,
 } from "./Header.styles";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import Icon from "components/icon/Icon";
+import {
+  faBars,
+  faMoon,
+  faSun,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 import { useResize } from "hooks/useResize";
 import { DeviceSize } from "constants/layout";
-import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 import { Link } from "components/Link";
 import { useLocation } from "react-router-dom";
+import { Style } from "constants/style";
+import ToggleButton from "components/themeSwitcher/ToggleButton";
+import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 
-function Header({ links, dynamicHeader }) {
+function Header({ links, dynamicHeader, theme, toggleTheme }) {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
   const [isBackgroundTransparent, setIsBackgroundTransparent] = useState(true);
   const [disableTransition, setDisableTransition] = useState(false);
@@ -41,13 +49,10 @@ function Header({ links, dynamicHeader }) {
   }, [dynamicHeader]);
 
   useEffect(() => {
-    /**
-     * Temporarily disable the transition when navigating from a page where the
-     * header is not dynamic to a page where the header is dynamic
-     */
+    // Temporarily disable the transition
     setDisableTransition(true);
     setTimeout(() => setDisableTransition(false), DISABLE_TRANSITION_DURATION);
-  }, [pathname]);
+  }, [pathname, theme, showHamburgerMenu]);
 
   useEffect(() => {
     /**
@@ -94,20 +99,30 @@ function Header({ links, dynamicHeader }) {
                   to={link.to}
                   onClick={showHamburgerMenu && toggleMenu}
                 >
-                  {link.label ?? <Icon name={link.icon} />}
+                  {link.label}
                 </Link>
               ))}
             </LinkContainer>
           ))}
+          <ToggleButton
+            onClick={toggleTheme}
+            icon={theme === Style.DARK_THEME ? faSun : faMoon}
+            backgroundColor={theme === Style.DARK_THEME ? "#242D34" : "#29353D"}
+            sliderColor={theme === Style.DARK_THEME ? "#47555F" : "#F1F2F3"}
+          />
           {isMobileHeader && (
             <StyledIcon
               onClick={toggleMenu}
               icon={showHamburgerMenu ? faTimes : faBars}
+              fixedWidth
             />
           )}
         </Nav>
       </NavContainer>
-      <HamburgerMenu display={showHamburgerMenu} clickHandler={toggleMenu} />
+      <HamburgerMenuContainer display={showHamburgerMenu}>
+        <Overlay onClick={toggleMenu} disableTransition={disableTransition} />
+        <HamburgerMenu toggleCallback={toggleMenu} />
+      </HamburgerMenuContainer>
     </Container>
   );
 }

@@ -30,6 +30,7 @@ import Error from "./pages/Error";
 import { Typography } from "constants/typography";
 import Contact from "pages/contact/Contact";
 import About from "pages/about/About";
+import { Style } from "constants/style";
 
 library.add(fab, fas);
 
@@ -42,7 +43,7 @@ function App() {
     });
   }, []);
 
-  const [theme, changeTheme] = useTheme();
+  const [theme, toggleTheme] = useTheme();
 
   const dynamicHeaderPages = ["/"];
 
@@ -54,7 +55,7 @@ function App() {
           element={
             <MainLayout
               theme={theme}
-              onChangeTheme={changeTheme}
+              toggleTheme={toggleTheme}
               dynamicHeaderPages={dynamicHeaderPages}
             />
           }
@@ -77,7 +78,7 @@ function App() {
   );
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === Style.LIGHT_THEME ? lightTheme : darkTheme}>
       <RouterProvider router={router} />
       <GlobalStyles />
     </ThemeProvider>

@@ -8,7 +8,7 @@ import {
   Top,
 } from "./Carousel.styles";
 import { useResize } from "hooks/useResize";
-import ArrowIndicator from "./ArrowIndicator";
+import ArrowIndicator from "./indicator/ArrowIndicator";
 
 const Carousel = ({ paddingX, arrows, children: slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

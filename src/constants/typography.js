@@ -2,7 +2,7 @@ export const Typography = Object.freeze({
   FONT_FAMILIES: ["Plus Jakarta Sans:400,600,700", "JetBrains Mono"],
   DEFAULT_FONT: "Plus Jakarta Sans",
   MONOSPACE_FONT: "JetBrains Mono",
-  TEXT_SHADOW: "0.25rem 0.25rem 2rem rgba(0, 0, 0, 0.3)",
+  TEXT_SHADOW: "0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.2)",
   H1: "h1",
   H2: "h2",
   H3: "h3",
