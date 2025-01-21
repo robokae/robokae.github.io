@@ -21,6 +21,7 @@ import { useLocation } from "react-router-dom";
 import { Style } from "constants/style";
 import ToggleButton from "components/themeSwitcher/ToggleButton";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
+import { themeToggleConfig } from "components/themeSwitcher/themeToggleConfig";
 
 function Header({ links, dynamicHeader, theme, toggleTheme }) {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
@@ -106,9 +107,9 @@ function Header({ links, dynamicHeader, theme, toggleTheme }) {
           ))}
           <ToggleButton
             onClick={toggleTheme}
-            icon={theme === Style.DARK_THEME ? faSun : faMoon}
-            backgroundColor={theme === Style.DARK_THEME ? "#242D34" : "#29353D"}
-            sliderColor={theme === Style.DARK_THEME ? "#47555F" : "#F1F2F3"}
+            icon={themeToggleConfig[theme].icon}
+            backgroundColor={themeToggleConfig[theme].backgroundColor}
+            sliderColor={themeToggleConfig[theme].sliderColor}
           />
           {isMobileHeader && (
             <StyledIcon

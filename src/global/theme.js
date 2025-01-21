@@ -1,5 +1,5 @@
 const lightTheme = {
-  primaryBackgroundColor: "#F0F1F2",
+  primaryBackgroundColor: "#EBEDEF",
   secondaryBackgroundColor: "#F8F8F8",
   tertiaryBackgroundColor: "#D3D6D7",
   headerColor: "#F1F2F2",

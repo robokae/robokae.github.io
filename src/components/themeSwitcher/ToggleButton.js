@@ -52,7 +52,7 @@ function ToggleButton({
       backgroundColor={backgroundColor}
     >
       <Slider backgroundColor={sliderColor} slideRight={slideRight}>
-        {icon && <StyledIcon icon={icon} fixedWidth />}
+        {icon && icon}
       </Slider>
     </SliderContainer>
   );
