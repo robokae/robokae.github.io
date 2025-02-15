@@ -1,19 +1,20 @@
 {
-  "links": [
-    {
-      "label": "ALEXANDER HOM",
-      "to": "/",
-      "position": "left"
-    },
-    {
-      "label": "About",
-      "to": "/about",
-      "position": "right"
-    },
-    {
-      "label": "Contact",
-      "to": "/contact",
-      "position": "right"
-    }
-  ]
+  "links": {
+    "left": [
+      {
+        "label": "ALEXANDER HOM",
+        "to": "/"
+      }
+    ],
+    "right": [
+      {
+        "label": "About",
+        "to": "/about"
+      },
+      {
+        "label": "Contact",
+        "to": "/contact"
+      }
+    ]
+  }
 }

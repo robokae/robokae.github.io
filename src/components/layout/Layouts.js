@@ -1,9 +1,11 @@
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import header from "content/layout/header.json";
-import Footer from "components/footer/Footer";
-import Header from "./header/Header";
+import Header from "./header/dynamic/Header";
 import { useEffect, useState } from "react";
+import Footer from "./footer/home/Footer";
+import BlogHeader from "./header/blog/BlogHeader";
+import AdminHeader from "./header/admin/AdminHeader";
 
 const Container = styled.div`
   width: 100%;
@@ -12,7 +14,7 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-function MainLayout({ theme, toggleTheme, dynamicHeaderPages }) {
+export function HomeLayout({ theme, toggleTheme, dynamicHeaderPages }) {
   const [dynamicHeader, setDynamicHeader] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { pathname } = useLocation();
@@ -43,4 +45,22 @@ function MainLayout({ theme, toggleTheme, dynamicHeaderPages }) {
   );
 }
 
-export default MainLayout;
+export function BlogLayout({ theme, toggleTheme }) {
+  return (
+    <Container>
+      <ScrollRestoration />
+      <BlogHeader />
+      <Outlet context={theme} />
+    </Container>
+  );
+}
+
+export function AdminLayout({ theme, toggleTheme }) {
+  return (
+    <Container>
+      <ScrollRestoration />
+      <AdminHeader theme={theme} toggleTheme={toggleTheme} />
+      <Outlet context={theme} />
+    </Container>
+  );
+}

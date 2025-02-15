@@ -1,4 +1,3 @@
-import { getYear } from "../../util/DateUtil";
 import {
   Caption,
   CaptionContainer,
@@ -8,6 +7,7 @@ import {
 } from "./Footer.styles";
 import footer from "content/layout/footer.json";
 import { UnderlinedLink } from "components/Link";
+import { getYear } from "util/DateUtil";
 
 function Footer() {
   const currentYear = getYear();

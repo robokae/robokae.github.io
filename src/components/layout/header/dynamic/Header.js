@@ -8,22 +8,16 @@ import {
   Overlay,
   StyledIcon,
 } from "./Header.styles";
-import {
-  faBars,
-  faMoon,
-  faSun,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useResize } from "hooks/useResize";
 import { DeviceSize } from "constants/layout";
 import { Link } from "components/Link";
 import { useLocation } from "react-router-dom";
-import { Style } from "constants/style";
 import ToggleButton from "components/themeSwitcher/ToggleButton";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 import { themeToggleConfig } from "components/themeSwitcher/themeToggleConfig";
 
-function Header({ links, dynamicHeader, theme, toggleTheme }) {
+function DynamicHeader({ links, dynamicHeader, theme, toggleTheme }) {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
   const [isBackgroundTransparent, setIsBackgroundTransparent] = useState(true);
   const [disableTransition, setDisableTransition] = useState(false);
@@ -31,8 +25,7 @@ function Header({ links, dynamicHeader, theme, toggleTheme }) {
   const { width } = useResize();
   const { pathname } = useLocation();
 
-  const leftLinks = links.filter((link) => link.position === "left");
-  const rightLinks = links.filter((link) => link.position === "right");
+  const { left: leftLinks, right: rightLinks } = links;
 
   const SCROLL_THRESHOLD = 20;
   const SCROLL = "scroll";
@@ -128,4 +121,4 @@ function Header({ links, dynamicHeader, theme, toggleTheme }) {
   );
 }
 
-export default Header;
+export default DynamicHeader;
