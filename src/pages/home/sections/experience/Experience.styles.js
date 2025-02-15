@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
 import { Typography } from "constants/typography";
-import { ContentLayout, SectionLayout } from "components/layout/Layout";
+import { ContentLayout, SectionLayout } from "components/layout/Layout.styles";
 import Card from "components/card/Card";
 import { Style } from "constants/style";
 

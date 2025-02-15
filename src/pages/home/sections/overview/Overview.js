@@ -1,4 +1,4 @@
-import { ContentLayout, SectionLayout } from "components/layout/Layout";
+import { ContentLayout, SectionLayout } from "components/layout/Layout.styles";
 import Typography from "components/typography/Typography";
 import { Color } from "constants/color";
 import { Layout } from "constants/layout";

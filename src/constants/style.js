@@ -1,5 +1,6 @@
 export const Style = Object.freeze({
   BORDER_RADIUS: ".5rem",
+  BORDER_RADIUS_SM: ".25rem",
   TRANSITION_DURATION: ".3s",
   LIGHT_THEME: "light",
   DARK_THEME: "dark",

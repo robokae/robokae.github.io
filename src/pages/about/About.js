@@ -4,7 +4,7 @@ import {
   ContentLayout,
   PageContentLayout,
   SectionLayout,
-} from "components/layout/Layout";
+} from "components/layout/Layout.styles";
 import Card from "components/card/Card";
 import Typography from "components/typography/Typography";
 import { Typography as TypographyConstants } from "constants/typography";

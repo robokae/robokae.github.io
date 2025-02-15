@@ -1,5 +1,5 @@
 import content from "content/home.json";
-import { PageContentLayout } from "components/layout/Layout";
+import { PageContentLayout } from "components/layout/Layout.styles";
 import Reflection from "./sections/reflection/Reflection";
 import Experience from "./sections/experience/Experience";
 import Hero from "./sections/hero/Hero";

@@ -3,7 +3,7 @@ import { Breakpoint, Layout } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";
 import { Style } from "constants/style";
 import { useLayoutEffect, useRef, useState } from "react";
-import { HeroLayout } from "components/layout/Layout";
+import { HeroLayout } from "components/layout/Layout.styles";
 
 const Container = styled(HeroLayout)`
   width: 100%;

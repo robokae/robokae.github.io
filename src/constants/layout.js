@@ -23,6 +23,7 @@ export const Layout = Object.freeze({
   GAP_MD: "1.75rem",
   GAP_LG: "3rem",
   GAP_XL: "5rem",
+  PADDING_XS: ".75rem",
   PADDING_SM: "1rem",
   PADDING_MD: "2rem",
   PADDING_LG: "3rem",

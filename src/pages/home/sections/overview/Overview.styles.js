@@ -3,7 +3,7 @@ import Icon from "components/icon/Icon";
 import { Breakpoint, Layout } from "constants/layout";
 import styled from "styled-components";
 import { Style } from "constants/style";
-import { SectionLayout } from "components/layout/Layout";
+import { SectionLayout } from "components/layout/Layout.styles";
 
 export const ResponsiveSectionLayout = styled(SectionLayout)`
   @media ${Breakpoint.MOBILE_LG} {

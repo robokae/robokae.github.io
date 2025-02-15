@@ -1,7 +1,9 @@
-import styled from "styled-components";
 import error from "content/error/error.json";
 import { LinkButton } from "components/Link";
-import { PageContentLayout, SectionLayout } from "components/layout/Layout";
+import {
+  PageContentLayout,
+  SectionLayout,
+} from "components/layout/Layout.styles";
 import Typography from "components/typography/Typography";
 import { Typography as TypographyConstants } from "constants/typography";
 

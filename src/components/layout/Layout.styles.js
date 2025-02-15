@@ -10,6 +10,8 @@ export const BaseLayout = styled.div`
 
 export const PageContentLayout = styled(BaseLayout)`
   margin-top: ${Layout.HEADER_HEIGHT};
+  position: relative;
+  flex: 1;
 `;
 
 export const ContentLayout = styled(BaseLayout)`

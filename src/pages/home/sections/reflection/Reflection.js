@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ContentLayout, SectionLayout } from "components/layout/Layout";
+import { ContentLayout, SectionLayout } from "components/layout/Layout.styles";
 import Typography from "components/typography/Typography";
 import { Breakpoint, Layout } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";

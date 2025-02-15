@@ -3,7 +3,7 @@ import {
   ContentLayout,
   PageContentLayout,
   SectionLayout,
-} from "components/layout/Layout";
+} from "components/layout/Layout.styles";
 import Typography from "components/typography/Typography";
 import { Typography as TypographyConstants } from "constants/typography";
 import content from "content/contact.json";
