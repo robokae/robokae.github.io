@@ -5,9 +5,8 @@ import {
   LinkContainer,
   Nav,
   NavContainer,
-  Overlay,
   StyledIcon,
-} from "./Header.styles";
+} from "./DynamicHeader.styles";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useResize } from "hooks/useResize";
 import { DeviceSize } from "constants/layout";
@@ -16,6 +15,7 @@ import { useLocation } from "react-router-dom";
 import ToggleButton from "components/themeSwitcher/ToggleButton";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 import { themeToggleConfig } from "components/themeSwitcher/themeToggleConfig";
+import Overlay from "components/overlay/Overlay";
 
 function DynamicHeader({ links, dynamicHeader, theme, toggleTheme }) {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
@@ -25,13 +25,12 @@ function DynamicHeader({ links, dynamicHeader, theme, toggleTheme }) {
   const { width } = useResize();
   const { pathname } = useLocation();
 
-  const { left: leftLinks, right: rightLinks } = links;
-
   const SCROLL_THRESHOLD = 20;
   const SCROLL = "scroll";
   const DISABLE_TRANSITION_DURATION = 1000;
 
   const isMobileHeader = width < DeviceSize.TABLET;
+  const { left: leftLinks, right: rightLinks } = links;
   const headerLinks = isMobileHeader ? [leftLinks] : [leftLinks, rightLinks];
 
   const toggleMenu = () => setShowHamburgerMenu((prev) => !prev);

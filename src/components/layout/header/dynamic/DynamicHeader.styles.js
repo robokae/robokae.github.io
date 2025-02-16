@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
 import Icon from "components/icon/Icon";
-import { Style } from "constants";
 
 export const Container = styled.header`
   width: 100%;
@@ -73,7 +72,7 @@ export const LinkContainer = styled.section`
 
 export const HamburgerMenuContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: ${Layout.HEADER_HEIGHT};
   left: 0;
@@ -84,13 +83,4 @@ export const HamburgerMenuContainer = styled.div`
     css`
       display: block;
     `}
-`;
-
-export const Overlay = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: ${({ theme }) => theme.overlayColor};
-  transition: all ${Style.TRANSITION_DURATION} ease-out;
-  z-index: 2;
 `;

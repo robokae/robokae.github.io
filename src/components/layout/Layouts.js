@@ -1,11 +1,11 @@
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import header from "content/layout/header.json";
-import Header from "./header/dynamic/Header";
-import { useEffect, useState } from "react";
+import DynamicHeader from "./header/dynamic/DynamicHeader";
 import Footer from "./footer/home/Footer";
 import BlogHeader from "./header/blog/BlogHeader";
 import AdminHeader from "./header/admin/AdminHeader";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -33,7 +33,7 @@ export function HomeLayout({ theme, toggleTheme, dynamicHeaderPages }) {
   return (
     <Container>
       <ScrollRestoration />
-      <Header
+      <DynamicHeader
         links={header.links}
         theme={theme}
         toggleTheme={toggleTheme}
