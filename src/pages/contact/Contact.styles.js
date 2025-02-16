@@ -5,11 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "components/icon/Icon";
 
 export const SubHeading = styled.p`
-  width: 80%;
+  width: 85%;
   text-align: center;
+  font-weight: normal;
+
+  @media ${Breakpoint.LAPTOP_LG} {
+    width: 75%;
+  }
 
   @media ${Breakpoint.MOBILE_LG} {
-    width: 100%;
+    width: 90%;
   }
 `;
 
@@ -22,6 +27,7 @@ export const Cards = styled.div`
 
   @media ${Breakpoint.LAPTOP} {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 `;
 
