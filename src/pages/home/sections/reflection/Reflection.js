@@ -32,14 +32,14 @@ const Description = styled.div`
   gap: 2.5rem;
 `;
 
-const ResponsiveText = styled.h5`
-  width: 90%;
+const ResponsiveText = styled.p`
+  width: 85%;
+  font-size: larger;
   font-weight: normal;
   text-align: center;
 
-  @media ${Breakpoint.TABLET} {
-    width: 100%;
-    text-align: left;
+  @media ${Breakpoint.MOBILE_LG} {
+    width: 95%;
   }
 `;
 

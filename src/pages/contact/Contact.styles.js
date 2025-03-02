@@ -22,12 +22,12 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
-  gap: ${Layout.GAP_MD};
+  gap: 1rem;
   height: max-content;
 
   @media ${Breakpoint.LAPTOP} {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 `;
 

@@ -22,12 +22,11 @@ const CardsContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
+  gap: 0.75rem;
   grid-auto-rows: 1fr;
 
   @media ${Breakpoint.TABLET} {
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
   }
 
   @media ${Breakpoint.MOBILE_LG} {
@@ -39,11 +38,7 @@ const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  @media ${Breakpoint.MOBILE_LG} {
-    flex-direction: row;
-    justify-content: left;
-  }
+  border-radius: 0.25rem;
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -52,8 +47,6 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `;
 
 const StyledText = styled.p`
-  margin: auto;
-
   @media ${Breakpoint.MOBILE_LG} {
     margin: 0;
     text-align: left;
@@ -64,15 +57,10 @@ const CardContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   gap: 1rem;
-
-  @media ${Breakpoint.MOBILE_LG} {
-    flex-direction: row;
-    justify-content: left;
-    gap: 2rem;
-  }
 `;
 
 function About() {
