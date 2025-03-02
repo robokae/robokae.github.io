@@ -1,6 +1,6 @@
-import ToggleButton from "components/themeSwitcher/ToggleButton";
+import ToggleButton from "components/button/ToggleButton";
 import { Container, Nav, NavContainer } from "./AdminHeader.styles";
-import { themeToggleConfig } from "components/themeSwitcher/themeToggleConfig";
+import { themeToggleConfig } from "config/themeToggleConfig";
 
 function AdminHeader({ links, theme, toggleTheme }) {
   return (

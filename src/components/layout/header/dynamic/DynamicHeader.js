@@ -12,9 +12,9 @@ import { useResize } from "hooks/useResize";
 import { DeviceSize } from "constants/layout";
 import { Link } from "components/Link";
 import { useLocation } from "react-router-dom";
-import ToggleButton from "components/themeSwitcher/ToggleButton";
+import ToggleButton from "components/button/ToggleButton";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
-import { themeToggleConfig } from "components/themeSwitcher/themeToggleConfig";
+import { themeToggleConfig } from "config/themeToggleConfig";
 import Overlay from "components/overlay/Overlay";
 
 function DynamicHeader({ links, dynamicHeader, theme, toggleTheme }) {
