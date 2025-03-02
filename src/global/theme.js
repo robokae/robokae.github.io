@@ -8,10 +8,37 @@ const lightTheme = {
   primaryFontColor: "#29353D",
   secondaryFontColor: "#66727E",
   boxShadow: "0.5rem 0.5rem 1rem rgba(153, 174, 215, 0.2)",
-  lineColor: "#b8bec2",
+  lineColor: "#B8BEC2",
   tagColor: "#E5EBF0",
-  accentColor: "#5EB0EB",
+  accentColor: "#6F8FA6",
   warningColor: "#CC5E57",
+  form: {
+    input: {
+      backgroundColor: "#F2F3F3",
+      labelColor: "#6D818F",
+      placeholderColor: "#8D9FAA",
+    },
+  },
+  button: {
+    cta: {
+      backgroundColor: "#6F8FA6",
+      fontColor: "#EBEDEF",
+    },
+    secondary: {
+      backgroundColor: "#D7DDE4",
+      fontColor: "#6D818F",
+    },
+    toggle: {
+      backgroundColor: "#536673",
+      foregroundColor: "#C7D2DC",
+      fontColor: "#485964",
+      borderColor: "#465966",
+    },
+  },
+  tag: {
+    backgroundColor: "#D3D6D7",
+    fontColor: "#8D9FAA",
+  },
 };
 
 const darkTheme = {
@@ -28,6 +55,33 @@ const darkTheme = {
   tagColor: "#202A34",
   accentColor: "#97DBFB",
   warningColor: "#CC5E57",
+  form: {
+    input: {
+      backgroundColor: "#11181C",
+      labelColor: "#8D9FAA",
+      placeholderColor: "#4F5B63",
+    },
+  },
+  button: {
+    cta: {
+      backgroundColor: "#97DBFB",
+      fontColor: "#11191F",
+    },
+    secondary: {
+      backgroundColor: "#1D262D",
+      fontColor: "#8D9FAA",
+    },
+    toggle: {
+      backgroundColor: "#25323B",
+      foregroundColor: "#98A9B6",
+      fontColor: "#47555F",
+      borderColor: "#47555F",
+    },
+  },
+  tag: {
+    backgroundColor: "#283137",
+    fontColor: "#4F5B63",
+  },
 };
 
 export { lightTheme, darkTheme };
