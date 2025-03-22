@@ -16,6 +16,7 @@ import ToggleButton from "components/button/ToggleButton";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 import { themeToggleConfig } from "config/themeToggleConfig";
 import Overlay from "components/overlay/Overlay";
+import Icon from "components/icon/Icon";
 
 function DynamicHeader({ links, dynamicHeader, theme, toggleTheme }) {
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
@@ -30,7 +31,8 @@ function DynamicHeader({ links, dynamicHeader, theme, toggleTheme }) {
   const DISABLE_TRANSITION_DURATION = 1000;
 
   const isMobileHeader = width < DeviceSize.TABLET;
-  const { left: leftLinks, right: rightLinks } = links;
+  const leftLinks = links.filter((link) => link.position === "left");
+  const rightLinks = links.filter((link) => link.position === "right");
   const headerLinks = isMobileHeader ? [leftLinks] : [leftLinks, rightLinks];
 
   const toggleMenu = () => setShowHamburgerMenu((prev) => !prev);
@@ -92,7 +94,11 @@ function DynamicHeader({ links, dynamicHeader, theme, toggleTheme }) {
                   to={link.to}
                   onClick={showHamburgerMenu && toggleMenu}
                 >
-                  {link.label}
+                  {link.type === "text"
+                    ? link.label
+                    : link.type === "icon" && (
+                        <Icon icon={[link.icon.style, link.icon.name]} />
+                      )}
                 </Link>
               ))}
             </LinkContainer>

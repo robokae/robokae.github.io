@@ -5,8 +5,8 @@ const DEFAULT_BACKGROUND_COLOR = "#29353D";
 const DEFAULT_SLIDER_BACKGROUND_COLOR = "#F0F1F2";
 
 const SliderContainer = styled.button`
-  width: 2.75rem;
-  height: 1.375rem;
+  width: 2.25rem;
+  height: 1.25rem;
   background-color: ${({ theme }) => theme.button.toggle.backgroundColor};
   padding: 1px;
   border: none;

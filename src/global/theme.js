@@ -29,9 +29,9 @@ const lightTheme = {
       fontColor: "#6D818F",
     },
     toggle: {
-      backgroundColor: "#536673",
-      foregroundColor: "#C7D2DC",
-      fontColor: "#485964",
+      backgroundColor: "#4c5861",
+      foregroundColor: "#F1F2F2",
+      fontColor: "#4b5762",
       borderColor: "#465966",
     },
   },
@@ -72,8 +72,8 @@ const darkTheme = {
       fontColor: "#8D9FAA",
     },
     toggle: {
-      backgroundColor: "#25323B",
-      foregroundColor: "#98A9B6",
+      backgroundColor: "#53616f",
+      foregroundColor: "#DFEDEE",
       fontColor: "#47555F",
       borderColor: "#47555F",
     },

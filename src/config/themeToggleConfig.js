@@ -3,11 +3,11 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 const fontSize = "0.8rem";
 
 const lightThemeIcon = (
-  <LightMode sx={{ fontSize: fontSize, color: "#485964" }} />
+  <LightMode sx={{ fontSize: fontSize, color: "#4c5861" }} />
 );
 
 const darkThemeIcon = (
-  <DarkMode sx={{ fontSize: fontSize, color: "#47555F" }} />
+  <DarkMode sx={{ fontSize: fontSize, color: "#53616f" }} />
 );
 
 export const themeToggleConfig = {

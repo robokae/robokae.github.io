@@ -1,20 +1,42 @@
 {
-  "links": {
-    "left": [
-      {
-        "label": "ALEXANDER HOM",
-        "to": "/"
+  "links": [
+    {
+      "label": "ALEXANDER HOM",
+      "to": "/",
+      "position": "left",
+      "type": "text"
+    },
+    {
+      "label": "About",
+      "to": "/about",
+      "position": "right",
+      "type": "text"
+    },
+    {
+      "label": "Contact",
+      "to": "/contact",
+      "position": "right",
+      "type": "text"
+    },
+    {
+      "label": "GitHub",
+      "to": "https://github.com/robokae",
+      "position": "right",
+      "type": "icon",
+      "icon": {
+        "style": "fab",
+        "name": "github"
       }
-    ],
-    "right": [
-      {
-        "label": "About",
-        "to": "/about"
-      },
-      {
-        "label": "Contact",
-        "to": "/contact"
+    },
+    {
+      "label": "LinkedIn",
+      "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
+      "position": "right",
+      "type": "icon",
+      "icon": {
+        "style": "fab",
+        "name": "linkedin"
       }
-    ]
-  }
+    }
+  ]
 }
