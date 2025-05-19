@@ -1,22 +1,41 @@
 {
-    "links": [
-        {
-            "id": 0,
-            "type": "text",
-            "label": "Home",
-            "to": "/"
-        },
-        {
-            "id": 1,
-            "type": "text",
-            "label": "About",
-            "to": "/about"
-        },
-        {
-            "id": 2,
-            "type": "text",
-            "label": "Contact",
-            "to": "/contact"
-        }
+  "links": [
+    [
+      {
+        "label": "Home",
+        "type": "text",
+        "to": "/"
+      },
+      {
+        "label": "About",
+        "type": "text",
+        "to": "/about"
+      },
+      {
+        "label": "Contact",
+        "type": "text",
+        "to": "/contact"
+      }
+    ],
+    [
+      {
+        "label": "GitHub",
+        "type": "text",
+        "to": "https://github.com/robokae"
+      },
+      {
+        "label": "LinkedIn",
+        "type": "text",
+        "to": "https://www.linkedin.com/in/alexander-hom-94811b188/"
+      }
     ]
+  ],
+  "additionalElements": [
+    [
+      {
+        "label": "Theme",
+        "type": "themeToggle"
+      }
+    ]
+  ]
 }

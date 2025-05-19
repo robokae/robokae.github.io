@@ -1,19 +1,17 @@
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import header from "content/layout/header.json";
-import DynamicHeader from "../header/dynamic/DynamicHeader";
+import Header from "../header/home/Header";
 import Footer from "../footer/home/Footer";
 import { useEffect, useState } from "react";
 import { PageContainer } from "../Layout.styles";
 
-export function HomeLayout({ theme, toggleTheme, dynamicHeaderPages }) {
-  const [dynamicHeader, setDynamicHeader] = useState(false);
+export function HomeLayout() {
+  const [transitionBg, setTransitionBg] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { pathname } = useLocation();
 
   useEffect(() => {
-    dynamicHeaderPages.includes(pathname)
-      ? setDynamicHeader(true)
-      : setDynamicHeader(false);
+    setTransitionBg(["/"].includes(pathname));
     setIsLoading(false);
   }, [pathname]);
 
@@ -24,13 +22,8 @@ export function HomeLayout({ theme, toggleTheme, dynamicHeaderPages }) {
   return (
     <PageContainer>
       <ScrollRestoration />
-      <DynamicHeader
-        links={header.links}
-        theme={theme}
-        toggleTheme={toggleTheme}
-        dynamicHeader={dynamicHeader}
-      />
-      <Outlet context={theme} />
+      <Header data={header.links} transitionBgOnScroll={transitionBg} />
+      <Outlet />
       <Footer />
     </PageContainer>
   );

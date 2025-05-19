@@ -1,4 +1,5 @@
 const lightTheme = {
+  name: "light",
   primaryBackgroundColor: "#EBEDEF",
   secondaryBackgroundColor: "#F8F8F8",
   tertiaryBackgroundColor: "#D3D6D7",
@@ -34,14 +35,28 @@ const lightTheme = {
       fontColor: "#4b5762",
       borderColor: "#465966",
     },
+    themeToggle: {
+      iconColor: "#4c5861",
+      backgroundColor: "#29353D",
+      foregroundColor: "#F1F2F3",
+    },
   },
   tag: {
     backgroundColor: "#D3D6D7",
     fontColor: "#8D9FAA",
   },
+  pages: {
+    home: {
+      hero: {
+        backgroundColor: "#8DA4B4",
+        subheadingColor: "#3C5565",
+      },
+    },
+  },
 };
 
 const darkTheme = {
+  name: "dark",
   primaryBackgroundColor: "#11191F",
   secondaryBackgroundColor: "#182128",
   tertiaryBackgroundColor: "#283137",
@@ -49,7 +64,7 @@ const darkTheme = {
   footerColor: "#192229",
   overlayColor: "rgba(15, 22, 29, 0.85)",
   primaryFontColor: "#DFEDEE",
-  secondaryFontColor: "#56616C",
+  secondaryFontColor: "#758392",
   boxShadow: "0.25rem 0.25rem 1rem rgba(2, 10, 18, 0.2)",
   lineColor: "#2D343A",
   tagColor: "#202A34",
@@ -77,10 +92,23 @@ const darkTheme = {
       fontColor: "#47555F",
       borderColor: "#47555F",
     },
+    themeToggle: {
+      iconColor: "#53616f",
+      backgroundColor: "#242D34",
+      foregroundColor: "#47555F",
+    },
   },
   tag: {
     backgroundColor: "#283137",
     fontColor: "#4F5B63",
+  },
+  pages: {
+    home: {
+      hero: {
+        backgroundColor: "#3B4C58",
+        subheadingColor: "#A1B6C4",
+      },
+    },
   },
 };
 

@@ -1,13 +1,21 @@
 import { Link } from "components/Link";
 import { Breakpoint, Layout } from "constants/layout";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
   height: max-content;
   position: fixed;
+  top: 0;
+  left: 0;
   box-sizing: border-box;
-  z-index: 10;
+  display: none;
+
+  ${(props) =>
+    props.display &&
+    css`
+      display: block;
+    `}
 `;
 
 export const Content = styled.section`
@@ -16,6 +24,18 @@ export const Content = styled.section`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.headerColor};
+  z-index: 10;
+`;
+
+export const MenuHeader = styled.nav`
+  height: ${Layout.HEADER_HEIGHT};
+  width: 100%;
+  padding: 0 ${Layout.SECTION_PADDING};
+  border-bottom: 1px solid ${({ theme }) => theme.lineColor};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0 ${Layout.SECION_PADDING_SM};
@@ -25,10 +45,22 @@ export const Content = styled.section`
 export const MenuOptionsContainer = styled.ul`
   width: 100%;
   height: 100%;
+  padding: 0 ${Layout.SECTION_PADDING};
   display: flex;
   flex-direction: column;
   list-style: none;
-  padding: 2rem 0;
+
+  @media ${Breakpoint.MOBILE_LG} {
+    padding: 0 ${Layout.SECION_PADDING_SM};
+  }
+
+  & > * {
+    padding-top: 1.25rem;
+  }
+
+  & > :not(:last-child) {
+    border-bottom: 1px solid ${({ theme }) => theme.lineColor};
+  }
 `;
 
 export const MenuOption = styled.li`
@@ -37,9 +69,9 @@ export const MenuOption = styled.li`
 
   & > a {
     display: block;
-    text-align: center;
-    font-size: 1.25rem;
-    padding: 1.25rem ${Layout.SECTION_PADDING};
+    text-align: left;
+    font-size: 1.2rem;
+    padding-bottom: 1.25rem;
 
     &:hover {
       color: ${({ theme }) => theme.accentColor};

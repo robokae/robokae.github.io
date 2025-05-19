@@ -5,9 +5,11 @@ const OverlayContainer = styled.div`
   width: 100vw;
   height: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
   background-color: ${({ theme }) => theme.overlayColor};
   transition: all ${Style.TRANSITION_DURATION} ease-out;
-  z-index: 1;
+  z-index: -1;
 `;
 
 function Overlay(props) {

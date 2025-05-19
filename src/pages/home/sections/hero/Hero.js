@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
-import { Typography as TypographyConstants } from "constants/typography";
 import { Style } from "constants/style";
 import { useLayoutEffect, useRef, useState } from "react";
 import { HeroLayout } from "components/layout/Layout.styles";
@@ -8,8 +7,7 @@ import { HeroLayout } from "components/layout/Layout.styles";
 const Container = styled(HeroLayout)`
   width: 100%;
   padding: 0 ${Layout.SECTION_PADDING};
-  background-color: ${(props) =>
-    props.theme === Style.DARK_THEME ? "#3B4C58" : "#8DA4B4"};
+  background-color: ${({ theme }) => theme.pages.home.hero.backgroundColor};
   padding-bottom: 0;
 `;
 
@@ -45,15 +43,13 @@ const headingStyle = css`
 `;
 
 const Heading = styled.div`
-  ${headingStyle}
-  text-shadow: ${TypographyConstants.TEXT_SHADOW};
+  ${headingStyle};
 `;
 
 const SubHeading = styled.div`
   ${headingStyle}
   & > * {
-    color: ${(props) =>
-      props.theme === Style.DARK_THEME ? "#A1B6C4" : "#3C5565"};
+    color: ${({ theme }) => theme.pages.home.hero.subheadingColor};
     font-weight: normal;
   }
 `;
