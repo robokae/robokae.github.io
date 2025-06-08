@@ -62,7 +62,7 @@ const darkTheme = {
   tertiaryBackgroundColor: "#283137",
   headerColor: "#192229",
   footerColor: "#192229",
-  overlayColor: "rgba(15, 22, 29, 0.85)",
+  overlayColor: "rgba(15, 22, 29, 0.9)",
   primaryFontColor: "#DFEDEE",
   secondaryFontColor: "#758392",
   boxShadow: "0.25rem 0.25rem 1rem rgba(2, 10, 18, 0.2)",

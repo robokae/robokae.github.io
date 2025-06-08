@@ -12,6 +12,9 @@ import { Link } from "components/Link";
 import Overlay from "components/overlay/Overlay";
 import { StyledIcon } from "components/layout/header/Nav.styles";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import Typography from "components/typography/Typography";
+import ThemeToggleButton from "components/button/ThemeToggleButton";
+import Stack from "components/layout/Stack";
 
 function Menu({ data, display, toggleCallback }) {
   const { pathname } = useLocation();
@@ -62,6 +65,10 @@ function Menu({ data, display, toggleCallback }) {
                 </MenuOption>
               ))}
           </div>
+          <Stack>
+            <Typography fontSize="1.2rem">Theme</Typography>
+            <ThemeToggleButton />
+          </Stack>
         </MenuOptionsContainer>
       </Content>
     </Container>

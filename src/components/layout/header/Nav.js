@@ -20,7 +20,7 @@ function Nav({ data, isDesktop, showMenu, toggleMenu }) {
           ))}
         </LinkContainer>
       ))}
-      <ThemeToggleButton />
+      {isDesktop && <ThemeToggleButton />}
       {!isDesktop && (
         <StyledIcon onClick={toggleMenu} icon={faBars} fixedWidth />
       )}
