@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
 import { Link } from "components/Link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "components/icon/Icon";
 
 export const SubHeading = styled.p`
@@ -46,11 +45,7 @@ export const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.accentColor};
 `;
 
-export const AnimatedIcon = styled(FontAwesomeIcon)`
+export const AnimatedIcon = styled(Icon)`
   transition: all 0.2s ease-in-out;
   transform: translateX(${(props) => (props.isHovered ? "0.5rem" : "0")});
-`;
-
-export const StyledIcon = styled(Icon)`
-  font-size: 1.5rem;
 `;

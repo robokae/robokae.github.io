@@ -5,10 +5,10 @@ import { useState } from "react";
 const useTheme = () => {
   const THEME = "theme";
   const fetchSavedTheme = () => {
-    return localStorage.getItem(THEME);
+    return localStorage.getItem(THEME) || Style.DARK_THEME;
   };
 
-  const [theme, setTheme] = useState(fetchSavedTheme() || Style.DARK_THEME);
+  const [theme, setTheme] = useState(fetchSavedTheme());
   const [styles, setStyles] = useState(
     fetchSavedTheme() === Style.LIGHT_THEME ? lightTheme : darkTheme
   );

@@ -10,11 +10,11 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "components/Link";
 import Overlay from "components/overlay/Overlay";
-import { StyledIcon } from "components/layout/header/Nav.styles";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Typography from "components/typography/Typography";
-import ThemeToggleButton from "components/button/ThemeToggleButton";
 import Stack from "components/layout/Stack";
+import Icon from "components/icon/Icon";
+import ThemeToggle from "components/button/ThemeToggle";
+import Button from "components/button/Button";
 
 function Menu({ data, display, toggleCallback }) {
   const { pathname } = useLocation();
@@ -51,7 +51,9 @@ function Menu({ data, display, toggleCallback }) {
                 {link.label}
               </Link>
             ))}
-          <StyledIcon onClick={toggleCallback} icon={faTimes} fixedWidth />
+          <Button>
+            <Icon onClick={toggleCallback} name="X" size="lg" />
+          </Button>
         </MenuHeader>
         <MenuOptionsContainer>
           <div>
@@ -67,7 +69,7 @@ function Menu({ data, display, toggleCallback }) {
           </div>
           <Stack>
             <Typography fontSize="1.2rem">Theme</Typography>
-            <ThemeToggleButton />
+            <ThemeToggle label />
           </Stack>
         </MenuOptionsContainer>
       </Content>

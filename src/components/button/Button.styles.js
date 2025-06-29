@@ -20,3 +20,16 @@ export const SecondaryButton = styled.button`
   background-color: ${({ theme }) => theme.button.secondary.backgroundColor};
   color: ${({ theme }) => theme.button.secondary.fontColor};
 `;
+
+export const PlainButton = styled.button`
+  ${baseButtonStyles}
+  padding: 0;
+  background-color: transparent;
+`;
+
+export const OutlinedButton = styled.button`
+  ${baseButtonStyles}
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+  border: 1px solid ${({ theme }) => theme.lineColor};
+`;

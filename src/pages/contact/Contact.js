@@ -7,13 +7,11 @@ import {
 import Typography from "components/typography/Typography";
 import { Typography as TypographyConstants } from "constants/typography";
 import content from "content/contact.json";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import {
   AnimatedIcon,
   CardHeader,
   Cards,
-  StyledIcon,
   StyledLink,
   SubHeading,
 } from "./Contact.styles";
@@ -28,7 +26,7 @@ const AnimatedLink = ({ label, url }) => {
       onMouseLeave={() => setIsHovered((prev) => !prev)}
     >
       {label}
-      <AnimatedIcon isHovered={isHovered} icon={faArrowRight} fixedWidth />
+      <AnimatedIcon isHovered={isHovered} name="ArrowRight" />
     </StyledLink>
   );
 };
@@ -61,7 +59,7 @@ const DetailsSection = ({ content }) => {
       {subHeadings.map((subHeading, index) => (
         <Card>
           <CardHeader>
-            <StyledIcon icon={icons[index]} />
+            {/* <StyledIcon icon={icons[index]} /> */}
             <Typography tag={TypographyConstants.CARD_TITLE_TAG}>
               {subHeading}
             </Typography>

@@ -51,11 +51,11 @@ export const TagInput = styled.input`
   background-color: transparent;
 `;
 
-export const StyledIcon = styled(Icon)`
-  color: ${({ theme }) => theme.secondaryFontColor};
-  font-size: 1rem;
-  cursor: pointer;
-`;
+// export const StyledIcon = styled(Icon)`
+//   color: ${({ theme }) => theme.secondaryFontColor};
+//   font-size: 1rem;
+//   cursor: pointer;
+// `;
 
 export const RemovableTag = styled.div`
   height: 100%;

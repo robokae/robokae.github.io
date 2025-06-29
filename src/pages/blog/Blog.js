@@ -1,9 +1,8 @@
 import Post from "../../components/blog/PostPreview";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "components/layout/footer/home/Footer";
+import { Github, Linkedin } from "react-bootstrap-icons";
 
 function Blog() {
   const [posts, setPosts] = useState(null);
@@ -60,17 +59,11 @@ function Blog() {
             <h3>Follow Me</h3>
             <div className="blog-page__contact-links">
               <div className="blog-page__contact-link">
-                <FontAwesomeIcon
-                  className="blog-page__icon blog-page__icon--contact"
-                  icon={faGithub}
-                />
+                <Github />
                 <a href="https://github.com/robokae">GitHub</a>
               </div>
               <div className="blog-page__contact-link">
-                <FontAwesomeIcon
-                  className="blog-page__icon blog-page__icon--contact"
-                  icon={faLinkedin}
-                />
+                <Linkedin />
                 <a href="https://www.linkedin.com/in/alexander-hom-94811b188/">
                   LinkedIn
                 </a>

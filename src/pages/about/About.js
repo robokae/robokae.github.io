@@ -9,8 +9,6 @@ import Card from "components/card/Card";
 import Typography from "components/typography/Typography";
 import { Typography as TypographyConstants } from "constants/typography";
 import { Breakpoint } from "constants/layout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconSize } from "constants/style";
 
 const Overview = styled.div`
   display: flex;
@@ -39,11 +37,6 @@ const StyledCard = styled(Card)`
   flex-direction: column;
   justify-content: center;
   border-radius: 0.25rem;
-`;
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  color: ${({ theme }) => theme.accentColor};
-  font-size: ${IconSize.SIZE_LG};
 `;
 
 const StyledText = styled.p`
@@ -104,11 +97,11 @@ function About() {
             {interests.text.map((text, index) => (
               <StyledCard key={index}>
                 <CardContent>
-                  <StyledIcon
+                  {/* <StyledIcon
                     icon={interests.icons[index]}
                     key={index}
                     fixedWidth
-                  />
+                  /> */}
                   <StyledText>{text}</StyledText>
                 </CardContent>
               </StyledCard>

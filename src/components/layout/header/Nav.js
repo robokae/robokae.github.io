@@ -1,8 +1,8 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import ThemeToggleButton from "components/button/ThemeToggleButton";
+import ThemeToggleButton from "components/button/ThemeToggle";
 import Icon from "components/icon/Icon";
 import { Link } from "components/Link";
-import { Container, LinkContainer, StyledIcon } from "./Nav.styles";
+import { Container, LinkContainer } from "./Nav.styles";
+import Button from "components/button/Button";
 
 function Nav({ data, isDesktop, showMenu, toggleMenu }) {
   return (
@@ -13,16 +13,16 @@ function Nav({ data, isDesktop, showMenu, toggleMenu }) {
             <Link key={index} to={link.to} onClick={showMenu && toggleMenu}>
               {link.type === "text"
                 ? link.label
-                : link.type === "icon" && (
-                    <Icon icon={[link.icon.style, link.icon.name]} />
-                  )}
+                : link.type === "icon" && <Icon name={link.icon} />}
             </Link>
           ))}
         </LinkContainer>
       ))}
       {isDesktop && <ThemeToggleButton />}
       {!isDesktop && (
-        <StyledIcon onClick={toggleMenu} icon={faBars} fixedWidth />
+        <Button>
+          <Icon onClick={toggleMenu} name="List" size="lg" />
+        </Button>
       )}
     </Container>
   );

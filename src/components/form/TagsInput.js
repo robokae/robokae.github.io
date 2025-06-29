@@ -7,7 +7,6 @@ import {
   TagInput,
   TagsContainer,
 } from "./TagsInput.styles";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function TagsInput({ label, name, placeholder, required, onChange, ...props }) {
   const [tagInput, setTagInput] = useState("");
@@ -20,6 +19,7 @@ function TagsInput({ label, name, placeholder, required, onChange, ...props }) {
         setTags((prev) => [...prev, tagInput]);
         tagInputRef.current.value = "";
       }
+      onChange(tags);
     }
   };
 
@@ -40,7 +40,7 @@ function TagsInput({ label, name, placeholder, required, onChange, ...props }) {
             {tags.map((tag, index) => (
               <RemovableTag key={index}>
                 <p>{tag}</p>
-                <StyledIcon onClick={() => removeTag(index)} icon={faTimes} />
+                {/* <StyledIcon onClick={() => removeTag(index)} icon={faTimes} /> */}
               </RemovableTag>
             ))}
           </TagsContainer>

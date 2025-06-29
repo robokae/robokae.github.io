@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "components/icon/Icon";
 import { Breakpoint, Layout } from "constants/layout";
 import styled, { css } from "styled-components";
 
@@ -63,7 +63,7 @@ export const SlideIndicatorContainer = styled.div`
   gap: 0.5rem;
 `;
 
-export const SlideIndicator = styled(FontAwesomeIcon)`
+export const SlideIndicator = styled(Icon)`
   font-size: 0.5rem;
   cursor: pointer;
   color: ${(props) =>

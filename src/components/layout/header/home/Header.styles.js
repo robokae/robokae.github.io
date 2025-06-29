@@ -13,7 +13,7 @@ export const Container = styled.header`
   left: 0;
   z-index: 10;
   background-color: ${({ theme }) => theme.headerColor};
-  border: 1px solid ${({ theme }) => theme.lineColor};
+  border-bottom: 1px solid ${({ theme }) => theme.lineColor};
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0 ${Layout.SECION_PADDING_SM};

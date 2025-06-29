@@ -23,20 +23,14 @@
       "to": "https://github.com/robokae",
       "position": "right",
       "type": "icon",
-      "icon": {
-        "style": "fab",
-        "name": "github"
-      }
+      "icon": "Github"
     },
     {
       "label": "LinkedIn",
       "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
       "position": "right",
       "type": "icon",
-      "icon": {
-        "style": "fab",
-        "name": "linkedin"
-      }
+      "icon": "Linkedin"
     }
   ]
 }

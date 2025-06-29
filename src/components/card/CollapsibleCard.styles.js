@@ -1,4 +1,4 @@
-import Icon from "components/icon/Icon";
+// import Icon from "components/icon/Icon";
 import styled from "styled-components";
 
 export const HeadingContainer = styled.div`
@@ -9,6 +9,6 @@ export const HeadingContainer = styled.div`
   cursor: pointer;
 `;
 
-export const StyledIcon = styled(Icon)`
-  color: ${({ theme }) => theme.lineColor};
-`;
+// export const StyledIcon = styled(Icon)`
+//   color: ${({ theme }) => theme.lineColor};
+// `;

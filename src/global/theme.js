@@ -51,6 +51,24 @@ const lightTheme = {
         backgroundColor: "#8DA4B4",
         subheadingColor: "#3C5565",
       },
+      overview: {
+        purple: {
+          backgroundColor: "#C9ADF3",
+          foregroundColor: "#674696",
+        },
+        turquoise: {
+          backgroundColor: "#B0E9E6",
+          foregroundColor: "#469692",
+        },
+        blue: {
+          backgroundColor: "#9EC2DC",
+          foregroundColor: "#517690",
+        },
+        green: {
+          backgroundColor: "#8DBFA7",
+          foregroundColor: "#2F6A4E",
+        },
+      },
     },
   },
 };
@@ -107,6 +125,24 @@ const darkTheme = {
       hero: {
         backgroundColor: "#3B4C58",
         subheadingColor: "#A1B6C4",
+      },
+      overview: {
+        purple: {
+          backgroundColor: "#9C69E4",
+          foregroundColor: "#563586",
+        },
+        turquoise: {
+          backgroundColor: "#379390",
+          foregroundColor: "#1C514F",
+        },
+        blue: {
+          backgroundColor: "#4B98B9",
+          foregroundColor: "#1C4152",
+        },
+        green: {
+          backgroundColor: "#468A69",
+          foregroundColor: "#1E4935",
+        },
       },
     },
   },

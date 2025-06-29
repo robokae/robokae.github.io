@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { Envelope, Github, Linkedin } from "react-bootstrap-icons";
 
 function Resume() {
   useEffect(() => {
@@ -16,17 +14,17 @@ function Resume() {
             <h3 className="name">Alexander Hom</h3>
             <div className="contact-info-container">
               <div className="contact-info">
-                <FontAwesomeIcon icon={faEnvelope} />
+                <Envelope />
                 <p>alexanderhom19@gmail.com</p>
               </div>
               <div className="dot"></div>
               <div className="contact-info">
-                <FontAwesomeIcon icon={faGithub} />
+                <Github />
                 <a href="https://github.com/robokae">GitHub</a>
               </div>
               <div className="dot"></div>
               <div className="contact-info">
-                <FontAwesomeIcon icon={faLinkedin} />
+                <Linkedin />
                 <a href="https://www.linkedin.com/in/alexander-hom-94811b188/">
                   LinkedIn
                 </a>

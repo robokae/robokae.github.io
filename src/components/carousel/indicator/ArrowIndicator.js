@@ -1,6 +1,5 @@
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ActionButton, NumbersContainer } from "./ArrowIndicator.styles";
+import { ArrowLeft, ArrowRight } from "react-bootstrap-icons";
 
 function ArrowIndicator({
   numbers,
@@ -12,7 +11,7 @@ function ArrowIndicator({
   return (
     <>
       <ActionButton active={currentSlide !== 0} onClick={leftArrowClickHandler}>
-        <FontAwesomeIcon icon={faArrowLeft} fixedWidth />
+        <ArrowLeft />
       </ActionButton>
       {numbers && (
         <NumbersContainer>
@@ -23,7 +22,7 @@ function ArrowIndicator({
         active={currentSlide !== numSlides - 1}
         onClick={rightArrowClickHandler}
       >
-        <FontAwesomeIcon icon={faArrowRight} fixedWidth />
+        <ArrowRight />
       </ActionButton>
     </>
   );

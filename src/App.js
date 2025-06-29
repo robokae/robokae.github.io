@@ -6,14 +6,10 @@ import { GlobalStyles } from "./global/globalStyles";
 import useTheme from "./hooks/useTheme";
 import { useWebFonts } from "hooks/useWebFonts";
 import { ThemeContext } from "context/ThemeContext";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 import { appConfig } from "app/config";
 
 function App() {
   const { router } = appConfig;
-  library.add(fas, fab);
   const { theme, styles, toggleTheme } = useTheme();
   useWebFonts();
 

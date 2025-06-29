@@ -1,13 +1,22 @@
-import { PrimaryButton, SecondaryButton } from "./Button.styles";
+import {
+  OutlinedButton,
+  PlainButton,
+  PrimaryButton,
+  SecondaryButton,
+} from "./Button.styles";
 
-function Button({ type, onChange, children }) {
-  switch (type) {
+function Button({ variant, onClick, children }) {
+  switch (variant) {
     case "primary":
-      return <PrimaryButton onChange={onChange}>{children}</PrimaryButton>;
+      return <PrimaryButton onClick={onClick}>{children}</PrimaryButton>;
     case "secondary":
-      return <SecondaryButton onChange={onChange}>{children}</SecondaryButton>;
+      return <SecondaryButton onClick={onClick}>{children}</SecondaryButton>;
+    case "plain":
+      return <PlainButton onClick={onClick}>{children}</PlainButton>;
+    case "outlined":
+      return <OutlinedButton onClick={onClick}>{children}</OutlinedButton>;
     default:
-      return <SecondaryButton onChange={onChange}>{children}</SecondaryButton>;
+      return <PlainButton onClick={onClick}>{children}</PlainButton>;
   }
 }
 
