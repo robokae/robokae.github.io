@@ -9,12 +9,14 @@ import { Typography as TypographyConstants } from "constants/typography";
 import content from "content/contact.json";
 import { useState } from "react";
 import {
-  AnimatedIcon,
   CardHeader,
   Cards,
   StyledLink,
   SubHeading,
+  TranslateRight,
 } from "./Contact.styles";
+import Icon from "components/icon/Icon";
+import { getSectionData } from "util/PageDataUtil";
 
 const AnimatedLink = ({ label, url }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -26,7 +28,9 @@ const AnimatedLink = ({ label, url }) => {
       onMouseLeave={() => setIsHovered((prev) => !prev)}
     >
       {label}
-      <AnimatedIcon isHovered={isHovered} name="ArrowRight" />
+      <TranslateRight isHovered={isHovered}>
+        <Icon name="ArrowRight" />
+      </TranslateRight>
     </StyledLink>
   );
 };
@@ -59,7 +63,7 @@ const DetailsSection = ({ content }) => {
       {subHeadings.map((subHeading, index) => (
         <Card>
           <CardHeader>
-            {/* <StyledIcon icon={icons[index]} /> */}
+            <Icon name={icons[index]} size="lg" />
             <Typography tag={TypographyConstants.CARD_TITLE_TAG}>
               {subHeading}
             </Typography>
@@ -75,20 +79,14 @@ const DetailsSection = ({ content }) => {
 };
 
 function Contact() {
-  const sections = content.sections;
-  const overviewSectionData = sections.find(
-    (section) => section.title === "overview"
-  )?.content;
-  const detailsSectionData = sections.find(
-    (section) => section.title === "details"
-  )?.content;
+  const { overview, details } = getSectionData(content);
 
   return (
     <PageContentLayout>
       <SectionLayout>
         <ContentLayout>
-          <OverviewSection content={overviewSectionData} />
-          <DetailsSection content={detailsSectionData} />
+          <OverviewSection content={overview} />
+          <DetailsSection content={details} />
         </ContentLayout>
       </SectionLayout>
     </PageContentLayout>

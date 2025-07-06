@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
 import { Link } from "components/Link";
-import Icon from "components/icon/Icon";
 
 export const SubHeading = styled.p`
   width: 85%;
@@ -45,7 +44,7 @@ export const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.accentColor};
 `;
 
-export const AnimatedIcon = styled(Icon)`
+export const TranslateRight = styled.div`
   transition: all 0.2s ease-in-out;
   transform: translateX(${(props) => (props.isHovered ? "0.5rem" : "0")});
 `;
