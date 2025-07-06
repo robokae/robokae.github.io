@@ -1,4 +1,4 @@
-import error from "content/error/error.json";
+import error from "content/error.json";
 import { LinkButton } from "components/Link";
 import {
   PageContentLayout,

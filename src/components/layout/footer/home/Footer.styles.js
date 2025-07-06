@@ -48,6 +48,7 @@ export const LinkContainer = styled.div`
   justify-content: left;
   flex-direction: row;
   gap: 1.5rem;
+  color: ${({ theme }) => theme.secondaryFontColor};
 
   @media ${Breakpoint.TABLET} {
     justify-content: center;

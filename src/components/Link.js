@@ -10,6 +10,8 @@ export const Link = styled(NavLink)`
 `;
 
 export const UnderlinedLink = styled(Link)`
+  color: inherit;
+
   &:hover {
     text-decoration: underline;
   }
