@@ -1,39 +1,37 @@
 {
-    "pageName": "about",
-    "sections": [
-        {
-            "title": "overview",
-            "content": {
-                "headings": ["About me"],
-                "text": [
-                    "Hello! I am a software engineer from San Francisco, who graduated with a bachelor's degree in computer science from the University of California, Merced, and am currently pursuing a master's degree in cybersecurity.",
-                    "During my undergraduate studies, I gained a passion for web development in one of my computer science classes, where I was first exposed to the world of programming web applications. I remember my first time writing HTML back in 2019 — it was a special moment because of how simple it was to get a basic website up and running.",
-                    "Since then, I worked on a number of full-stack web development projects, in which I designed and programmed web applications using frontend frameworks like React, and implemented backend APIs with frameworks, such as Flask and Spring Boot. In addition to web development, I've also tinkered around with Android application development with Java, as well as some game development with Java and C#.",
-                    "Outside of software development, I enjoy learning about operating systems, machine learning, cybersecurity, and databases."
-                ]
-            }
-        },
-        {
-            "title": "interests",
-            "content": {
-                "headings": ["A few of my interests"],
-                "text": [
-                    "Web development",
-                    "Cloud technologies",
-                    "Databases",
-                    "Cybersecurity",
-                    "Distributed systems",
-                    "Game development"
-                ],
-                "icons": [
-                    "code", 
-                    "cloud", 
-                    "database", 
-                    "shield", 
-                    "coins", 
-                    "gamepad"
-                ]
-            }
-        }
-    ]
+  "pageName": "about",
+  "sections": [
+    {
+      "title": "overview",
+      "content": {
+        "headings": ["Hello!"],
+        "text": [
+          "I am a software engineer from San Francisco, who graduated with a bachelor's degree in computer science from the University of California, Merced, and am currently pursuing a master's degree in cybersecurity.",
+          "During my undergraduate studies, I gained a passion for web development in one of my computer science classes, where I was first exposed to the world of programming web applications. I remember my first time writing HTML back in 2019 — it was a special moment because of how simple it was to get a basic website up and running.",
+          "Since then, I worked on a number of full-stack web development projects, in which I designed and programmed web applications using frontend frameworks like React, and implemented backend APIs with frameworks, such as Flask and Spring Boot. In addition to web development, I've also tinkered around with Android application development with Java, as well as some game development with Java and C#.",
+          "Outside of software development, I enjoy learning about operating systems, machine learning, cybersecurity, and databases."
+        ]
+      }
+    },
+    {
+      "title": "interests",
+      "content": {
+        "headings": ["A snapshot of my interests"],
+        "text": [
+          "Technology is constantly changing and as a software engineer, I get to work with all sorts of technologies. From the latest frameworks for building modern, scalable websites and backends, to the amazing continuous integration and continuous deployment (CI/CD) tools that perform that magic of packaging and shipping an application for people across the world to use, to all the cybersecurity processes running behind the scenes to ensure that our applications are safe, there are so many exciting technologies out there. These are some that I'm passionate about:"
+        ]
+      }
+    },
+    {
+      "title": "cards",
+      "content": {
+        "text": [
+          "Full stack web development",
+          "DevOps and cloud technologies",
+          "Cybersecurity"
+        ],
+        "icons": ["CodeSlash", "Cloud", "ShieldCheck"]
+      }
+    }
+  ]
 }
