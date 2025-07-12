@@ -54,7 +54,11 @@
       "title": "experience",
       "content": {
         "headings": ["Full stack development expertise"],
-        "subHeadings": ["Frontend", "Backend", "Cloud"],
+        "subHeadings": [
+          "Building modern and responsive user interfaces",
+          "Designing and developing robust and scalable backend APIs",
+          "Deploying to the cloud with the latest technologies"
+        ],
         "text": [
           "Proficient in designing responsive web applications with Figma and developing them with modern JavaScript using React and its ecosystem of tools and packages, like Redux",
           "Experienced in developing large-scale microservices using various backend frameworks and technologies, like Spring Boot and Flask, and testing APIs using frameworks, such as JUnit and Karate",

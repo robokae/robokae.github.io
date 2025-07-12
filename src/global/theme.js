@@ -69,6 +69,13 @@ const lightTheme = {
           foregroundColor: "#2F6A4E",
         },
       },
+      experience: {
+        lightPurpleGradient:
+          "linear-gradient(315deg, #A4B7D1 0%, #8597B1 100%)",
+        lightGreyGradient: "linear-gradient(45deg, #B2BBC2 0%, #8B9CA8 100%)",
+        lightBlueGradient: "linear-gradient(0deg, #A0B6C9 0%, #7F95A8 100%)",
+        fontColor: "#29353D",
+      },
     },
   },
 };
@@ -143,6 +150,13 @@ const darkTheme = {
           backgroundColor: "#468A69",
           foregroundColor: "#1E4935",
         },
+      },
+      experience: {
+        lightPurpleGradient:
+          "linear-gradient(315deg, #A4B7D1 0%, #8597B1 100%)",
+        lightGreyGradient: "linear-gradient(45deg, #B2BBC2 0%, #8B9CA8 100%)",
+        lightBlueGradient: "linear-gradient(0deg, #A0B6C9 0%, #7F95A8 100%)",
+        fontColor: "#29353D",
       },
     },
   },

@@ -9,7 +9,7 @@ export const getSectionData = (data) => {
 };
 
 export const getHeading = (text, align = "left") => (
-  <Typography textAlign={align} tag={TypographyConstants.SECTION_TITLE_TAG}>
+  <Typography align={align} tag={TypographyConstants.SECTION_TITLE_TAG}>
     {text}
   </Typography>
 );

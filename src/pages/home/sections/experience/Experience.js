@@ -11,28 +11,30 @@ import {
   Section,
   StyledCard,
 } from "./Experience.styles";
-import { Color } from "constants/color";
+import useTheme from "hooks/useTheme";
 
 const Experience = ({ data }) => {
   const { headings, subHeadings, text, images } = data;
+  const { lightPurpleGradient, lightGreyGradient, lightBlueGradient } =
+    useTheme().styles.pages.home.experience;
 
   const imageBackgroundColors = [
-    Color.LIGHT_PURPLE_2,
-    Color.LIGHT_TURQUOISE_2,
-    Color.LIGHT_BLUE_2,
+    lightPurpleGradient,
+    lightGreyGradient,
+    lightBlueGradient,
   ];
 
   const cards = () =>
     subHeadings.map((subHeading, index) => (
-      <StyledCard key={index}>
-        <ImageContainer backgroundColor={imageBackgroundColors[index]}>
+      <StyledCard key={index} background={imageBackgroundColors[index]}>
+        <ImageContainer background={imageBackgroundColors[index]}>
           <img
             src={`images/${images[index].name}`}
             alt={images[index].altText}
           ></img>
         </ImageContainer>
         <DetailsContainer>
-          <Typography tag={TypographyConstants.H3}>{subHeading}</Typography>
+          <Typography tag={TypographyConstants.H4}>{subHeading}</Typography>
           <p>{text[index]}</p>
         </DetailsContainer>
       </StyledCard>
@@ -43,7 +45,7 @@ const Experience = ({ data }) => {
       <Content>
         {headings.map((line, index) => (
           <Typography
-            textAlign="center"
+            align="center"
             key={index}
             tag={TypographyConstants.SECTION_TITLE_TAG}
           >
