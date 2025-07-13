@@ -37,7 +37,7 @@ export const MenuHeader = styled.nav`
   align-items: center;
 
   @media ${Breakpoint.MOBILE_LG} {
-    padding: 0 ${Layout.SECION_PADDING_SM};
+    padding: 0 ${Layout.SECTION_PADDING_SM};
   }
 `;
 
@@ -50,7 +50,7 @@ export const MenuOptionsContainer = styled.ul`
   list-style: none;
 
   @media ${Breakpoint.MOBILE_LG} {
-    padding: 0 ${Layout.SECION_PADDING_SM};
+    padding: 0 ${Layout.SECTION_PADDING_SM};
   }
 
   & > * {

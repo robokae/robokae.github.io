@@ -16,7 +16,7 @@ export const Container = styled.header`
   box-shadow: ${({ theme }) => theme.boxShadow};
 
   @media ${Breakpoint.MOBILE_LG} {
-    padding: 0 ${Layout.SECION_PADDING_SM};
+    padding: 0 ${Layout.SECTION_PADDING_SM};
   }
 
   ${(props) =>
@@ -31,7 +31,6 @@ export const Container = styled.header`
     props.transition &&
     css`
       background-color: ${({ theme }) => theme.headerColor};
-      transition: background-color 0.35s ease;
       box-shadow: ${({ theme }) => theme.boxShadow};
     `}
 `;

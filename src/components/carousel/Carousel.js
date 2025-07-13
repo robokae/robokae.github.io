@@ -1,23 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Bottom,
-  Container,
-  Slide,
-  SlideContainer,
-  SlideIndicatorContainer,
-  Top,
-} from "./Carousel.styles";
+import { Container, Slide, SlideContainer } from "./Carousel.styles";
 import { useResize } from "hooks/useResize";
-import ArrowIndicator from "./indicator/ArrowIndicator";
+import SlideIndicator from "./SlideIndicator";
 
-const Carousel = ({ paddingX, arrows, children: slides }) => {
+const Carousel = ({
+  paddingX,
+  displayArrows,
+  indicatorType,
+  children: slides,
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRefs = useRef(slides.map(React.createRef));
   const carouselRef = useRef(null);
   const [slideInitialPosition, setSlideInitialPosition] = useState(null);
   const [slideWidth, setSlideWidth] = useState(null);
   const { width } = useResize();
-  const scrollConfig = { behavior: "smooth" };
+  const scrollConfig = {
+    behavior: "smooth",
+    inline: "center",
+    block: "nearest",
+  };
   const [touchStart, setTouchStart] = useState(null);
   const TOUCH_MOVE_THRESHOLD = 8;
   const isScrolling = useRef(false);
@@ -103,45 +105,32 @@ const Carousel = ({ paddingX, arrows, children: slides }) => {
     }, 200);
   };
 
-  const DefaultSlideIndicator = () => (
-    <SlideIndicatorContainer>
-      {`${currentSlide + 1} / ${slides.length}`}
-    </SlideIndicatorContainer>
-  );
-
   return (
     <Container>
-      <Top>
-        <SlideContainer
-          paddingX={paddingX}
-          ref={carouselRef}
-          onWheel={handleWheel}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          {slides.map((item, index) => {
-            return (
-              <Slide key={index} ref={slideRefs.current[index]}>
-                {item}
-              </Slide>
-            );
-          })}
-        </SlideContainer>
-      </Top>
+      <SlideContainer
+        ref={carouselRef}
+        onWheel={handleWheel}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        style={paddingX ? { padding: `0 ${paddingX}` } : null}
+      >
+        {slides.map((item, index) => {
+          return (
+            <Slide key={index} ref={slideRefs.current[index]}>
+              {item}
+            </Slide>
+          );
+        })}
+      </SlideContainer>
 
-      <Bottom>
-        {arrows ? (
-          <ArrowIndicator
-            numbers
-            currentSlide={currentSlide}
-            numSlides={slides.length}
-            leftArrowClickHandler={scrollToPreviousSlide}
-            rightArrowClickHandler={scrollToNextSlide}
-          />
-        ) : (
-          <DefaultSlideIndicator />
-        )}
-      </Bottom>
+      <SlideIndicator
+        displayArrows={displayArrows}
+        indicatorType={indicatorType}
+        currentSlide={currentSlide}
+        numSlides={slides.length}
+        nextSlideCallback={scrollToNextSlide}
+        previousSlideCallback={scrollToPreviousSlide}
+      />
     </Container>
   );
 };

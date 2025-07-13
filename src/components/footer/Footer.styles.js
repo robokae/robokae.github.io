@@ -55,7 +55,7 @@ export const LinkContainer = styled.div`
   }
 
   @media ${Breakpoint.MOBILE_S} {
-    padding: 0 ${Layout.SECION_PADDING_SM};
+    padding: 0 ${Layout.SECTION_PADDING_SM};
     display: grid;
     justify-content: left;
     grid-template-columns: max-content max-content;
@@ -80,7 +80,7 @@ export const CaptionContainer = styled.div`
   }
 
   @media ${Breakpoint.MOBILE_S} {
-    padding: 0 ${Layout.SECION_PADDING_SM};
+    padding: 0 ${Layout.SECTION_PADDING_SM};
     align-items: flex-start;
   }
 `;

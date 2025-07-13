@@ -36,6 +36,6 @@ export const SectionLayout = styled(BaseLayout)`
   position: relative;
 
   @media ${Breakpoint.MOBILE_LG} {
-    padding: ${Layout.SECION_PADDING_SM};
+    padding: ${Layout.SECTION_PADDING_SM};
   }
 `;

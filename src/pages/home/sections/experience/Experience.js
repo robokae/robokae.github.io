@@ -12,6 +12,7 @@ import {
   StyledCard,
 } from "./Experience.styles";
 import useTheme from "hooks/useTheme";
+import { Layout } from "constants/layout";
 
 const Experience = ({ data }) => {
   const { headings, subHeadings, text, images } = data;
@@ -54,7 +55,13 @@ const Experience = ({ data }) => {
         ))}
         <CardLayout size={subHeadings.length}>{cards()}</CardLayout>
         <CarouselContainer>
-          <Carousel arrows>{cards()}</Carousel>
+          <Carousel
+            displayArrows
+            indicatorType="numbers"
+            paddingX={Layout.SECTION_PADDING_SM}
+          >
+            {cards()}
+          </Carousel>
         </CarouselContainer>
       </Content>
     </Section>

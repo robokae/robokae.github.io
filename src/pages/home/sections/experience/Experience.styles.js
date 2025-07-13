@@ -21,7 +21,7 @@ export const Content = styled(ContentLayout)`
 
   @media ${Breakpoint.MOBILE_LG} {
     ${Typography.SECTION_TITLE_TAG} {
-      padding: 0 ${Layout.SECION_PADDING_SM};
+      padding: 0 ${Layout.SECTION_PADDING_SM};
     }
   }
 `;
