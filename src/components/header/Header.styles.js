@@ -13,7 +13,7 @@ export const Container = styled.header`
   left: 0;
   z-index: 10;
   background-color: ${({ theme }) => theme.headerColor};
-  border-bottom: 1px solid ${({ theme }) => theme.lineColor};
+  box-shadow: ${({ theme }) => theme.boxShadow};
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0 ${Layout.SECION_PADDING_SM};
@@ -24,13 +24,14 @@ export const Container = styled.header`
     css`
       background-color: transparent;
       border-color: transparent;
+      box-shadow: none;
     `}
 
   ${(props) =>
     props.transition &&
     css`
       background-color: ${({ theme }) => theme.headerColor};
-      border-color: ${({ theme }) => theme.lineColor};
       transition: background-color 0.35s ease;
+      box-shadow: ${({ theme }) => theme.boxShadow};
     `}
 `;

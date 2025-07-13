@@ -67,8 +67,8 @@ function Menu({ data, display, toggleCallback }) {
                 </MenuOption>
               ))}
           </div>
-          <Stack>
-            <Typography fontSize="1.2rem">Theme</Typography>
+          <Stack justifyContent="space-between">
+            <p style={{ fontSize: "1.2rem" }}>Theme</p>
             <ThemeToggle label />
           </Stack>
         </MenuOptionsContainer>

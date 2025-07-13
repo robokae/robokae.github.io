@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
-import { Container } from "./Header.styles";
 import { useResponsiveHeader } from "hooks/useResponsiveHeader";
-import Menu from "components/menu/Menu";
 import Nav from "./Nav";
+import { Container } from "./Header.styles";
+import Menu from "./Menu";
 
 function Header({ data, transitionBgOnScroll }) {
   const [transition, setTransition] = useState(false);
