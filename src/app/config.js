@@ -1,5 +1,5 @@
-import AdminLayout from "components/layout/page/AdminLayout";
-import { HomeLayout } from "components/layout/page/HomeLayout";
+import AdminLayout from "components/layout/AdminLayout";
+import { HomeLayout } from "components/layout/HomeLayout";
 import About from "pages/about/About";
 import Admin from "pages/admin/Admin";
 import CreatePost from "pages/admin/CreatePost";

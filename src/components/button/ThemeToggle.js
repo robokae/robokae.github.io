@@ -3,7 +3,7 @@ import Typography from "components/typography/Typography";
 import { Style } from "constants/style";
 import { useThemeContext } from "context/ThemeContext";
 import Button from "./Button";
-import Stack from "components/layout/Stack";
+import Stack from "components/Stack";
 
 function ThemeToggle({ label = false }) {
   const { theme: currentTheme, toggleTheme } = useThemeContext();

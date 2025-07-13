@@ -11,7 +11,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "components/Link";
 import Overlay from "components/overlay/Overlay";
 import Typography from "components/typography/Typography";
-import Stack from "components/layout/Stack";
+import Stack from "components/Stack";
 import Icon from "components/icon/Icon";
 import ThemeToggle from "components/button/ThemeToggle";
 import Button from "components/button/Button";

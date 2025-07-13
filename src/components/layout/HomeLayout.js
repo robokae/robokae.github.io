@@ -1,9 +1,9 @@
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import header from "content/layout/header.json";
-import Header from "../header/home/Header";
-import Footer from "../footer/home/Footer";
+import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
-import { PageContainer } from "../Layout.styles";
+import { PageContainer } from "./Layout.styles";
+import Header from "components/header/Header";
 
 export function HomeLayout() {
   const [transitionBg, setTransitionBg] = useState(false);

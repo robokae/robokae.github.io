@@ -1,12 +1,10 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
-import { PageContainer } from "../Layout.styles";
-import AdminHeader from "../header/admin/AdminHeader";
+import { PageContainer } from "./Layout.styles";
 
 function AdminLayout() {
   return (
     <PageContainer>
       <ScrollRestoration />
-      <AdminHeader />
       <Outlet />
     </PageContainer>
   );
