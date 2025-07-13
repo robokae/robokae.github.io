@@ -20,6 +20,7 @@ const Carousel = ({ paddingX, arrows, children: slides }) => {
   const scrollConfig = { behavior: "smooth" };
   const [touchStart, setTouchStart] = useState(null);
   const TOUCH_MOVE_THRESHOLD = 8;
+  const isScrolling = useRef(false);
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -31,6 +32,7 @@ const Carousel = ({ paddingX, arrows, children: slides }) => {
   }, [width]);
 
   const isNotFirstSlide = (slideIndex) => slideIndex !== 0;
+
   const isNotLastSlide = (slideIndex) => slideIndex !== slides.length - 1;
 
   const scrollToPreviousSlide = () => {
@@ -56,27 +58,49 @@ const Carousel = ({ paddingX, arrows, children: slides }) => {
   };
 
   const handleTouchEnd = (e) => {
-    const delta = e.changedTouches[0].clientX - touchStart;
-    const isTouchMoveOverThreshold = Math.abs(delta) > TOUCH_MOVE_THRESHOLD;
+    const touchTranslateDelta = e.changedTouches[0].clientX - touchStart;
+    const isTouchMoveOverThreshold =
+      Math.abs(touchTranslateDelta) > TOUCH_MOVE_THRESHOLD;
+
     if (isTouchMoveOverThreshold) {
-      if (delta < 0 && isNotLastSlide(currentSlide)) {
+      if (touchTranslateDelta < 0 && isNotLastSlide(currentSlide)) {
         setCurrentSlide((prevSlide) => prevSlide + 1);
-      } else if (delta > 0 && isNotFirstSlide(currentSlide)) {
+      } else if (touchTranslateDelta > 0 && isNotFirstSlide(currentSlide)) {
         setCurrentSlide((prevSlide) => prevSlide - 1);
       }
     }
   };
 
-  const handleWheel = () => {
+  const getSlideTranslateDelta = () => {
     const { x: offset } =
       carouselRef.current.children[currentSlide].getBoundingClientRect();
-    const delta = offset - slideInitialPosition;
+    return offset - slideInitialPosition;
+  };
 
-    if (delta < (-1 * slideWidth) / 2 && isNotLastSlide(currentSlide)) {
-      setCurrentSlide((prevSlide) => prevSlide + 1);
-    } else if (delta > slideWidth / 2 && isNotFirstSlide(currentSlide)) {
-      setCurrentSlide((prevSlide) => prevSlide - 1);
+  const handleWheel = () => {
+    if (isScrolling.current) {
+      return;
     }
+
+    isScrolling.current = true;
+
+    if (isNotLastSlide(currentSlide)) {
+      if (getSlideTranslateDelta() < (-1 * slideWidth) / 2) {
+        setCurrentSlide((prevSlide) => prevSlide + 1);
+        setTimeout(10);
+      }
+    }
+
+    if (isNotFirstSlide(currentSlide)) {
+      if (getSlideTranslateDelta() > slideWidth / 2) {
+        setCurrentSlide((prevSlide) => prevSlide - 1);
+        setTimeout(10);
+      }
+    }
+
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 200);
   };
 
   const DefaultSlideIndicator = () => (
