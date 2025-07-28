@@ -26,16 +26,12 @@ export const Content = styled.div`
   width: 100%;
   max-width: ${Layout.CONTENT_MAX_WIDTH};
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 1.5rem 0;
+  gap: 1.5rem;
+  padding: 2rem 0;
   font-size: 0.9rem;
-
-  @media ${Breakpoint.TABLET} {
-    flex-direction: column;
-  }
 
   @media ${Breakpoint.MOBILE_S} {
     gap: 1.5rem;
@@ -45,14 +41,10 @@ export const Content = styled.div`
 export const LinkContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: left;
   flex-direction: row;
+  justify-content: center;
   gap: 1.5rem;
   color: ${({ theme }) => theme.secondaryFontColor};
-
-  @media ${Breakpoint.TABLET} {
-    justify-content: center;
-  }
 
   @media ${Breakpoint.MOBILE_S} {
     padding: 0 ${Layout.SECTION_PADDING_SM};
@@ -66,32 +58,17 @@ export const LinkContainer = styled.div`
   }
 `;
 
-export const CaptionContainer = styled.div`
+export const Caption = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap: 0.5rem;
   color: ${({ theme }) => theme.secondaryFontColor};
 
-  @media ${Breakpoint.TABLET} {
-    align-items: center;
-  }
-
   @media ${Breakpoint.MOBILE_S} {
     padding: 0 ${Layout.SECTION_PADDING_SM};
     align-items: flex-start;
-  }
-`;
-
-export const Caption = styled.p`
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-
-  @media ${Breakpoint.MOBILE_S} {
-    flex-direction: column;
-    gap: 0;
   }
 `;

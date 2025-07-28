@@ -1,10 +1,4 @@
-import {
-  Caption,
-  CaptionContainer,
-  Container,
-  Content,
-  LinkContainer,
-} from "./Footer.styles";
+import { Caption, Container, Content, LinkContainer } from "./Footer.styles";
 import footer from "content/layout/footer.json";
 import { UnderlinedLink } from "components/Link";
 import { getYear } from "util/DateUtil";
@@ -28,9 +22,7 @@ function Footer() {
               </UnderlinedLink>
             ))}
         </LinkContainer>
-        <CaptionContainer>
-          {caption && <Caption>{`${caption} ${currentYear}`}</Caption>}
-        </CaptionContainer>
+        <Caption>{caption && <p>{`${caption} ${currentYear}`}</p>}</Caption>
       </Content>
     </Container>
   );
