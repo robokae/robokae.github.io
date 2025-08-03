@@ -5,7 +5,7 @@ const lightTheme = {
   tertiaryBackgroundColor: "#D3D6D7",
   headerColor: "#F1F2F2",
   footerColor: "#E4E6E8",
-  overlayColor: "rgba(18, 28, 32, 0.85)",
+  overlayColor: "rgba(18, 28, 32, 0.65)",
   primaryFontColor: "#29353D",
   secondaryFontColor: "#66727E",
   boxShadow: "0.1rem 0.1rem 2rem rgba(163, 172, 179, 0.3)",
@@ -51,24 +51,24 @@ const lightTheme = {
         backgroundColor: "#8DA4B4",
         subheadingColor: "#3C5565",
       },
-      overview: {
-        purple: {
-          backgroundColor: "#C9ADF3",
-          foregroundColor: "#674696",
+      overview: [
+        {
+          backgroundColor: "linear-gradient(315deg, #D2C4E6 0%, #A18DBE 100%)",
+          foregroundColor: "#F5EEFF",
         },
-        turquoise: {
-          backgroundColor: "#B0E9E6",
-          foregroundColor: "#469692",
+        {
+          backgroundColor: "linear-gradient(315deg, #BFE9C8 0%, #79B88F 100%)",
+          foregroundColor: "#EDFFEE",
         },
-        blue: {
-          backgroundColor: "#9EC2DC",
-          foregroundColor: "#517690",
+        {
+          backgroundColor: "linear-gradient(315deg, #A6C6DD 0%, #6388A2 100%)",
+          foregroundColor: "#D4E9F7",
         },
-        green: {
-          backgroundColor: "#8DBFA7",
-          foregroundColor: "#2F6A4E",
+        {
+          backgroundColor: "linear-gradient(315deg, #E9DDBF 0%, #CAB585 100%)",
+          foregroundColor: "#F9F4D1",
         },
-      },
+      ],
       experience: {
         lightPurpleGradient:
           "linear-gradient(315deg, #A4B7D1 0%, #8597B1 100%)",
@@ -133,24 +133,24 @@ const darkTheme = {
         backgroundColor: "#3B4C58",
         subheadingColor: "#A1B6C4",
       },
-      overview: {
-        purple: {
-          backgroundColor: "#9C69E4",
-          foregroundColor: "#563586",
+      overview: [
+        {
+          backgroundColor: "linear-gradient(315deg, #624D80 0%, #3F2A5D 100%)",
+          foregroundColor: "#F5EEFF",
         },
-        turquoise: {
-          backgroundColor: "#379390",
-          foregroundColor: "#1C514F",
+        {
+          backgroundColor: "linear-gradient(315deg, #4F965E 0%, #25653B 100%)",
+          foregroundColor: "#EDFFEE",
         },
-        blue: {
-          backgroundColor: "#4B98B9",
-          foregroundColor: "#1C4152",
+        {
+          backgroundColor: "linear-gradient(315deg, #6289A5 0%, #335B78 100%)",
+          foregroundColor: "#D4E9F7",
         },
-        green: {
-          backgroundColor: "#468A69",
-          foregroundColor: "#1E4935",
+        {
+          backgroundColor: "linear-gradient(315deg, #AD9C71 0%, #80662E 100%)",
+          foregroundColor: "#F9F4D1",
         },
-      },
+      ],
       experience: {
         lightPurpleGradient:
           "linear-gradient(315deg, #A4B7D1 0%, #8597B1 100%)",

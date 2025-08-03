@@ -24,6 +24,10 @@ export const PageContentLayout = styled(BaseLayout)`
 export const ContentLayout = styled(BaseLayout)`
   max-width: ${Layout.CONTENT_MAX_WIDTH};
   gap: ${Layout.GAP_LG};
+
+  @media ${Breakpoint.MOBILE_LG} {
+    gap: 2rem;
+  }
 `;
 
 export const HeroLayout = styled(BaseLayout)`
@@ -31,7 +35,7 @@ export const HeroLayout = styled(BaseLayout)`
 `;
 
 export const SectionLayout = styled(BaseLayout)`
-  padding: ${Layout.SECTION_PADDING};
+  padding: 4rem ${Layout.SECTION_PADDING};
   gap: ${Layout.GAP_LG};
   position: relative;
 

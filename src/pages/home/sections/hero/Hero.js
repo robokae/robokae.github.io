@@ -62,7 +62,7 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 45%;
+  width: 50%;
 
   @media ${Breakpoint.TABLET} {
     width: 75%;

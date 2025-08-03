@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ContentLayout, SectionLayout } from "components/layout/Layout.styles";
 import Typography from "components/typography/Typography";
-import { Breakpoint, Layout } from "constants/layout";
+import { Breakpoint } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";
 
 const Section = styled(SectionLayout)`
@@ -15,7 +15,6 @@ const Content = styled(ContentLayout)`
   position: relative;
   height: 100%;
   display: flex;
-  padding: ${Layout.PADDING_MD} 0;
 
   @media ${Breakpoint.LAPTOP} {
     display: flex;
@@ -52,7 +51,7 @@ const Reflection = ({ data }) => {
             <Typography
               tag={TypographyConstants.SECTION_TITLE_TAG}
               key={index}
-              textAlign="center"
+              align="center"
             >
               {line}
             </Typography>

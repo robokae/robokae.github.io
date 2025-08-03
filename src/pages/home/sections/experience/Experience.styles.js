@@ -31,19 +31,35 @@ export const CardLayout = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
   position: relative;
+
+  & > div > div {
+    border-radius: ${Style.BORDER_RADIUS} 0 0 ${Style.BORDER_RADIUS};
+  }
 
   & > :nth-child(even) {
     flex-direction: row-reverse;
 
-    @media ${Breakpoint.LAPTOP} {
-      flex-direction: column;
+    & > div {
+      border-radius: 0 ${Style.BORDER_RADIUS} ${Style.BORDER_RADIUS} 0;
     }
   }
 
-  @media ${Breakpoint.LAPTOP} {
-    gap: 2rem;
+  @media ${Breakpoint.TABLET} {
+    gap: 3rem;
+
+    & > div > div {
+      border-radius: ${Style.BORDER_RADIUS} ${Style.BORDER_RADIUS} 0 0;
+    }
+
+    & > :nth-child(even) {
+      flex-direction: column;
+
+      & > div {
+        border-radius: ${Style.BORDER_RADIUS} ${Style.BORDER_RADIUS} 0 0;
+      }
+    }
   }
 
   @media ${Breakpoint.MOBILE_LG} {
@@ -53,40 +69,36 @@ export const CardLayout = styled.div`
 
 export const StyledCard = styled(Card)`
   width: 100%;
-  padding: ${Layout.PADDING_LG};
+  padding: 0;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
-  background-image: ${(props) => props.background};
+  gap: 0;
 
-  @media ${Breakpoint.LAPTOP} {
-    padding: ${Layout.PADDING_LG};
+  @media ${Breakpoint.TABLET} {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
   }
 
   @media ${Breakpoint.MOBILE_LG} {
     background-image: none;
     padding: 0;
-    gap: 0;
     flex-direction: column;
   }
 `;
 
 export const ImageContainer = styled.div`
-  padding: 6rem 0;
+  padding: 11rem 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: ${Style.BORDER_RADIUS};
   width: 50%;
+  background-image: ${(props) => props.background};
 
   img {
-    width: 65%;
+    width: 50%;
 
-    @media ${Breakpoint.LAPTOP} {
+    @media ${Breakpoint.TABLET} {
       width: 40%;
     }
 
@@ -95,15 +107,14 @@ export const ImageContainer = styled.div`
     }
   }
 
-  @media ${Breakpoint.LAPTOP} {
+  @media ${Breakpoint.TABLET} {
     width: 100%;
-    padding: 3rem 0;
+    padding: 5rem 0;
   }
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 3rem 0;
     width: 100%;
-    background-image: ${(props) => props.background};
     border-radius: ${Style.BORDER_RADIUS} ${Style.BORDER_RADIUS} 0 0;
   }
 `;
@@ -114,23 +125,15 @@ export const DetailsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
-  background: none;
+  padding: ${Layout.PADDING_LG};
 
-  & > * {
-    color: ${({ theme }) => theme.pages.home.experience.fontColor};
-
-    @media ${Breakpoint.MOBILE_LG} {
-      color: ${({ theme }) => theme.primaryFontColor};
-    }
-  }
-
-  @media ${Breakpoint.LAPTOP} {
-    width: 80%;
+  @media ${Breakpoint.TABLET} {
+    width: 90%;
     text-align: center;
+    padding: 4rem ${Layout.PADDING_LG};
   }
 
   @media ${Breakpoint.MOBILE_LG} {
-    width: 100%;
     justify-content: flex-start;
     padding: ${Layout.CARD_PADDING};
     text-align: left;

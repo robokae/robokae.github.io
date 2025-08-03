@@ -2,7 +2,7 @@ import CallToActionCard from "components/card/callToActionCard/CallToActionCard"
 import styled from "styled-components";
 import { ContentLayout, SectionLayout } from "components/layout/Layout.styles";
 import { useState } from "react";
-import HorizontalCategoryPanel from "components/layout/header/menu/HorizontalCategoryPanel";
+import HorizontalCategoryPanel from "components/menu/HorizontalCategoryPanel";
 import Typography from "components/typography/Typography";
 import { Breakpoint, Layout } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";

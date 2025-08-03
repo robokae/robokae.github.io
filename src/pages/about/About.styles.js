@@ -32,9 +32,12 @@ export const StyledCard = styled(Card)`
 `;
 
 export const StyledText = styled.p`
+  display: flex;
+  align-items: center;
+  flex: 1;
+
   @media ${Breakpoint.MOBILE_LG} {
-    margin: 0;
-    text-align: left;
+    margin-bottom: auto;
   }
 `;
 

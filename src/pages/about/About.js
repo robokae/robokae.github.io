@@ -22,10 +22,10 @@ function About() {
     <PageContentLayout>
       <SectionLayout>
         <ContentLayout>
+          {overview.headings.map((heading, index) => (
+            <React.Fragment key={index}>{getHeading(heading)}</React.Fragment>
+          ))}
           <TextGroup>
-            {overview.headings.map((heading, index) => (
-              <React.Fragment key={index}>{getHeading(heading)}</React.Fragment>
-            ))}
             {overview.text.map((text, index) => (
               <p key={index}>{text}</p>
             ))}
@@ -34,14 +34,9 @@ function About() {
       </SectionLayout>
       <SectionLayout>
         <ContentLayout>
-          <TextGroup>
-            {interests.headings.map((heading, index) => (
-              <React.Fragment key={index}>{getHeading(heading)}</React.Fragment>
-            ))}
-            {interests.text.map((text, index) => (
-              <p key={index}>{text}</p>
-            ))}
-          </TextGroup>
+          {interests.headings.map((heading, index) => (
+            <React.Fragment key={index}>{getHeading(heading)}</React.Fragment>
+          ))}
           <CardsContainer>
             {cards.text.map((text, index) => (
               <StyledCard key={index}>
