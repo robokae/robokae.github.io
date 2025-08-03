@@ -1,17 +1,14 @@
 import styled from "styled-components";
-import { useState } from "react";
-
-const DEFAULT_BACKGROUND_COLOR = "#29353D";
-const DEFAULT_SLIDER_BACKGROUND_COLOR = "#F0F1F2";
 
 const SliderContainer = styled.button`
-  width: 2.25rem;
-  height: 1.25rem;
+  width: 2.75rem;
+  height: 1.5rem;
   background-color: ${({ theme }) => theme.button.toggle.backgroundColor};
-  padding: 1px;
+  padding: 2.25px;
   border: none;
-  border-radius: 10rem;
+  border-radius: 16rem;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 const Slider = styled.div`
@@ -21,34 +18,17 @@ const Slider = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 10rem;
+  border-radius: 16rem;
   background-color: ${({ theme }) => theme.button.toggle.foregroundColor};
+  color: ${({ theme }) => theme.button.toggle.fontColor};
   transition: transform 0.2s ease-out;
-  transform: ${(props) =>
-    props.slideRight ? "translateX(100%)" : "translateX(0)"};
+  transform: ${(props) => (props.slide ? "translateX(100%)" : "translateX(0)")};
 `;
 
-function ToggleButton({
-  onClick,
-  icon,
-  backgroundColor = DEFAULT_BACKGROUND_COLOR,
-  sliderColor = DEFAULT_SLIDER_BACKGROUND_COLOR,
-}) {
-  const [slideRight, setSlideRight] = useState(false);
-
-  const handleClick = (clickCallback) => {
-    clickCallback();
-    setSlideRight((prev) => !prev);
-  };
-
+function ToggleButton({ onClick, slide, icon }) {
   return (
-    <SliderContainer
-      onClick={() => handleClick(onClick)}
-      backgroundColor={backgroundColor}
-    >
-      <Slider backgroundColor={sliderColor} slideRight={slideRight}>
-        {icon && icon}
-      </Slider>
+    <SliderContainer onClick={onClick}>
+      <Slider slide={slide}>{icon && icon}</Slider>
     </SliderContainer>
   );
 }

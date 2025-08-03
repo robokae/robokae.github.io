@@ -26,6 +26,7 @@ const AnimatedLink = ({ label, url }) => {
       to={url}
       onMouseEnter={() => setIsHovered((prev) => !prev)}
       onMouseLeave={() => setIsHovered((prev) => !prev)}
+      underline={false}
     >
       {label}
       <TranslateRight isHovered={isHovered}>

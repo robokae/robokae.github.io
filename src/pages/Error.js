@@ -1,11 +1,11 @@
 import error from "content/error.json";
-import { LinkButton } from "components/Link";
 import {
   PageContentLayout,
   SectionLayout,
 } from "components/layout/Layout.styles";
 import React from "react";
 import { getHeading } from "util/PageDataUtil";
+import ButtonLink from "components/link/buttonLink/ButtonLink";
 
 const { content } = error;
 
@@ -15,7 +15,9 @@ function Error() {
       <SectionLayout>
         {getHeading(content.heading, "center")}
         <p>{content.text}</p>
-        <LinkButton to={content.ctaUrl}>{content.ctaText}</LinkButton>
+        <ButtonLink variant="primary" to={content.ctaUrl}>
+          {content.ctaText}
+        </ButtonLink>
       </SectionLayout>
     </PageContentLayout>
   );

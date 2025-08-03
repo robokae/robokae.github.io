@@ -1,4 +1,4 @@
-import { Link } from "components/Link";
+import Link from "components/link/Link";
 import { Breakpoint, Layout } from "constants/layout";
 import styled, { css } from "styled-components";
 
@@ -9,6 +9,7 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   display: none;
+  box-sizing: border-box;
 
   ${(props) =>
     props.display &&

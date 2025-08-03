@@ -1,4 +1,3 @@
-import { Style } from "constants/style";
 import styled from "styled-components";
 
 const OverlayContainer = styled.div`
@@ -8,7 +7,6 @@ const OverlayContainer = styled.div`
   top: 0;
   left: 0;
   background-color: ${({ theme }) => theme.overlayColor};
-  transition: all ${Style.TRANSITION_DURATION} ease-out;
   z-index: -1;
 `;
 

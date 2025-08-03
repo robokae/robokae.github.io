@@ -45,6 +45,10 @@ const lightTheme = {
     backgroundColor: "#D3D6D7",
     fontColor: "#8D9FAA",
   },
+  tooltip: {
+    backgroundColor: "#52606B",
+    foregroundColor: "#EBEDEF",
+  },
   pages: {
     home: {
       hero: {
@@ -126,6 +130,10 @@ const darkTheme = {
   tag: {
     backgroundColor: "#283137",
     fontColor: "#4F5B63",
+  },
+  tooltip: {
+    backgroundColor: "#2F3A44",
+    foregroundColor: "#F8F8F8",
   },
   pages: {
     home: {

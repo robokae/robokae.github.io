@@ -14,6 +14,7 @@ export const Container = styled.header`
   z-index: 10;
   background-color: ${({ theme }) => theme.headerColor};
   box-shadow: ${({ theme }) => theme.boxShadow};
+  border-bottom: 1px solid transparent;
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0 ${Layout.SECTION_PADDING_SM};

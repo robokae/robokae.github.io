@@ -7,14 +7,13 @@ import {
   MenuOptionsContainer,
 } from "./Menu.styles";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { Link } from "components/Link";
 import Overlay from "components/overlay/Overlay";
-import Typography from "components/typography/Typography";
 import Stack from "components/Stack";
 import Icon from "components/icon/Icon";
-import ThemeToggle from "components/button/ThemeToggle";
+import ThemeToggle from "components/button/themeToggle/ThemeToggle";
 import Button from "components/button/Button";
+import { useLocation } from "react-router-dom";
+import Link from "components/link/Link";
 
 function Menu({ data, display, toggleCallback }) {
   const { pathname } = useLocation();
@@ -61,7 +60,11 @@ function Menu({ data, display, toggleCallback }) {
               .filter((link) => link.position === "right")
               .map((link, index) => (
                 <MenuOption key={index}>
-                  <MenuLink onClick={toggleCallback} to={link.to}>
+                  <MenuLink
+                    underline={false}
+                    onClick={toggleCallback}
+                    to={link.to}
+                  >
                     {link.label}
                   </MenuLink>
                 </MenuOption>

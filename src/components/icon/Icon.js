@@ -5,6 +5,7 @@ const Container = styled.div`
   width: max-content;
   display: flex;
   align-items: center;
+  color: inherit;
 `;
 
 function Icon({ name, size = "sm", onClick, ...props }) {
