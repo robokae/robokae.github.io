@@ -21,16 +21,21 @@
     {
       "title": "overview",
       "content": {
-        "headings": ["A brief overview"],
-        "subHeadings": [],
+        "headings": ["A quick overview"],
+        "subHeadings": [
+          "Passion for software engineering",
+          "Experience across the full stack",
+          "Successful delivery of projects through collaboration",
+          "Learning throughout my software engineering journey"
+        ],
         "text": [
-          "I have three years of professional software engineering experience developing client-side web applications as well as enterprise APIs",
-          "I am proficient in various programming languages and technologies, including Java, Python, JavaScript, relational and NoSQL databases, CI/CD pipelines, and Google Cloud",
-          "I enjoy tackling challenges and collaborating with people to design and develop solutions to complex problems",
-          "I like learning about the latest technologies and applying the knowledge to my work to improve application performance and efficiency"
+          "I have over three years of experience developing large, scalable enterprise APIs for two Fortune 500 companies and am very passionate about my work",
+          "I’m skilled in developing web applications using JavaScript, Java, Python, SQL, MongoDB, and Google Cloud",
+          "Whether the team’s big or small, through collaboration and leadership, I have contributed to the timely and successful delivering of projects of various shapes and sizes",
+          "I enjoy learning the latest technologies, taking part in technology events, and applying new knowledge to my work"
         ],
         "images": [],
-        "icons": ["Terminal", "CodeSlash", "Heart", "Book"],
+        "icons": ["Heart", "CodeSlash", "Star", "Book"],
         "buttons": [],
         "listContent": []
       }
