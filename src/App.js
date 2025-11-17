@@ -7,6 +7,7 @@ import useTheme from "./hooks/useTheme";
 import { useWebFonts } from "hooks/useWebFonts";
 import { ThemeContext } from "context/ThemeContext";
 import { appConfig } from "app/config";
+import { ThemeProvider as RobokaeProvider } from "@robokae/robokae-ui";
 
 function App() {
   const { router } = appConfig;
@@ -16,7 +17,9 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <ThemeProvider theme={styles}>
-        <RouterProvider router={router} />
+        <RobokaeProvider theme={theme}>
+          <RouterProvider router={router} />
+        </RobokaeProvider>
         <GlobalStyles />
       </ThemeProvider>
     </ThemeContext.Provider>
