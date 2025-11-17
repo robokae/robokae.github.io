@@ -18,9 +18,9 @@ export const Breakpoint = Object.freeze({
 });
 
 export const Layout = Object.freeze({
-  CONTENT_MAX_WIDTH: `${DeviceSize.LAPTOP}px`,
+  CONTENT_MAX_WIDTH: `1200px`,
   GAP_SM: ".5rem",
-  GAP_MD: "1.75rem",
+  GAP_MD: "1.5rem",
   GAP_LG: "3rem",
   GAP_XL: "5rem",
   PADDING_XS: ".75rem",

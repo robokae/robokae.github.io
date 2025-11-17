@@ -1,10 +1,10 @@
 const lightTheme = {
   name: "light",
-  primaryBackgroundColor: "#EBEDEF",
-  secondaryBackgroundColor: "#F8F8F8",
+  primaryBackgroundColor: "#EEEFF0",
+  secondaryBackgroundColor: "#F9F9F9",
   tertiaryBackgroundColor: "#D3D6D7",
   headerColor: "#F1F2F2",
-  footerColor: "#E4E6E8",
+  footerColor: "#E1E4E6",
   overlayColor: "rgba(18, 28, 32, 0.65)",
   primaryFontColor: "#29353D",
   secondaryFontColor: "#66727E",
@@ -44,10 +44,6 @@ const lightTheme = {
   tag: {
     backgroundColor: "#D3D6D7",
     fontColor: "#8D9FAA",
-  },
-  tooltip: {
-    backgroundColor: "#52606B",
-    foregroundColor: "#EBEDEF",
   },
   pages: {
     home: {
@@ -130,10 +126,6 @@ const darkTheme = {
   tag: {
     backgroundColor: "#283137",
     fontColor: "#4F5B63",
-  },
-  tooltip: {
-    backgroundColor: "#2F3A44",
-    foregroundColor: "#F8F8F8",
   },
   pages: {
     home: {

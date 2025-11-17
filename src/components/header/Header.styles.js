@@ -1,10 +1,9 @@
 import styled, { css } from "styled-components";
-import { Breakpoint, Layout } from "constants/layout";
+import { Layout } from "constants/layout";
 
 export const Container = styled.header`
   width: 100%;
   height: ${Layout.HEADER_HEIGHT};
-  padding: 0 ${Layout.SECTION_PADDING};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -15,10 +14,6 @@ export const Container = styled.header`
   background-color: ${({ theme }) => theme.headerColor};
   box-shadow: ${({ theme }) => theme.boxShadow};
   border-bottom: 1px solid transparent;
-
-  @media ${Breakpoint.MOBILE_LG} {
-    padding: 0 ${Layout.SECTION_PADDING_SM};
-  }
 
   ${(props) =>
     props.transparent &&

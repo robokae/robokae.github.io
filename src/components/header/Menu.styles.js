@@ -25,6 +25,7 @@ export const Content = styled.section`
   flex-direction: column;
   background-color: ${({ theme }) => theme.headerColor};
   z-index: 10;
+  position: relative;
 `;
 
 export const MenuHeader = styled.nav`

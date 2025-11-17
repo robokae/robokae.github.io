@@ -9,11 +9,10 @@ import {
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Overlay from "components/overlay/Overlay";
 import Stack from "components/Stack";
-import Icon from "components/icon/Icon";
 import ThemeToggle from "components/button/themeToggle/ThemeToggle";
-import Button from "components/button/Button";
 import { useLocation } from "react-router-dom";
 import Link from "components/link/Link";
+import { Button, Icon } from "@robokae/robokae-ui";
 
 function Menu({ data, display, toggleCallback }) {
   const { pathname } = useLocation();

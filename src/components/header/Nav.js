@@ -1,31 +1,38 @@
 import ThemeToggle from "components/button/themeToggle/ThemeToggle";
-import Icon from "components/icon/Icon";
 import { Container, LinkContainer } from "./Nav.styles";
-import Button from "components/button/Button";
-import ButtonLink from "components/link/buttonLink/ButtonLink";
+import { Button, Icon, Tooltip } from "@robokae/robokae-ui";
+import LinkButton from "components/link/linkButton/LinkButton";
+import { useThemeContext } from "context/ThemeContext";
 
 function Nav({ data, isDesktop, showMenu, toggleMenu }) {
+  const { theme } = useThemeContext();
+
   return (
     <Container>
       {data.map((links, index) => (
         <LinkContainer key={index}>
           {links.map((link, index) => (
-            <ButtonLink
+            <LinkButton
               key={index}
               to={link.to}
-              underline={false}
               onClick={() => showMenu && toggleMenu}
-              tooltip={link.tooltip}
+              tooltipData={link.tooltip}
             >
               {link.type === "text"
                 ? link.label
                 : link.type === "icon" && <Icon name={link.icon} />}
-            </ButtonLink>
+            </LinkButton>
           ))}
         </LinkContainer>
       ))}
-      {isDesktop && <ThemeToggle variant="plain" />}
-      {!isDesktop && (
+      {isDesktop ? (
+        <Tooltip
+          position="bottom"
+          content={`${theme === "light" ? "Dark" : "Light"} theme`}
+        >
+          <ThemeToggle variant="plain" />
+        </Tooltip>
+      ) : (
         <Button>
           <Icon onClick={toggleMenu} name="List" size="lg" />
         </Button>
