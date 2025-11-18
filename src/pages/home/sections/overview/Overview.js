@@ -1,4 +1,3 @@
-import { ContentLayout, SectionLayout } from "components/layout/Layout.styles";
 import { Layout } from "constants/layout";
 import {
   CardContent,
@@ -6,17 +5,16 @@ import {
   IconContainer,
   TextContainer,
 } from "./Overview.styles";
-import Icon from "components/icon/Icon";
-import { getHeading } from "util/PageDataUtil";
-import Card from "components/card/Card";
+import { Card, Heading, Icon, Text } from "@robokae/robokae-ui";
+import Section from "components/page/section/Section";
 
 const Overview = ({ data }) => {
-  const { text, headings, subHeadings, icons } = data;
+  const { text, heading, subHeadings, icons } = data;
 
   return (
-    <SectionLayout>
-      <ContentLayout>
-        {headings.map((heading) => getHeading(heading, "center"))}
+    <Section>
+      <Section.Heading>{heading}</Section.Heading>
+      <Section.Content>
         <Grid gap={Layout.MEDIUM_GAP} size={text.length}>
           {text.map((cardText, index) => {
             return (
@@ -26,16 +24,16 @@ const Overview = ({ data }) => {
                     <Icon name={icons[index]} index={index} size="xl" />
                   </IconContainer>
                   <TextContainer>
-                    <h5>{subHeadings[index]}</h5>
-                    <p>{cardText}</p>
+                    <Heading as="h5">{subHeadings[index]}</Heading>
+                    <Text>{cardText}</Text>
                   </TextContainer>
                 </CardContent>
               </Card>
             );
           })}
         </Grid>
-      </ContentLayout>
-    </SectionLayout>
+      </Section.Content>
+    </Section>
   );
 };
 

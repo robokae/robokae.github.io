@@ -1,68 +1,34 @@
 import styled from "styled-components";
-import { ContentLayout, SectionLayout } from "components/layout/Layout.styles";
-import Typography from "components/typography/Typography";
 import { Breakpoint } from "constants/layout";
-import { Typography as TypographyConstants } from "constants/typography";
-
-const Section = styled(SectionLayout)`
-  width: 100%;
-  height: max-content;
-  display: flex;
-  justify-content: center;
-`;
-
-const Content = styled(ContentLayout)`
-  position: relative;
-  height: 100%;
-  display: flex;
-
-  @media ${Breakpoint.LAPTOP} {
-    display: flex;
-    flex-direction: column;
-  }
-`;
+import Section from "components/page/section/Section";
+import { Text } from "@robokae/robokae-ui";
 
 const Description = styled.div`
-  width: 100%;
+  width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-`;
-
-const ResponsiveText = styled.p`
-  width: 85%;
   font-size: larger;
-  font-weight: normal;
-  text-align: center;
 
   @media ${Breakpoint.MOBILE_LG} {
-    width: 95%;
+    width: 100%;
+    font-size: inherit;
   }
 `;
 
 const Reflection = ({ data }) => {
   return (
     <Section>
-      <Content>
-        <div>
-          {data.headings.map((line, index) => (
-            <Typography
-              tag={TypographyConstants.SECTION_TITLE_TAG}
-              key={index}
-              align="center"
-            >
-              {line}
-            </Typography>
-          ))}
-        </div>
+      <Section.Heading>{data.heading}</Section.Heading>
+      <Section.Content>
         <Description>
           {data.text.map((line, index) => (
-            <ResponsiveText key={index}>{line}</ResponsiveText>
+            <Text key={index}>{line}</Text>
           ))}
         </Description>
-      </Content>
+      </Section.Content>
     </Section>
   );
 };

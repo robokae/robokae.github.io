@@ -1,5 +1,5 @@
-import Typography from "components/typography/Typography";
-import { Typography as TypographyConstants } from "constants/typography";
+import { Heading } from "@robokae/robokae-ui";
+import { Typography } from "constants/typography";
 
 export const getSectionData = (data) => {
   return data?.sections?.reduce((sections, section) => {
@@ -9,7 +9,7 @@ export const getSectionData = (data) => {
 };
 
 export const getHeading = (text, align = "left") => (
-  <Typography align={align} tag={TypographyConstants.SECTION_TITLE_TAG}>
+  <Heading as={Typography.SECTION_TITLE_TAG} align={align}>
     {text}
-  </Typography>
+  </Heading>
 );

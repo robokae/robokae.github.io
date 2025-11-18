@@ -4,15 +4,11 @@ import { Typography } from "constants/typography";
 import { ContentLayout, SectionLayout } from "components/layout/Layout.styles";
 import Card from "components/card/Card";
 import { Style } from "constants/style";
+import Section from "components/page/section/Section";
 
-export const Section = styled(SectionLayout)`
-  @media ${Breakpoint.MOBILE_LG} {
-    padding-left: 0;
-    padding-right: 0;
-  }
-`;
+export const StyledSection = styled(Section)``;
 
-export const Content = styled(ContentLayout)`
+export const Content = styled(Section.Content)`
   @media ${Breakpoint.TABLET} {
     ${Typography.SECTION_TITLE_TAG} {
       padding: 0 ${Layout.SECTION_PADDING};

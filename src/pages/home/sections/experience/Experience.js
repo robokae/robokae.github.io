@@ -8,14 +8,17 @@ import {
   Content,
   DetailsContainer,
   ImageContainer,
-  Section,
   StyledCard,
+  StyledSection,
 } from "./Experience.styles";
 import useTheme from "hooks/useTheme";
 import { Layout } from "constants/layout";
+import { getHeading } from "util/PageDataUtil";
+import { Heading } from "@robokae/robokae-ui";
+import Section from "components/page/section/Section";
 
 const Experience = ({ data }) => {
-  const { headings, subHeadings, text, images } = data;
+  const { heading, subHeadings, text, images } = data;
   const { lightPurpleGradient, lightGreyGradient, lightBlueGradient } =
     useTheme().styles.pages.home.experience;
 
@@ -43,27 +46,19 @@ const Experience = ({ data }) => {
 
   return (
     <Section>
+      <Section.Heading>{heading}</Section.Heading>
       <Content>
-        {headings.map((line, index) => (
-          <Typography
-            align="center"
-            key={index}
-            tag={TypographyConstants.SECTION_TITLE_TAG}
-          >
-            {line}
-          </Typography>
-        ))}
         <CardLayout size={subHeadings.length}>{cards()}</CardLayout>
-        <CarouselContainer>
-          <Carousel
-            displayArrows
-            indicatorType="numbers"
-            paddingX={Layout.SECTION_PADDING_SM}
-          >
-            {cards()}
-          </Carousel>
-        </CarouselContainer>
       </Content>
+      <CarouselContainer>
+        <Carousel
+          displayArrows
+          indicatorType="numbers"
+          paddingX={Layout.SECTION_PADDING_SM}
+        >
+          {cards()}
+        </Carousel>
+      </CarouselContainer>
     </Section>
   );
 };

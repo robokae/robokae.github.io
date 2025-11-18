@@ -21,7 +21,7 @@
     {
       "title": "overview",
       "content": {
-        "headings": ["A quick overview"],
+        "heading": "A quick overview",
         "subHeadings": [
           "Passion for software engineering",
           "Experience across the full stack",
@@ -43,7 +43,7 @@
     {
       "title": "reflection",
       "content": {
-        "headings": ["A tale of two passions,", "art and technology"],
+        "heading": "A tale of two passions, art and technology",
         "subHeadings": [],
         "text": [
           "Growing up, two of my interests were art and technology. I enjoyed creating objects with Lego, folding origami, and designing architectural structures. At the same time, I was fascinated with the inner workings of websites and was very enthusiastic about developing my own.",
@@ -58,7 +58,7 @@
     {
       "title": "experience",
       "content": {
-        "headings": ["Full stack development expertise"],
+        "heading": "Full stack development expertise",
         "subHeadings": [
           "Building modern and responsive user interfaces",
           "Designing and developing robust and scalable backend APIs",
