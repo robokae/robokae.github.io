@@ -12,7 +12,7 @@ export const CardsContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.75rem;
+  gap: 1.5rem;
   grid-auto-rows: 1fr;
 
   @media ${Breakpoint.TABLET} {

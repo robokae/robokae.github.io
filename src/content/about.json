@@ -4,7 +4,7 @@
     {
       "title": "overview",
       "content": {
-        "headings": ["A Journey that Began with a Few Lines of Code"],
+        "heading": "A Journey that Began with a Few Lines of Code",
         "text": [
           "Hi there, I am a software engineer from San Francisco, who graduated with a bachelor's degree in computer science from the University of California, Merced, and am currently pursuing a master's degree in cybersecurity.",
           "During my undergraduate studies, I gained a passion for web development in one of my computer science classes, where I was first exposed to the world of programming web applications. I remember my first time writing HTML back in 2019 — it was a special moment because of how simple it was to get a basic website up and running.",
@@ -16,7 +16,7 @@
     {
       "title": "interests",
       "content": {
-        "headings": ["Dedication across all aspects of software development"],
+        "heading": "Dedication across all aspects of software development",
         "text": []
       }
     },

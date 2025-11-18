@@ -1,12 +1,7 @@
 import content from "content/about.json";
-import {
-  ContentLayout,
-  PageContentLayout,
-  SectionLayout,
-} from "components/layout/Layout.styles";
-import { getHeading, getSectionData } from "util/PageDataUtil";
+import { PageContentLayout } from "components/layout/Layout.styles";
+import { getSectionData } from "util/PageDataUtil";
 import React from "react";
-import Icon from "components/icon/Icon";
 import {
   CardContent,
   CardsContainer,
@@ -14,29 +9,27 @@ import {
   StyledText,
   TextGroup,
 } from "./About.styles";
+import { Icon } from "@robokae/robokae-ui";
+import Section from "components/page/Section";
 
 function About() {
   const { overview, interests, cards } = getSectionData(content);
 
   return (
     <PageContentLayout>
-      <SectionLayout>
-        <ContentLayout>
-          {overview.headings.map((heading, index) => (
-            <React.Fragment key={index}>{getHeading(heading)}</React.Fragment>
-          ))}
+      <Section>
+        <Section.Heading align="left">{overview.heading}</Section.Heading>
+        <Section.Content>
           <TextGroup>
             {overview.text.map((text, index) => (
               <p key={index}>{text}</p>
             ))}
           </TextGroup>
-        </ContentLayout>
-      </SectionLayout>
-      <SectionLayout>
-        <ContentLayout>
-          {interests.headings.map((heading, index) => (
-            <React.Fragment key={index}>{getHeading(heading)}</React.Fragment>
-          ))}
+        </Section.Content>
+      </Section>
+      <Section>
+        <Section.Heading align="left">{interests.heading}</Section.Heading>
+        <Section.Content>
           <CardsContainer>
             {cards.text.map((text, index) => (
               <StyledCard key={index}>
@@ -47,8 +40,8 @@ function About() {
               </StyledCard>
             ))}
           </CardsContainer>
-        </ContentLayout>
-      </SectionLayout>
+        </Section.Content>
+      </Section>
     </PageContentLayout>
   );
 }
