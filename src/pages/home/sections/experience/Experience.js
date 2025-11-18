@@ -9,13 +9,10 @@ import {
   DetailsContainer,
   ImageContainer,
   StyledCard,
-  StyledSection,
 } from "./Experience.styles";
 import useTheme from "hooks/useTheme";
 import { Layout } from "constants/layout";
-import { getHeading } from "util/PageDataUtil";
-import { Heading } from "@robokae/robokae-ui";
-import Section from "components/page/section/Section";
+import Section from "components/page/Section";
 
 const Experience = ({ data }) => {
   const { heading, subHeadings, text, images } = data;

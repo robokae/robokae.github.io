@@ -8,10 +8,10 @@ export const SubHeading = styled.p`
   font-weight: normal;
 
   @media ${Breakpoint.LAPTOP_LG} {
-    width: 75%;
+    width: 65%;
   }
 
-  @media ${Breakpoint.MOBILE_LG} {
+  @media ${Breakpoint.TABLET} {
     width: 90%;
   }
 `;
@@ -28,7 +28,7 @@ export const Cards = styled.div`
   }
 `;
 
-export const CardHeader = styled.div`
+export const CardHeading = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;

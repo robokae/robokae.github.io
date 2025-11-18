@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Breakpoint } from "constants/layout";
-import Section from "components/page/section/Section";
 import { Text } from "@robokae/robokae-ui";
+import Section from "components/page/Section";
 
 const Description = styled.div`
   width: 90%;

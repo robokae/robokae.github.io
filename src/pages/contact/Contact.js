@@ -1,15 +1,10 @@
-import Card from "components/card/Card";
-import {
-  ContentLayout,
-  PageContentLayout,
-  SectionLayout,
-} from "components/layout/Layout.styles";
+import { PageContentLayout } from "components/layout/Layout.styles";
 import Typography from "components/typography/Typography";
 import { Typography as TypographyConstants } from "constants/typography";
 import content from "content/contact.json";
 import { useState } from "react";
 import {
-  CardHeader,
+  CardHeading,
   Cards,
   StyledLink,
   SubHeading,
@@ -17,6 +12,8 @@ import {
 } from "./Contact.styles";
 import Icon from "components/icon/Icon";
 import { getSectionData } from "util/PageDataUtil";
+import { Card } from "@robokae/robokae-ui";
+import Section from "components/page/Section";
 
 const AnimatedLink = ({ label, url }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -36,57 +33,42 @@ const AnimatedLink = ({ label, url }) => {
   );
 };
 
-const OverviewSection = ({ content }) => {
-  const { headings, subHeadings } = content;
-
-  return (
-    <>
-      {headings.map((heading) => (
-        <Typography tag={TypographyConstants.SECTION_TITLE_TAG} align="center">
-          {heading}
-        </Typography>
-      ))}
-      {subHeadings.map((subHeading) => (
-        <SubHeading>{subHeading}</SubHeading>
-      ))}
-    </>
-  );
-};
-
-const DetailsSection = ({ content }) => {
-  const { subHeadings, text, icons, links } = content;
-
-  return (
-    <Cards>
-      {subHeadings.map((subHeading, index) => (
-        <Card>
-          <CardHeader>
-            <Icon name={icons[index]} size="lg" />
-            <Typography tag={TypographyConstants.CARD_TITLE_TAG}>
-              {subHeading}
-            </Typography>
-          </CardHeader>
-          <p>{text[index]}</p>
-          {links[index] && (
-            <AnimatedLink label={links[index].label} url={links[index].url} />
-          )}
-        </Card>
-      ))}
-    </Cards>
-  );
-};
-
 function Contact() {
   const { overview, details } = getSectionData(content);
 
   return (
     <PageContentLayout>
-      <SectionLayout>
-        <ContentLayout>
-          <OverviewSection content={overview} />
-          <DetailsSection content={details} />
-        </ContentLayout>
-      </SectionLayout>
+      <Section>
+        <Section.Heading>{overview.heading}</Section.Heading>
+        <Section.Content>
+          {overview.text.map((subHeading) => (
+            <SubHeading>{subHeading}</SubHeading>
+          ))}
+          <Cards>
+            {details.subHeadings.map((subHeading, index) => (
+              <Card>
+                <Card.Heading>
+                  <CardHeading>
+                    <Icon name={details.icons[index]} size="lg" />
+                    <Typography tag={TypographyConstants.CARD_TITLE_TAG}>
+                      {subHeading}
+                    </Typography>
+                  </CardHeading>
+                </Card.Heading>
+                <Card.Content>
+                  <p>{details.text[index]}</p>
+                  {details.links[index] && (
+                    <AnimatedLink
+                      label={details.links[index].label}
+                      url={details.links[index].url}
+                    />
+                  )}
+                </Card.Content>
+              </Card>
+            ))}
+          </Cards>
+        </Section.Content>
+      </Section>
     </PageContentLayout>
   );
 }

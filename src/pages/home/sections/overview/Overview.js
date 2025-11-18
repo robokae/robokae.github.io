@@ -6,7 +6,7 @@ import {
   TextContainer,
 } from "./Overview.styles";
 import { Card, Heading, Icon, Text } from "@robokae/robokae-ui";
-import Section from "components/page/section/Section";
+import Section from "components/page/Section";
 
 const Overview = ({ data }) => {
   const { text, heading, subHeadings, icons } = data;
