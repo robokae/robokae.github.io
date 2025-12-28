@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const SliderContainer = styled.button`
-  width: 2.75rem;
-  height: 1.5rem;
-  background-color: ${({ theme }) => theme.button.toggle.backgroundColor};
+  width: 3.1rem;
+  height: 1.65rem;
+  background-color: ${({ theme }) => theme.toggleButton.backgroundColor};
   padding: 2.25px;
   border: none;
   border-radius: 16rem;
@@ -19,10 +19,13 @@ const Slider = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 16rem;
-  background-color: ${({ theme }) => theme.button.toggle.foregroundColor};
-  color: ${({ theme }) => theme.button.toggle.fontColor};
+  background-color: ${({ theme }) => theme.toggleButton.foregroundColor};
   transition: transform 0.2s ease-out;
-  transform: ${(props) => (props.slide ? "translateX(100%)" : "translateX(0)")};
+  transform: ${(props) => `translateX(${props.slide ? "100%" : "0"})`};
+
+  & > * {
+    color: ${({ theme }) => theme.toggleButton.fontColor};
+  }
 `;
 
 function ToggleButton({ onClick, slide, icon }) {

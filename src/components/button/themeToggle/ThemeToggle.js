@@ -1,18 +1,15 @@
 import { Style } from "constants/style";
 import { useThemeContext } from "context/ThemeContext";
-import Stack from "components/Stack";
 import { useState } from "react";
 import ToggleButton from "../ToggleButton";
 import { Button, Icon } from "@robokae/robokae-ui";
+import { useTheme } from "styled-components";
 
 function ThemeToggle({ variant = "slider" }) {
   const { theme: currentTheme, toggleTheme } = useThemeContext();
+  const theme = useTheme();
   const isDarkTheme = currentTheme === Style.DARK_THEME;
   const [slide, setSlide] = useState(false);
-
-  const ThemeIcon = (size = "sm") => (
-    <Icon name={isDarkTheme ? "SunFill" : "MoonFill"} size={size} />
-  );
 
   const handleToggle = () => {
     toggleTheme();
@@ -21,15 +18,19 @@ function ThemeToggle({ variant = "slider" }) {
 
   return variant === "plain" ? (
     <Button onClick={toggleTheme}>
-      <Stack gap="0.5rem">
-        <ThemeIcon />
-      </Stack>
+      <Icon name={isDarkTheme ? "SunFill" : "MoonFill"} />
     </Button>
   ) : (
     <ToggleButton
       slide={slide}
       onClick={handleToggle}
-      icon={<ThemeIcon size="xs" />}
+      icon={
+        <Icon
+          name={isDarkTheme ? "MoonFill" : "SunFill"}
+          size="xs"
+          color={theme.toggleButton.fontColor}
+        />
+      }
     />
   );
 }

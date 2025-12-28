@@ -1,35 +1,55 @@
-import { useCallback, useEffect, useState } from "react";
-import { useResponsiveHeader } from "hooks/useResponsiveHeader";
-import Nav from "./Nav";
-import { Container } from "./Header.styles";
-import Menu from "./Menu";
+import { Container, Content } from "./Header.styles";
+import Link from "components/link/Link";
+import Nav from "./nav/Nav";
+import useScroll from "hooks/useScroll";
+import { useEffect } from "react";
+import classNames from "classnames";
+import { HeaderProvider, useHeaderContext } from "context/HeaderContext";
 
-function Header({ data, transitionBgOnScroll }) {
-  const [transition, setTransition] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
-  const { headerLinks, isDesktop } = useResponsiveHeader(data);
-  const toggleMenu = () => setShowMenu((prev) => !prev);
+function Header({ children }) {
+  return <HeaderProvider>{children}</HeaderProvider>;
+}
 
-  const handleScroll = useCallback(() => {
-    transitionBgOnScroll && setTransition(window.scrollY >= 20);
-  }, [transitionBgOnScroll]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [transitionBgOnScroll, handleScroll]);
+Header.Content = function HeaderContent({ children }) {
+  const { isTransparent, transition } = useHeaderContext();
 
   return (
-    <Container transparent={transitionBgOnScroll} transition={transition}>
-      <Nav
-        data={headerLinks}
-        isDesktop={isDesktop}
-        showMenu={showMenu}
-        toggleMenu={toggleMenu}
-      />
-      <Menu display={showMenu} data={data} toggleCallback={toggleMenu} />
+    <Container
+      className={classNames({
+        "transition-transparency": isTransparent,
+        "no-transition": !transition,
+      })}
+    >
+      <Content>{children}</Content>
     </Container>
   );
-}
+};
+
+Header.Brand = function HeaderBrand({ logo, url }) {
+  const { handleLinkClick } = useHeaderContext();
+
+  return (
+    <Link to={url} underline={false} onClick={handleLinkClick}>
+      {logo}
+    </Link>
+  );
+};
+
+Header.Nav = function HeaderNav({ links }) {
+  return <Nav data={links} />;
+};
+
+Header.TransparentBackground = function TransparentHeader({
+  transitionAtHeight = 20,
+}) {
+  const { scrollPosition } = useScroll();
+  const { setIsTransparent } = useHeaderContext();
+
+  useEffect(() => {
+    setIsTransparent(scrollPosition.y <= transitionAtHeight);
+
+    return () => setIsTransparent(false);
+  }, [scrollPosition.y, transitionAtHeight, setIsTransparent]);
+};
 
 export default Header;

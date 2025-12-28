@@ -1,5 +1,5 @@
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
-import header from "content/layout/header.json";
+import data from "content/layout/header.json";
 import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
 import { PageContainer } from "./Layout.styles";
@@ -22,7 +22,13 @@ export function HomeLayout() {
   return (
     <PageContainer>
       <ScrollRestoration />
-      <Header data={header.links} transitionBgOnScroll={transitionBg} />
+      <Header>
+        {transitionBg && <Header.TransparentBackground />}
+        <Header.Content>
+          <Header.Brand logo={data.brand.logo} to={data.brand.url} />
+          <Header.Nav links={data.links} />
+        </Header.Content>
+      </Header>
       <Outlet />
       <Footer />
     </PageContainer>

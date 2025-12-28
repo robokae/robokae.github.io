@@ -1,44 +1,28 @@
 {
+  "brand": {
+    "logo": "ALEXANDER HOM",
+    "url": "/"
+  },
   "links": [
     {
-      "label": "ALEXANDER HOM",
-      "to": "/",
-      "position": "left",
-      "type": "text"
-    },
-    {
       "label": "About",
-      "to": "/about",
-      "position": "right",
-      "type": "text"
+      "url": "/about"
     },
     {
       "label": "Contact",
-      "to": "/contact",
-      "position": "right",
-      "type": "text"
+      "url": "/contact"
     },
     {
       "label": "GitHub",
-      "to": "https://github.com/robokae",
-      "position": "right",
-      "type": "icon",
+      "url": "https://github.com/robokae",
       "icon": "Github",
-      "tooltip": {
-        "hint": "GitHub",
-        "position": "bottom"
-      }
+      "showHint": true
     },
     {
       "label": "LinkedIn",
-      "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
-      "position": "right",
-      "type": "icon",
+      "url": "https://www.linkedin.com/in/alexander-hom-94811b188/",
       "icon": "Linkedin",
-      "tooltip": {
-        "hint": "LinkedIn",
-        "position": "bottom"
-      }
+      "showHint": true
     }
   ]
 }

@@ -20,6 +20,10 @@ export const GlobalStyles = createGlobalStyle`
         line-height: 1.75;
     }
 
+    body.no-scroll {
+        overflow: hidden;
+    }
+
     ::placeholder {
         color: ${({ theme }) => theme.secondaryFontColor};
     }

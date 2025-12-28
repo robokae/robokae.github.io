@@ -1,11 +1,11 @@
 export const DeviceSize = {
-  MOBILE_SM: "320",
-  MOBILE_MD: "425",
-  MOBILE_LG: "600",
-  TABLET: "768",
-  LAPTOP: "1024",
-  LAPTOP_LG: "1440",
-  DESKTOP: "2560",
+  MOBILE_SM: 320,
+  MOBILE_MD: 425,
+  MOBILE_LG: 600,
+  TABLET: 768,
+  LAPTOP: 1024,
+  LAPTOP_LG: 1440,
+  DESKTOP: 2560,
 };
 export const Breakpoint = Object.freeze({
   MOBILE_S: `(max-width: ${DeviceSize.MOBILE_SM}px)`,

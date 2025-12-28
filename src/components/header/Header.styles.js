@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import { Layout } from "constants/layout";
+import styled from "styled-components";
+import { Breakpoint, Layout } from "constants/layout";
 
-export const Container = styled.header`
+export const Container = styled.div`
   width: 100%;
   height: ${Layout.HEADER_HEIGHT};
   display: flex;
@@ -12,21 +12,30 @@ export const Container = styled.header`
   left: 0;
   z-index: 10;
   background-color: ${({ theme }) => theme.headerColor};
-  box-shadow: ${({ theme }) => theme.boxShadow};
-  border-bottom: 1px solid transparent;
+  box-shadow: 0.2rem 0.25rem 3rem rgba(8, 10, 10, 0.1);
+  transition: all 0.2s ease;
 
-  ${(props) =>
-    props.transparent &&
-    css`
-      background-color: transparent;
-      border-color: transparent;
-      box-shadow: none;
-    `}
+  &.transition-transparency {
+    background-color: transparent;
+    box-shadow: none;
+    transition: all 0.25s ease-in;
+    transition-delay: 0.2s;
+  }
 
-  ${(props) =>
-    props.transition &&
-    css`
-      background-color: ${({ theme }) => theme.headerColor};
-      box-shadow: ${({ theme }) => theme.boxShadow};
-    `}
+  &.no-transition {
+    transition: none;
+  }
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  max-width: ${Layout.CONTENT_MAX_WIDTH};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 ${Layout.SECTION_PADDING};
+
+  @media ${Breakpoint.MOBILE_LG} {
+    padding: 0 ${Layout.SECTION_PADDING_SM};
+  }
 `;

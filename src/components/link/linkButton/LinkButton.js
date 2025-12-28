@@ -1,23 +1,23 @@
 import { Button, Tooltip } from "@robokae/robokae-ui";
-import Link from "../Link";
+import { useNavigate } from "react-router-dom";
 
-const LinkButton = ({ to, onClick, tooltipData, children }) => {
-  const Content = ({ to, onClick, children }) => (
-    <Button onClick={onClick}>
-      <Link to={to} underline={false}>
-        {children}
-      </Link>
+const LinkButton = ({ to, tooltipData, children, ...props }) => {
+  const navigate = useNavigate();
+
+  const Content = ({ to, children, ...props }) => (
+    <Button {...props} onClick={() => navigate(to)}>
+      {children}
     </Button>
   );
 
   return tooltipData ? (
     <Tooltip position={tooltipData.position} content={tooltipData.hint}>
-      <Content to={to} onClick={onClick}>
+      <Content to={to} {...props}>
         {children}
       </Content>
     </Tooltip>
   ) : (
-    <Content to={to} onClick={onClick}>
+    <Content to={to} {...props}>
       {children}
     </Content>
   );

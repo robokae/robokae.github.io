@@ -5,26 +5,17 @@ const Container = styled.div`
   width: max-content;
   display: flex;
   align-items: center;
-  color: inherit;
 `;
 
-function Icon({ name, size = "sm", onClick, ...props }) {
-  const convertSize = (size) => {
-    switch (size) {
-      case "xs":
-        return "0.75rem";
-      case "sm":
-        return "1rem";
-      case "md":
-        return "1.25rem";
-      case "lg":
-        return "1.5rem";
-      case "xl":
-        return "1.75rem";
-      default:
-        return "1.25rem";
-    }
-  };
+function Icon({ name, size, onClick, ...props }) {
+  const convertSize = (size) =>
+    ({
+      xs: "0.75rem",
+      sm: "1rem",
+      md: "1.25rem",
+      lg: "1.5rem",
+      xl: "1.75rem",
+    }[size] || "1.25rem");
 
   const BootstrapIcon = icons[name];
   if (!BootstrapIcon) {
