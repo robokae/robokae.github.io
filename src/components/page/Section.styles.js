@@ -4,13 +4,16 @@ import { styled } from "styled-components";
 
 export const Container = styled.section`
   width: 100%;
-  max-width: ${Layout.CONTENT_MAX_WIDTH};
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: ${Layout.GAP_LG};
   position: relative;
   padding: ${Layout.SECTION_PADDING} 0;
+
+  * {
+    max-width: ${Layout.CONTENT_MAX_WIDTH};
+  }
 
   h3 {
     padding: 0 ${Layout.SECTION_PADDING};

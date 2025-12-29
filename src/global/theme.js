@@ -69,6 +69,9 @@ const lightTheme = {
           foregroundColor: "#F9F4D1",
         },
       ],
+      reflection: {
+        background: "linear-gradient(0deg, #A8B4BA 0%, #8E9CA7 100%)",
+      },
       experience: {
         lightPurpleGradient:
           "linear-gradient(315deg, #A4B7D1 0%, #8597B1 100%)",
@@ -151,6 +154,9 @@ const darkTheme = {
           foregroundColor: "#F9F4D1",
         },
       ],
+      reflection: {
+        background: "linear-gradient(0deg, #677782 0%, #505D63 100%)",
+      },
       experience: {
         lightPurpleGradient:
           "linear-gradient(315deg, #A4B7D1 0%, #8597B1 100%)",

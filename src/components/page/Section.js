@@ -1,8 +1,8 @@
 import { Heading } from "@robokae/robokae-ui";
 import { Container, Content } from "./Section.styles";
 
-const Section = ({ children }) => {
-  return <Container>{children}</Container>;
+const Section = ({ children, ...props }) => {
+  return <Container {...props}>{children}</Container>;
 };
 
 Section.Heading = ({ align = "center", children }) => (
