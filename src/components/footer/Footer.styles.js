@@ -1,3 +1,4 @@
+import Link from "components/link/Link";
 import { Breakpoint, Layout } from "constants/layout";
 import styled from "styled-components";
 
@@ -6,7 +7,7 @@ export const Container = styled.footer`
   height: max-content;
   position: relative;
   bottom: 0;
-  padding: 0 ${Layout.SECTION_PADDING};
+  padding: 1rem ${Layout.SECTION_PADDING};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,7 +45,6 @@ export const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 1.5rem;
-  color: ${({ theme }) => theme.secondaryFontColor};
 
   @media ${Breakpoint.MOBILE_S} {
     padding: 0 ${Layout.SECTION_PADDING_SM};
@@ -55,6 +55,14 @@ export const LinkContainer = styled.div`
     grid-row-gap: 0.5rem;
     grid-column-gap: 3rem;
     grid-auto-flow: column;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.secondaryFontColor};
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 

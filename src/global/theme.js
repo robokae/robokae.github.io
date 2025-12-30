@@ -4,7 +4,7 @@ const lightTheme = {
   secondaryBackgroundColor: "#F9F9F9",
   tertiaryBackgroundColor: "#D3D6D7",
   headerColor: "#f3f3f3",
-  footerColor: "#f8f8f8",
+  footerColor: "#E4E7E9",
   overlayColor: "rgba(18, 28, 32, 0.65)",
   primaryFontColor: "#29353D",
   secondaryFontColor: "#66727E",

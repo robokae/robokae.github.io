@@ -1,6 +1,11 @@
-import { Caption, Container, Content, LinkContainer } from "./Footer.styles";
+import {
+  Caption,
+  Container,
+  Content,
+  LinkContainer,
+  StyledLink,
+} from "./Footer.styles";
 import footer from "content/layout/footer.json";
-import Link from "components/link/Link";
 import { getYear } from "util/DateUtil";
 
 function Footer() {
@@ -17,9 +22,9 @@ function Footer() {
         <LinkContainer>
           {links &&
             links.map((link, index) => (
-              <Link key={index} to={link.to}>
+              <StyledLink key={index} to={link.url} underline>
                 {link.label}
-              </Link>
+              </StyledLink>
             ))}
         </LinkContainer>
         <Caption>{caption && <p>{`${caption} ${currentYear}`}</p>}</Caption>

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled(NavLink)`
   color: ${({ theme }) => theme.primaryFontColor};
@@ -7,12 +7,4 @@ export const Container = styled(NavLink)`
   align-items: center;
   text-decoration: none;
   font-size: inherit;
-
-  ${(props) =>
-    props.underline &&
-    css`
-      &:hover {
-        text-decoration: underline;
-      }
-    `}
 `;
