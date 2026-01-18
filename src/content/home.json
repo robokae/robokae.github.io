@@ -23,19 +23,19 @@
       "content": {
         "heading": "A quick overview",
         "subHeadings": [
-          "Passion for software engineering",
-          "Experience across the full stack",
-          "Successful delivery of projects through collaboration",
-          "Learning throughout my software engineering journey"
+          "4+ years of professional software engineering",
+          "Experience across the full tech stack",
+          "Successful and timely delivery of projects",
+          "Learning throughout my journey"
         ],
         "text": [
-          "I have over three years of experience developing large, scalable enterprise APIs for two Fortune 500 companies and am very passionate about my work",
-          "I’m skilled in developing web applications using JavaScript, Java, Python, SQL, MongoDB, and Google Cloud",
-          "Whether the team’s big or small, through collaboration and leadership, I have contributed to the timely and successful delivering of projects of various shapes and sizes",
-          "I enjoy learning the latest technologies, taking part in technology events, and applying new knowledge to my work"
+          "I have experience developing large enterprise APIs for two of the largest companies in the world",
+          "I am skilled in developing modern, scalable applications using JavaScript, Java, Python, SQL, MongoDB, and Google Cloud",
+          "Through collaboration and leadership, I've contributed to the successful delivering of projects of various scales",
+          "I am always learning and applying the latest technologies, from trending AI topics to ways of improving developer experience"
         ],
         "images": [],
-        "icons": ["Heart", "CodeSlash", "Star", "Book"],
+        "icons": ["Terminal", "Braces", "Trophy", "JournalCode"],
         "buttons": [],
         "listContent": []
       }
@@ -43,7 +43,7 @@
     {
       "title": "reflection",
       "content": {
-        "heading": "A tale of two passions, art and technology",
+        "heading": "A tale of two passions: art and technology",
         "subHeadings": [],
         "text": [
           "Growing up, two of my interests were art and technology. I enjoyed creating objects with Lego, folding origami, and designing architectural structures. At the same time, I was fascinated with the inner workings of websites and was very enthusiastic about developing my own.",
@@ -91,39 +91,6 @@
         "icons": [],
         "buttons": [],
         "listContent": []
-      }
-    },
-    {
-      "title": "projects",
-      "content": {
-        "headings": ["Projects I've Worked On"],
-        "subHeadings": ["Minimal Todo List", "Encapsulate", "Nocturnal"],
-        "text": [
-          "Web-based todo list with a simple user interface. Features include creating, removing, and searching todos.",
-          "Technology and software engineering blog.",
-          "Minimalistic social networking Android application. Users can view and create posts, which are saved to a Parse database."
-        ],
-        "images": [],
-        "icons": [],
-        "buttons": [
-          {
-            "label": "GitHub",
-            "url": "https://github.com/robokae/Minimal-React-Todo-List"
-          },
-          {
-            "label": "GitHub",
-            "url": "https://github.com/EncapsulateSocial/Encapsulate"
-          },
-          {
-            "label": "GitHub",
-            "url": "https://github.com/UCM-CodePath-Social-Media/Nocturnal"
-          }
-        ],
-        "listContent": [
-          ["React", "Sass"],
-          ["React", "Sass", "Spring Boot"],
-          ["Java", "Parse"]
-        ]
       }
     }
   ]
