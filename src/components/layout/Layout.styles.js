@@ -20,14 +20,9 @@ export const PageContentLayout = styled(BaseLayout)`
   margin-top: ${Layout.HEADER_HEIGHT};
   position: relative;
   flex: 1;
-
-  & > :last-child {
-    margin-bottom: 5rem;
-  }
 `;
 
 export const ContentLayout = styled(BaseLayout)`
-  max-width: ${Layout.CONTENT_MAX_WIDTH};
   gap: ${Layout.GAP_LG};
 
   @media ${Breakpoint.MOBILE_LG} {
