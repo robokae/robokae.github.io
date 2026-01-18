@@ -53,30 +53,31 @@ const lightTheme = {
       },
       overview: [
         {
-          backgroundColor: "linear-gradient(315deg, #D2C4E6 0%, #A18DBE 100%)",
+          backgroundColor: "#A987D9",
           foregroundColor: "#F5EEFF",
         },
         {
-          backgroundColor: "linear-gradient(315deg, #BFE9C8 0%, #79B88F 100%)",
+          backgroundColor: "#77B584",
           foregroundColor: "#EDFFEE",
         },
         {
-          backgroundColor: "linear-gradient(315deg, #A6C6DD 0%, #6388A2 100%)",
+          backgroundColor: "#7CA1BC",
           foregroundColor: "#D4E9F7",
         },
         {
-          backgroundColor: "linear-gradient(315deg, #E9DDBF 0%, #CAB585 100%)",
+          backgroundColor: "#CAB889",
           foregroundColor: "#F9F4D1",
         },
       ],
       reflection: {
-        background: "linear-gradient(0deg, #A8B4BA 0%, #8E9CA7 100%)",
+        background: "linear-gradient(90deg, #E8EDF0 0%, #E3E5E6 100%)",
       },
       experience: {
-        lightPurpleGradient:
-          "linear-gradient(315deg, #A4B7D1 0%, #8597B1 100%)",
-        lightGreyGradient: "linear-gradient(45deg, #B2BBC2 0%, #8B9CA8 100%)",
-        lightBlueGradient: "linear-gradient(0deg, #A0B6C9 0%, #7F95A8 100%)",
+        backgroundColor: [
+          "linear-gradient(315deg, #C8DDEC 0%, #A6B9C9 100%)",
+          "linear-gradient(45deg, #D4DDE6 0%, #C6D5DF 100%)",
+          "linear-gradient(0deg, #DFE6EC 0%, #D2DAE1 100%)",
+        ],
         fontColor: "#29353D",
       },
     },
@@ -138,30 +139,31 @@ const darkTheme = {
       },
       overview: [
         {
-          backgroundColor: "linear-gradient(315deg, #624D80 0%, #3F2A5D 100%)",
+          backgroundColor: "#9768DC",
           foregroundColor: "#F5EEFF",
         },
         {
-          backgroundColor: "linear-gradient(315deg, #4F965E 0%, #25653B 100%)",
+          backgroundColor: "#86B993",
           foregroundColor: "#EDFFEE",
         },
         {
-          backgroundColor: "linear-gradient(315deg, #6289A5 0%, #335B78 100%)",
+          backgroundColor: "#6CB3D1",
           foregroundColor: "#D4E9F7",
         },
         {
-          backgroundColor: "linear-gradient(315deg, #AD9C71 0%, #80662E 100%)",
+          backgroundColor: "#AA996D",
           foregroundColor: "#F9F4D1",
         },
       ],
       reflection: {
-        background: "linear-gradient(0deg, #677782 0%, #505D63 100%)",
+        background: "linear-gradient(90deg, #2C3841 0%, #1F292E 100%)",
       },
       experience: {
-        lightPurpleGradient:
-          "linear-gradient(315deg, #A4B7D1 0%, #8597B1 100%)",
-        lightGreyGradient: "linear-gradient(45deg, #B2BBC2 0%, #8B9CA8 100%)",
-        lightBlueGradient: "linear-gradient(0deg, #A0B6C9 0%, #7F95A8 100%)",
+        backgroundColor: [
+          "linear-gradient(315deg, #5B6F86 0%, #384D64 100%)",
+          "linear-gradient(45deg, #6788A4 0%, #4B5880 100%)",
+          "linear-gradient(0deg, #66727E 0%, #505E6A 100%)",
+        ],
         fontColor: "#29353D",
       },
     },

@@ -5,12 +5,14 @@ const Section = ({ children, ...props }) => {
   return <Container {...props}>{children}</Container>;
 };
 
-Section.Heading = ({ align = "center", children }) => (
-  <Heading as="h3" align={align}>
+Section.Heading = ({ align = "center", children, ...props }) => (
+  <Heading align={align} as="h2" {...props}>
     {children}
   </Heading>
 );
 
-Section.Content = ({ children }) => <Content>{children}</Content>;
+Section.Content = ({ children, ...props }) => (
+  <Content {...props}>{children}</Content>
+);
 
 export default Section;

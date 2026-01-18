@@ -1,21 +1,17 @@
-import { Flex } from "@robokae/robokae-ui";
 import { Breakpoint, Layout } from "constants/layout";
 import { styled } from "styled-components";
 
 export const Container = styled.section`
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: ${Layout.GAP_LG};
   position: relative;
-  padding: ${Layout.SECTION_PADDING} 0;
+  padding: ${Layout.SECTION_PADDING} 0 4rem 0;
 
-  * {
+  > * {
     max-width: ${Layout.CONTENT_MAX_WIDTH};
-  }
-
-  h3 {
     padding: 0 ${Layout.SECTION_PADDING};
 
     @media ${Breakpoint.MOBILE_LG} {
@@ -24,21 +20,20 @@ export const Container = styled.section`
   }
 
   @media ${Breakpoint.MOBILE_LG} {
-    gap: ${Layout.SECTION_PADDING_SM};
     padding: ${Layout.SECTION_PADDING_SM} 0;
+    gap: ${Layout.SECTION_PADDING_SM};
   }
 `;
 
-export const Content = styled(Flex)`
-  height: max-content;
+export const Content = styled.div`
+  width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: ${Layout.GAP_LG};
   position: relative;
-  padding: 0 ${Layout.SECTION_PADDING};
 
   @media ${Breakpoint.MOBILE_LG} {
     gap: ${Layout.SECTION_PADDING_SM};
-    padding: 0 ${Layout.SECTION_PADDING_SM};
   }
 `;
