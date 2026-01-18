@@ -1,61 +1,43 @@
-import Typography from "components/typography/Typography";
 import React from "react";
-import Carousel from "components/carousel/Carousel";
-import { Typography as TypographyConstants } from "constants/typography";
 import {
   CardLayout,
-  CarouselContainer,
-  Content,
   DetailsContainer,
   ImageContainer,
   StyledCard,
 } from "./Experience.styles";
-import useTheme from "hooks/useTheme";
-import { Layout } from "constants/layout";
 import Section from "components/page/Section";
+import { useTheme } from "styled-components";
+import { Heading } from "@robokae/robokae-ui";
 
 const Experience = ({ data }) => {
   const { heading, subHeadings, text, images } = data;
-  const { lightPurpleGradient, lightGreyGradient, lightBlueGradient } =
-    useTheme().styles.pages.home.experience;
-
-  const imageBackgroundColors = [
-    lightPurpleGradient,
-    lightGreyGradient,
-    lightBlueGradient,
-  ];
-
-  const cards = () =>
-    subHeadings.map((subHeading, index) => (
-      <StyledCard key={index} background={imageBackgroundColors[index]}>
-        <ImageContainer background={imageBackgroundColors[index]}>
-          <img
-            src={`images/${images[index].name}`}
-            alt={images[index].altText}
-          ></img>
-        </ImageContainer>
-        <DetailsContainer>
-          <Typography tag={TypographyConstants.H4}>{subHeading}</Typography>
-          <p>{text[index]}</p>
-        </DetailsContainer>
-      </StyledCard>
-    ));
+  const theme = useTheme();
 
   return (
     <Section>
       <Section.Heading>{heading}</Section.Heading>
-      <Content>
-        <CardLayout size={subHeadings.length}>{cards()}</CardLayout>
-      </Content>
-      <CarouselContainer>
-        <Carousel
-          displayArrows
-          indicatorType="numbers"
-          paddingX={Layout.SECTION_PADDING_SM}
-        >
-          {cards()}
-        </Carousel>
-      </CarouselContainer>
+      <Section.Content>
+        <CardLayout>
+          {subHeadings.map((subHeading, index) => (
+            <StyledCard
+              key={index}
+              className={(index + 1) % 2 === 0 && "even-card"}
+              background={theme.pages.home.experience.backgroundColor[index]}
+            >
+              <ImageContainer>
+                <img
+                  src={`images/${images[index].name}`}
+                  alt={images[index].altText}
+                ></img>
+              </ImageContainer>
+              <DetailsContainer>
+                <Heading as="h3">{subHeading}</Heading>
+                <p>{text[index]}</p>
+              </DetailsContainer>
+            </StyledCard>
+          ))}
+        </CardLayout>
+      </Section.Content>
     </Section>
   );
 };
