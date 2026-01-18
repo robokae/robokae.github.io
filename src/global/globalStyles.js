@@ -76,11 +76,6 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 1rem;
     }
 
-    .tooltip-container .custom-tooltip {
-        font-size: .8rem;
-        line-height: normal;
-    }
-
     @media screen and (max-width: 1024px) {
         /* Minor Third type scale */
         html {
@@ -156,113 +151,7 @@ export const GlobalStyles = createGlobalStyle`
         border-bottom: 1px solid ${({ theme }) => theme.primaryFontColor};
     }
 
-    .contact-info a {
-        color: ${({ theme }) => theme.primaryFontColor};
-    }
-
     .resume-section-title {
         border-bottom: 1px solid ${({ theme }) => theme.primaryFontColor};
-    }
-
-    /* Login page theme styling */
-    .login-page {
-        &__login-container {
-            border: 1px solid ${({ theme }) => theme.lineColor};
-        }
-
-        &__input {
-            border: 1px solid ${({ theme }) => theme.lineColor};
-            background-color: ${({ theme }) => theme.primaryBackgroundColor};
-            color: ${({ theme }) => theme.primaryFontColor};
-
-            &:focus {
-                border-color: ${({ theme }) => theme.accentColor};
-            }
-        }
-
-        &__submit-button {
-            color: ${({ theme }) => theme.primaryBackgroundColor};
-            background-color: ${({ theme }) => theme.accentColor};
-        }
-    }
-
-    /* Blog page styling */
-    .blog-page {
-        input {
-            border-color: transparent;
-            background-color: ${({ theme }) => theme.primaryBackgroundColor};
-            color: ${({ theme }) => theme.primaryFontColor};
-        }
-
-        a {
-            color: ${({ theme }) => theme.primaryFontColor};
-        }
-
-        &__icon {
-            color: ${({ theme }) => theme.primaryFontColor};
-        }
-
-        &__search-bar,
-        &__email-updates-input-container {
-            border: 1px solid ${({ theme }) => theme.lineColor};
-        }
-
-        @media screen and (max-width: 980px) {
-            .blog-page {
-                &__side-menu-container {
-                    border-bottom: 1px solid ${({ theme }) => theme.lineColor};
-                }
-            } 
-        }
-    }
-
-    .create-post-page {
-        input, textarea {
-            color: ${({ theme }) => theme.primaryFontColor};
-            background-color: ${({ theme }) => theme.primaryBackgroundColor};
-            border: 1px solid ${({ theme }) => theme.lineColor};
-        }
-    }
-
-    .text-editor {
-        &__num-words {
-            color: ${({ theme }) => theme.secondaryFontColor};
-        }        
-
-        &__action-button {
-            border: 1px solid ${({ theme }) => theme.accentColor};
-            background-color: ${({ theme }) => theme.primaryBackgroundColor};
-            color: ${({ theme }) => theme.accentColor};
-
-            &:hover {
-                background-color: ${({ theme }) => theme.accentColor};
-                color: ${({ theme }) => theme.primaryBackgroundColor};
-            }
-
-            &--warning {
-                border-color: ${({ theme }) => theme.warningColor};
-                color: ${({ theme }) => theme.warningColor};
-
-                &:hover {
-                    background-color: ${({ theme }) => theme.warningColor};
-                }
-            }
-
-        }
-    }
-
-    .post {
-        /* &:hover {
-            border: 1px solid ${({ theme }) => theme.lineColor};
-        } */
-        border-bottom: 1px solid ${({ theme }) => theme.lineColor};
-
-        &--no-border {
-            border-bottom: none;
-        }
-
-        &__publish-date {
-            color: ${({ theme }) => theme.secondaryFontColor};
-        }
     }
 `;
