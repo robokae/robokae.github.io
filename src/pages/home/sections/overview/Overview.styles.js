@@ -1,11 +1,15 @@
-import { Breakpoint } from "constants/layout";
+import { Breakpoint, Layout } from "constants/layout";
 import styled from "styled-components";
 
-export const Grid = styled.div`
+export const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
+
+  @media ${Breakpoint.LAPTOP} {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media ${Breakpoint.TABLET} {
     grid-template-columns: 1fr;
@@ -20,13 +24,13 @@ export const Grid = styled.div`
 export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 1rem 0.5rem;
+  gap: 1.5rem;
+  padding-bottom: ${Layout.PADDING_SM};
+  position: relative;
 
   @media ${Breakpoint.TABLET} {
     align-items: center;
     text-align: center;
-    border-radius: 0;
   }
 `;
 
@@ -38,7 +42,7 @@ export const IconContainer = styled.div`
   color: ${(props) =>
     ({ theme }) =>
       theme.pages.home.overview[props.index].foregroundColor};
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 0.5rem;
 
   @media ${Breakpoint.MOBILE_LG} {
@@ -53,7 +57,7 @@ export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 
   @media ${Breakpoint.TABLET} {
     width: 80%;

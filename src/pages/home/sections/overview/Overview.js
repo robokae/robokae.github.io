@@ -1,37 +1,43 @@
-import { Layout } from "constants/layout";
 import {
   CardContent,
-  Grid,
+  CardGrid,
   IconContainer,
   TextContainer,
 } from "./Overview.styles";
-import { Card, Heading, Icon, Text } from "@robokae/robokae-ui";
+import { Card, Icon, Text } from "@robokae/robokae-ui";
 import Section from "components/page/Section";
+import { useTheme } from "styled-components";
 
 const Overview = ({ data }) => {
   const { text, heading, subHeadings, icons } = data;
+  const theme = useTheme();
 
   return (
     <Section>
       <Section.Heading>{heading}</Section.Heading>
       <Section.Content>
-        <Grid gap={Layout.MEDIUM_GAP} size={text.length}>
+        <CardGrid>
           {text.map((cardText, index) => {
             return (
               <Card key={index}>
                 <CardContent>
                   <IconContainer index={index}>
-                    <Icon name={icons[index]} index={index} size="xl" />
+                    <Icon
+                      name={icons[index]}
+                      index={index}
+                      size="lg"
+                      color={theme.pages.home.overview[index].foregroundColor}
+                    />
                   </IconContainer>
                   <TextContainer>
-                    <Heading as="h5">{subHeadings[index]}</Heading>
+                    <h5>{subHeadings[index]}</h5>
                     <Text>{cardText}</Text>
                   </TextContainer>
                 </CardContent>
               </Card>
             );
           })}
-        </Grid>
+        </CardGrid>
       </Section.Content>
     </Section>
   );
