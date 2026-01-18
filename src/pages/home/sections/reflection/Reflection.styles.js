@@ -1,6 +1,5 @@
 import Section from "components/page/Section";
-import { Layout } from "constants";
-import { Breakpoint } from "constants";
+import { Breakpoint, Layout } from "global/constants";
 import styled from "styled-components";
 
 export const StyledSection = styled(Section)`

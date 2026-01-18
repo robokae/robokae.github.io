@@ -1,4 +1,4 @@
-import { Style } from "constants/style";
+import { Style } from "global/constants";
 import { darkTheme, lightTheme } from "global/theme";
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ const useTheme = () => {
 
   const [theme, setTheme] = useState(fetchSavedTheme());
   const [styles, setStyles] = useState(
-    fetchSavedTheme() === Style.LIGHT_THEME ? lightTheme : darkTheme
+    fetchSavedTheme() === Style.LIGHT_THEME ? lightTheme : darkTheme,
   );
 
   const updateThemeValue = (newTheme) => {

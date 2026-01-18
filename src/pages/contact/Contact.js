@@ -1,6 +1,6 @@
 import { PageContentLayout } from "components/layout/Layout.styles";
 import Typography from "components/typography/Typography";
-import { Typography as TypographyConstants } from "constants/typography";
+import { Typography as TypographyConstants } from "global/constants";
 import content from "content/contact.json";
 import { useState } from "react";
 import {

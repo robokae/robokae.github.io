@@ -1,9 +1,9 @@
-import { Style } from "constants/style";
 import { useThemeContext } from "context/ThemeContext";
 import { useState } from "react";
 import ToggleButton from "../ToggleButton";
 import { Button, Icon } from "@robokae/robokae-ui";
 import { useTheme } from "styled-components";
+import { Style } from "global/constants";
 
 function ThemeToggle({ variant = "slider" }) {
   const { theme: currentTheme, toggleTheme } = useThemeContext();

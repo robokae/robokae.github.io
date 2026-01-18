@@ -1,4 +1,4 @@
-import { Typography } from "constants";
+import { Typography } from "global/constants";
 import { useEffect } from "react";
 import WebFont from "webfontloader";
 

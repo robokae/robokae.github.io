@@ -1,5 +1,5 @@
 import Link from "components/link/Link";
-import { Breakpoint, Layout } from "constants/layout";
+import { Breakpoint, Layout } from "global/constants";
 import styled from "styled-components";
 
 export const Container = styled.footer`

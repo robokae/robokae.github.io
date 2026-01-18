@@ -1,4 +1,4 @@
-import { Style } from "constants/style";
+import { Style } from "global/constants";
 import styled, { css } from "styled-components";
 
 const baseButtonStyles = css`

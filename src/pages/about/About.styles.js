@@ -1,5 +1,5 @@
 import Card from "components/card/Card";
-import { Breakpoint } from "constants/layout";
+import { Breakpoint } from "global/constants";
 import styled from "styled-components";
 
 export const TextGroup = styled.div`

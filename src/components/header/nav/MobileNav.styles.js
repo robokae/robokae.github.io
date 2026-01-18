@@ -1,4 +1,4 @@
-import { Layout } from "constants/layout";
+import { Layout } from "global/constants";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -10,7 +10,9 @@ export const Container = styled.div`
   top: 100%;
   left: 0;
   background-color: ${({ theme }) => theme.headerColor};
-  transition: height 0.25s ease-out 0.1s, background-color 0.2s ease 0s;
+  transition:
+    height 0.25s ease-out 0.1s,
+    background-color 0.2s ease 0s;
 
   &.open {
     display: flex;

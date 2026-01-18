@@ -1,4 +1,4 @@
-import { DeviceSize } from "constants/layout";
+import { DeviceSize } from "global/constants";
 import { useResize } from "./useResize";
 
 export function useIsMobile() {

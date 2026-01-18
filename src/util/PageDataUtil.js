@@ -1,5 +1,5 @@
 import { Heading } from "@robokae/robokae-ui";
-import { Typography } from "constants/typography";
+import { Typography } from "global/constants";
 
 export const getSectionData = (data) => {
   return data?.sections?.reduce((sections, section) => {

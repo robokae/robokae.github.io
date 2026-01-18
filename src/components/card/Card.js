@@ -1,6 +1,5 @@
+import { Breakpoint, Layout, Style } from "global/constants";
 import styled from "styled-components";
-import { Style } from "constants/style";
-import { Layout, Breakpoint } from "constants/layout";
 
 export const Card = styled.div`
   width: 100%;

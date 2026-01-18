@@ -1,7 +1,5 @@
 import { HeroLayout } from "components/layout/Layout.styles";
-import { Breakpoint } from "constants";
-import { Layout } from "constants/layout";
-import { Style } from "constants/style";
+import { Breakpoint, Layout, Style } from "global/constants";
 import styled, { css } from "styled-components";
 
 export const Container = styled(HeroLayout)`

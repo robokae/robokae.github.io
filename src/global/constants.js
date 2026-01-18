@@ -1,3 +1,33 @@
+export const Typography = Object.freeze({
+  FONT_FAMILIES: ["Plus Jakarta Sans:400,600,700", "JetBrains Mono"],
+  DEFAULT_FONT: "Plus Jakarta Sans",
+  MONOSPACE_FONT: "JetBrains Mono",
+  TEXT_SHADOW: "0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.2)",
+  H1: "h1",
+  H2: "h2",
+  H3: "h3",
+  H4: "h4",
+  H5: "h5",
+  H6: "h6",
+  SECTION_TITLE_TAG: "h3",
+  CARD_TITLE_TAG: "h5",
+  SUBHEADING_TAG: "h4",
+});
+
+export const Style = Object.freeze({
+  BORDER_RADIUS: ".5rem",
+  BORDER_RADIUS_SM: ".25rem",
+  TRANSITION_DURATION: ".3s",
+  LIGHT_THEME: "light",
+  DARK_THEME: "dark",
+});
+
+export const IconSize = Object.freeze({
+  SIZE_SM: "1.25rem",
+  SIZE_MD: "1.5rem",
+  SIZE_LG: "2rem",
+});
+
 export const DeviceSize = {
   MOBILE_SM: 320,
   MOBILE_MD: 425,

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Breakpoint, Layout } from "constants/layout";
 import Link from "components/link/Link";
+import { Breakpoint, Layout } from "global/constants";
 
 export const SubHeading = styled.p`
   width: 85%;
