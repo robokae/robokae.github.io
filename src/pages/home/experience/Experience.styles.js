@@ -25,7 +25,7 @@ export const StyledCard = styled(Card)`
   &.even-card {
     flex-direction: row;
 
-    @media ${Breakpoint.MOBILE_LG} {
+    @media ${Breakpoint.LAPTOP} {
       flex-direction: column;
     }
   }
