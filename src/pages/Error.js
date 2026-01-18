@@ -1,24 +1,23 @@
 import error from "content/error.json";
-import {
-  PageContentLayout,
-  SectionLayout,
-} from "components/layout/Layout.styles";
-import React from "react";
-import { getHeading } from "util/PageDataUtil";
-import ButtonLink from "components/link/buttonLink/ButtonLink";
+import { PageContentLayout } from "components/layout/Layout.styles";
+import Section from "components/page/Section";
+import LinkButton from "components/link/linkButton/LinkButton";
+import styled from "styled-components";
 
 const { content } = error;
 
 function Error() {
   return (
     <PageContentLayout>
-      <SectionLayout>
-        {getHeading(content.heading, "center")}
-        <p>{content.text}</p>
-        <ButtonLink variant="primary" to={content.ctaUrl}>
-          {content.ctaText}
-        </ButtonLink>
-      </SectionLayout>
+      <Section>
+        <Section.Heading>{content.heading}</Section.Heading>
+        <Section.Content>
+          <p>{content.text}</p>
+          <LinkButton variant="outline" rounded to={content.ctaUrl}>
+            {content.ctaText}
+          </LinkButton>
+        </Section.Content>
+      </Section>
     </PageContentLayout>
   );
 }
