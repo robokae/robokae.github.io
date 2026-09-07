@@ -2,21 +2,16 @@
   "pageName": "contact",
   "sections": [
     {
-      "title": "overview",
+      "name": "overview",
       "content": {
-        "heading": "Let’s Connect",
-        "subHeadings": [],
+        "heading": "Let's Connect",
         "text": [
           "Have any questions? Feel free to send me an email or connect with me through LinkedIn. You can also check out my GitHub where you can find the latest open-source projects I'm working on."
-        ],
-        "images": [],
-        "icons": [],
-        "buttons": [],
-        "listContent": []
+        ]
       }
     },
     {
-      "title": "details",
+      "name": "details",
       "content": {
         "subHeadings": ["GitHub", "LinkedIn", "Email"],
         "text": [
@@ -24,7 +19,6 @@
           "Connect with me on LinkedIn",
           "Want to chat? Feel free to send me an email at alexanderhom19@gmail.com"
         ],
-        "images": [],
         "icons": ["Github", "Linkedin", "EnvelopeAtFill"],
         "links": [
           {
@@ -35,8 +29,7 @@
             "label": "LinkedIn",
             "url": "https://www.linkedin.com/in/alexander-hom-94811b188/"
           }
-        ],
-        "listContent": []
+        ]
       }
     }
   ]

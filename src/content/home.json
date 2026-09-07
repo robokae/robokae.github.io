@@ -2,95 +2,89 @@
   "pageName": "home",
   "sections": [
     {
-      "title": "hero",
+      "name": "hero",
       "content": {
-        "headings": ["Hi, my name is", "Alexander Hom"],
-        "subHeadings": ["I am a software engineer from", "San Francisco"],
-        "text": [],
-        "images": [
-          {
-            "name": "DeveloperSetup.svg",
-            "altText": "Desk with chair and computer monitor"
-          }
-        ],
-        "icons": [],
-        "buttons": [],
-        "listContent": []
+        "heading": "Hi, my name is\nAlexander Hom",
+        "subheading": "I am a software engineer from\nSan Francisco",
+        "image": {
+          "name": "DeveloperSetup.svg",
+          "altText": "Desk with chair and computer monitor"
+        }
       }
     },
     {
-      "title": "overview",
+      "name": "overview",
       "content": {
         "heading": "A quick overview",
-        "subHeadings": [
-          "4+ years of professional software engineering",
-          "Experience across the full tech stack",
-          "Successful and timely delivery of projects",
-          "Learning throughout my journey"
-        ],
-        "text": [
-          "I have experience developing large enterprise APIs for two of the largest companies in the world",
-          "I am skilled in developing modern, scalable applications using JavaScript, Java, Python, SQL, MongoDB, and Google Cloud",
-          "Through collaboration and leadership, I've contributed to the successful delivering of projects of various scales",
-          "I am always learning and applying the latest technologies, from trending AI topics to ways of improving developer experience"
-        ],
-        "images": [],
-        "icons": ["Terminal", "Braces", "Trophy", "JournalCode"],
-        "buttons": [],
-        "listContent": []
-      }
-    },
-    {
-      "title": "reflection",
-      "content": {
-        "heading": "A tale of two passions: art and technology",
-        "subHeadings": [],
-        "text": [
-          "Growing up, two of my interests were art and technology. I enjoyed creating objects with Lego, folding origami, and designing architectural structures. At the same time, I was fascinated with the inner workings of websites and was very enthusiastic about developing my own.",
-          "Today, as a software engineer, I get to combine my two passions as part of the software development process — putting on my artist cap when designing user interfaces and applying my interest in technology while programming applications using the latest technologies."
-        ],
-        "images": [
+        "entries": [
           {
-            "name": "CodeEditorAndWebsite.svg",
-            "altText": "Code editor and website"
+            "title": "4+ years of professional software engineering",
+            "description": "I am experienced in developing large, high-traffic web applications and enterprise APIs using the latest technologies",
+            "icon": "Terminal"
+          },
+          {
+            "title": "Experience across the full tech stack",
+            "description": "From designing and implementing user interfaces to developing and deploying microservices to the cloud, I can take a vision of an application and turn it into reality",
+            "icon": "Braces"
+          },
+          {
+            "title": "Successful and timely delivery of projects",
+            "description": "Through team collaboration and leadership, I have contributed to the successful delivery of applications that positively impact many people",
+            "icon": "Trophy"
+          },
+          {
+            "title": "Learning throughout my journey",
+            "description": "I strive towards becoming a better software engineer day by day through constant learning, so that the applications I work on are not just developed using the latest technologies, but they're also built following modern best practices",
+            "icon": "JournalCode"
           }
-        ],
-        "icons": [],
-        "buttons": [],
-        "listContent": []
+        ]
       }
     },
     {
-      "title": "experience",
+      "name": "reflection",
+      "content": {
+        "heading": "A tale of two passions \u2014 art and technology",
+        "text": [
+          "Growing up, I had a lot of exposure to art and technology that was constantly changing. I enjoyed building with Lego, folding origami, and designing all sorts of things. At the same time, I was also fascinated with how websites worked and had several opportunities to develop websites for myself as well as for others.",
+          "Today, as a software engineer, I get to integrate my passion in art and design into software development. That is, I get to put on my artist cap when designing user interfaces and experiences, then use the latest technologies to develop them. In essence, being a software engineer allows me to apply art and design into building applications that bring positivity to people around the world."
+        ],
+        "image": {
+          "name": "CodeEditorAndWebsite.svg",
+          "altText": "Code editor and website"
+        }
+      }
+    },
+    {
+      "name": "experience",
       "content": {
         "heading": "Full stack development expertise",
-        "subHeadings": [
-          "Building modern and responsive user interfaces",
-          "Designing and developing robust and scalable backend APIs",
-          "Deploying to the cloud with the latest technologies"
-        ],
-        "text": [
-          "Proficient in designing responsive web applications with Figma and developing them with modern JavaScript using React and its ecosystem of tools and packages, like Redux",
-          "Experienced in developing large-scale microservices using various backend frameworks and technologies, like Spring Boot and Flask, and testing APIs using frameworks, such as JUnit and Karate",
-          "Knowledgable in developing and deploying applications using Google Cloud Platform and cloud-native technologies, such as Kubernetes"
-        ],
-        "images": [
+        "subheading": "Software development has many layers, and throughout my journey as a software engineer, I have become experienced in each layer, beginning with the design of the application, to its development, deployment, and maintainence",
+        "entries": [
           {
-            "name": "Website.svg",
-            "altText": "Website"
+            "title": "Building modern and responsive user interfaces",
+            "description": "Proficient in designing responsive web applications with Figma and developing them with modern JavaScript using React and its ecosystem of tools and packages, like Redux",
+            "image": {
+              "name": "Website.svg",
+              "altText": "Website"
+            }
           },
           {
-            "name": "Server.svg",
-            "altText": "Server"
+            "title": "Designing and developing robust and scalable backend APIs",
+            "description": "Experienced in developing large-scale microservices using various backend frameworks and technologies, like Spring Boot and Flask, and testing APIs using frameworks, such as JUnit and Karate",
+            "image": {
+              "name": "Server.svg",
+              "altText": "Server"
+            }
           },
           {
-            "name": "Cloud.svg",
-            "altText": "Cloud"
+            "title": "Deploying to the cloud with the latest technologies",
+            "description": "Knowledgable in developing and deploying applications using Google Cloud Platform and cloud-native technologies, such as Kubernetes",
+            "image": {
+              "name": "Cloud.svg",
+              "altText": "Cloud"
+            }
           }
-        ],
-        "icons": [],
-        "buttons": [],
-        "listContent": []
+        ]
       }
     }
   ]

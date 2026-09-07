@@ -2,7 +2,7 @@
   "pageName": "about",
   "sections": [
     {
-      "title": "overview",
+      "name": "overview",
       "content": {
         "heading": "A Journey that Began with a Few Lines of Code",
         "text": [
@@ -14,14 +14,13 @@
       }
     },
     {
-      "title": "interests",
+      "name": "interests",
       "content": {
-        "heading": "Dedication across all aspects of software development",
-        "text": []
+        "heading": "Dedication across all aspects of software development"
       }
     },
     {
-      "title": "cards",
+      "name": "cards",
       "content": {
         "text": [
           "User interface design and development",
