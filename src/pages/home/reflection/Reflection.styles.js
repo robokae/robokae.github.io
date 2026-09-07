@@ -15,13 +15,8 @@ export const StyledSection = styled(Section)`
 
 export const StyledContent = styled(Section.Content)`
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-  @media ${Breakpoint.LAPTOP} {
-    flex-direction: column;
-    gap: ${Layout.GAP_XL};
-  }
+  flex-direction: column;
+  gap: ${Layout.GAP_XL};
 
   & > img {
     max-width: 500px;
@@ -36,14 +31,18 @@ export const StyledContent = styled(Section.Content)`
   }
 
   & > div {
-    width: 45%;
+    width: 65%;
     display: flex;
     flex-direction: column;
-    gap: ${Layout.GAP_MD};
+    gap: ${Layout.GAP_LG};
+    text-align: center;
 
     @media ${Breakpoint.LAPTOP} {
       width: 100%;
-      gap: ${Layout.GAP_LG};
+    }
+
+    & > p {
+      font-size: larger;
     }
   }
 `;

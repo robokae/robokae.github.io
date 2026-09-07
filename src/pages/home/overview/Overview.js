@@ -4,12 +4,12 @@ import {
   IconContainer,
   TextContainer,
 } from "./Overview.styles";
-import { Card, Icon, Text } from "@robokae/robokae-ui";
+import { Card, Icon } from "@robokae/robokae-ui";
 import Section from "components/page/Section";
 import { useTheme } from "styled-components";
 
 const Overview = ({ data }) => {
-  const { text, heading, subHeadings, icons } = data;
+  const { heading, entries } = data;
   const theme = useTheme();
 
   return (
@@ -17,21 +17,21 @@ const Overview = ({ data }) => {
       <Section.Heading>{heading}</Section.Heading>
       <Section.Content>
         <CardGrid>
-          {text.map((cardText, index) => {
+          {entries.map((entry, index) => {
             return (
               <Card key={index}>
                 <CardContent>
                   <IconContainer index={index}>
                     <Icon
-                      name={icons[index]}
+                      name={entry.icon}
                       index={index}
                       size="lg"
                       color={theme.pages.home.overview[index].foregroundColor}
                     />
                   </IconContainer>
                   <TextContainer>
-                    <h5>{subHeadings[index]}</h5>
-                    <Text>{cardText}</Text>
+                    <h5>{entry.title}</h5>
+                    <p>{entry.description}</p>
                   </TextContainer>
                 </CardContent>
               </Card>

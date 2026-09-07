@@ -7,7 +7,7 @@ export const CardGrid = styled.div`
   grid-auto-rows: 1fr;
   gap: 1.5rem;
 
-  @media ${Breakpoint.LAPTOP} {
+  @media ${Breakpoint.LAPTOP_LG} {
     grid-template-columns: repeat(2, 1fr);
   }
 

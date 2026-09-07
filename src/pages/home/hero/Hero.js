@@ -10,6 +10,7 @@ import {
 } from "./Hero.styles";
 
 function Hero({ data, theme }) {
+  const { heading, subheading, image } = data;
   const [multiLineHeading, setMultiLineHeading] = useState(false);
   const sectionRef = useRef(null);
 
@@ -32,11 +33,13 @@ function Hero({ data, theme }) {
     return () => resizeObserver.unobserve(observeTarget);
   }, []);
 
-  const headings = multiLineHeading ? data.headings : [data.headings.join(" ")];
+  const headings = multiLineHeading
+    ? heading.split("\n")
+    : [heading.replace("\\n", " ")];
 
   const subHeadings = multiLineHeading
-    ? data.subHeadings
-    : [data.subHeadings.join(" ")];
+    ? subheading.split("\n")
+    : [subheading.replace("\\n", " ")];
 
   return (
     <Container ref={sectionRef} theme={theme}>
@@ -54,10 +57,7 @@ function Hero({ data, theme }) {
           </SubHeading>
         </HeadingContainer>
         <ImageContainer>
-          <Image
-            src={`images/${data.images[0].name}`}
-            alt={data.images[0].altText}
-          />
+          <Image src={`images/${image.name}`} alt={image.altText} />
         </ImageContainer>
       </Content>
     </Container>

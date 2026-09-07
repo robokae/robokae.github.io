@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled(HeroLayout)`
   width: 100vw;
-  padding: 0 ${Layout.SECTION_PADDING};
+  padding: ${Layout.SECTION_PADDING};
   background-color: ${({ theme }) => theme.pages.home.hero.backgroundColor};
   padding-bottom: 0;
 `;
@@ -17,7 +17,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${Layout.GAP_MD};
+  gap: ${Layout.GAP_LG};
   border-radius: ${Style.BORDER_RADIUS};
 
   @media ${Breakpoint.MOBILE_LG} {
@@ -53,20 +53,20 @@ export const SubHeading = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 `;
 
 export const Image = styled.img`
-  width: 50%;
+  max-width: 500px;
 
   @media ${Breakpoint.TABLET} {
-    width: 75%;
+    max-width: 375px;
   }
 
   @media ${Breakpoint.MOBILE_LG} {
-    width: 90%;
+    max-width: 300px;
   }
 `;

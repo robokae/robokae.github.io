@@ -18,7 +18,7 @@ export const StyledCard = styled(Card)`
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-image: ${(props) => props.background};
   padding: ${Layout.PADDING_LG};
 
@@ -47,7 +47,7 @@ export const ImageContainer = styled.div`
 
   img {
     width: 100%;
-    max-width: 390px;
+    max-width: 350px;
   }
 
   @media ${Breakpoint.LAPTOP} {

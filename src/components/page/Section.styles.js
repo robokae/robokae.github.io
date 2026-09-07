@@ -1,3 +1,4 @@
+import { Heading } from "@robokae/robokae-ui";
 import { Breakpoint, Layout } from "global/constants";
 import { styled } from "styled-components";
 
@@ -9,9 +10,9 @@ export const Container = styled.section`
   gap: ${Layout.GAP_LG};
   position: relative;
   padding: ${Layout.SECTION_PADDING} 0 4rem 0;
+  max-width: ${Layout.CONTENT_MAX_WIDTH};
 
   > * {
-    max-width: ${Layout.CONTENT_MAX_WIDTH};
     padding: 0 ${Layout.SECTION_PADDING};
 
     @media ${Breakpoint.MOBILE_LG} {
@@ -36,4 +37,8 @@ export const Content = styled.div`
   @media ${Breakpoint.MOBILE_LG} {
     gap: ${Layout.SECTION_PADDING_SM};
   }
+`;
+
+export const Subheading = styled(Heading)`
+  font-weight: normal;
 `;
