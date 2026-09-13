@@ -20,6 +20,12 @@ export const PageContentLayout = styled(BaseLayout)`
   margin-top: ${Layout.HEADER_HEIGHT};
   position: relative;
   flex: 1;
+  gap: 6rem;
+  padding-bottom: 10rem;
+
+  @media ${Breakpoint.TABLET} {
+    gap: 3rem;
+  }
 `;
 
 export const ContentLayout = styled(BaseLayout)`
@@ -30,10 +36,6 @@ export const ContentLayout = styled(BaseLayout)`
   }
 `;
 
-export const HeroLayout = styled(BaseLayout)`
-  margin-top: -${Layout.HEADER_HEIGHT};
-`;
-
 export const SectionLayout = styled(BaseLayout)`
   padding: 4rem ${Layout.SECTION_PADDING};
   gap: ${Layout.GAP_LG};
@@ -42,4 +44,8 @@ export const SectionLayout = styled(BaseLayout)`
   @media ${Breakpoint.MOBILE_LG} {
     padding: ${Layout.SECTION_PADDING_SM};
   }
+`;
+
+export const HeroLayout = styled(SectionLayout)`
+  margin-top: -${Layout.HEADER_HEIGHT};
 `;
