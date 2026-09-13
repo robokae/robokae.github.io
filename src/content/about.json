@@ -12,23 +12,6 @@
           "Outside of software development, I enjoy learning about operating systems, machine learning, cybersecurity, and databases."
         ]
       }
-    },
-    {
-      "name": "interests",
-      "content": {
-        "heading": "Dedication across all aspects of software development"
-      }
-    },
-    {
-      "name": "cards",
-      "content": {
-        "text": [
-          "User interface design and development",
-          "Modern backend APIs and distributed systems",
-          "DevOps and cloud technologies"
-        ],
-        "icons": ["CodeSlash", "Cloud", "ShieldCheck"]
-      }
     }
   ]
 }

@@ -3,7 +3,7 @@ import { Typography } from "global/constants";
 
 export const getSectionData = (data) => {
   return data?.sections?.reduce((sections, section) => {
-    sections[section.title] = section.content;
+    sections[section.name] = section.content;
     return sections;
   }, {});
 };
