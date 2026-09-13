@@ -10,7 +10,7 @@ export const Typography = Object.freeze({
   H5: "h5",
   H6: "h6",
   SECTION_TITLE_TAG: "h3",
-  CARD_TITLE_TAG: "h5",
+  CARD_TITLE_TAG: "h4",
   SUBHEADING_TAG: "h4",
 });
 

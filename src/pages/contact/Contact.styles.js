@@ -1,6 +1,16 @@
 import styled from "styled-components";
 import Link from "components/link/Link";
 import { Breakpoint, Layout } from "global/constants";
+import { Card } from "@robokae/robokae-ui";
+import Section from "components/page/Section";
+
+export const StyledSection = styled(Section)`
+  padding-top: 6rem;
+
+  @media ${Breakpoint.TABLET} {
+    padding-top: ${Layout.PADDING_LG};
+  }
+`;
 
 export const SubHeading = styled.p`
   width: 85%;
@@ -28,11 +38,22 @@ export const Cards = styled.div`
   }
 `;
 
+export const StyledCard = styled(Card)`
+  padding: 2rem;
+  gap: 2rem;
+`;
+
 export const CardHeading = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+`;
+
+export const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${Layout.GAP_LG};
 `;
 
 export const StyledLink = styled(Link)`

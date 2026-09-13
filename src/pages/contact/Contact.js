@@ -1,18 +1,19 @@
 import { PageContentLayout } from "components/layout/Layout.styles";
-import Typography from "components/typography/Typography";
-import { Typography as TypographyConstants } from "global/constants";
+import { Typography } from "global/constants";
 import content from "content/contact.json";
 import { useState } from "react";
 import {
+  CardContent,
   CardHeading,
   Cards,
+  StyledCard,
   StyledLink,
-  SubHeading,
+  StyledSection,
   TranslateRight,
 } from "./Contact.styles";
 import Icon from "components/icon/Icon";
 import { getSectionData } from "util/PageDataUtil";
-import { Card } from "@robokae/robokae-ui";
+import { Card, Heading } from "@robokae/robokae-ui";
 import Section from "components/page/Section";
 
 const AnimatedLink = ({ label, url }) => {
@@ -38,37 +39,39 @@ function Contact() {
 
   return (
     <PageContentLayout>
-      <Section>
+      <StyledSection>
         <Section.Heading>{overview.heading}</Section.Heading>
+        {overview.text.map((subHeading) => (
+          <Section.Subheading>{subHeading}</Section.Subheading>
+        ))}
         <Section.Content>
-          {overview.text.map((subHeading) => (
-            <SubHeading>{subHeading}</SubHeading>
-          ))}
           <Cards>
             {details.subHeadings.map((subHeading, index) => (
-              <Card>
+              <StyledCard>
                 <Card.Heading>
                   <CardHeading>
-                    <Icon name={details.icons[index]} size="lg" />
-                    <Typography tag={TypographyConstants.CARD_TITLE_TAG}>
+                    <Icon name={details.icons[index]} size="xl" />
+                    <Heading as={Typography.CARD_TITLE_TAG}>
                       {subHeading}
-                    </Typography>
+                    </Heading>
                   </CardHeading>
                 </Card.Heading>
                 <Card.Content>
-                  <p>{details.text[index]}</p>
-                  {details.links[index] && (
-                    <AnimatedLink
-                      label={details.links[index].label}
-                      url={details.links[index].url}
-                    />
-                  )}
+                  <CardContent>
+                    <p>{details.text[index]}</p>
+                    {details.links[index] && (
+                      <AnimatedLink
+                        label={details.links[index].label}
+                        url={details.links[index].url}
+                      />
+                    )}
+                  </CardContent>
                 </Card.Content>
-              </Card>
+              </StyledCard>
             ))}
           </Cards>
         </Section.Content>
-      </Section>
+      </StyledSection>
     </PageContentLayout>
   );
 }
