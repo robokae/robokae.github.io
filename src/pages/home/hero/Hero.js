@@ -2,14 +2,13 @@ import { useLayoutEffect, useRef, useState } from "react";
 import {
   Container,
   Content,
-  Heading,
   HeadingContainer,
   Image,
-  ImageContainer,
   SubHeading,
 } from "./Hero.styles";
+import { Heading } from "@robokae/robokae-ui";
 
-function Hero({ data, theme }) {
+function Hero({ data }) {
   const { heading, subheading, image } = data;
   const [multiLineHeading, setMultiLineHeading] = useState(false);
   const sectionRef = useRef(null);
@@ -42,23 +41,21 @@ function Hero({ data, theme }) {
     : [subheading.replace("\\n", " ")];
 
   return (
-    <Container ref={sectionRef} theme={theme}>
+    <Container ref={sectionRef}>
       <Content>
         <HeadingContainer>
-          <Heading>
+          <Heading as="h1">
             {headings.map((line, index) => (
               <h1 key={index}>{line}</h1>
             ))}
           </Heading>
-          <SubHeading theme={theme}>
+          <div>
             {subHeadings.map((line, index) => (
-              <h4 key={index}>{line}</h4>
+              <SubHeading key={index}>{line}</SubHeading>
             ))}
-          </SubHeading>
+          </div>
         </HeadingContainer>
-        <ImageContainer>
-          <Image src={`images/${image.name}`} alt={image.altText} />
-        </ImageContainer>
+        <Image src={`images/${image.name}`} alt={image.altText} />
       </Content>
     </Container>
   );

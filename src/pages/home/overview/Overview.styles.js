@@ -1,14 +1,14 @@
+import { Card } from "@robokae/robokae-ui";
 import { Breakpoint, Layout } from "global/constants";
 import styled from "styled-components";
 
 export const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 1fr;
   gap: 1.5rem;
 
   @media ${Breakpoint.LAPTOP_LG} {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   @media ${Breakpoint.TABLET} {
@@ -19,6 +19,10 @@ export const CardGrid = styled.div`
   @media ${Breakpoint.MOBILE_LG} {
     gap: 1.5rem;
   }
+`;
+
+export const StyledCard = styled(Card)`
+  padding: 2rem;
 `;
 
 export const CardContent = styled.div`

@@ -1,48 +1,40 @@
-import Section from "components/page/Section";
+import { Card } from "@robokae/robokae-ui";
 import { Breakpoint, Layout } from "global/constants";
 import styled from "styled-components";
 
-export const StyledSection = styled(Section)`
+export const StyledCard = styled(Card)`
   background: ${({ theme }) => theme.pages.home.reflection.background};
-  padding: 10rem 0;
-  gap: 3.5rem;
+  padding: 12rem ${Layout.SECTION_PADDING};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  text-align: center;
+
+  p {
+    width: 80%;
+    font-size: larger;
+  }
 
   @media ${Breakpoint.TABLET} {
-    padding: 6rem 0;
+    padding: 6rem ${Layout.SECTION_PADDING_SM};
     gap: 3rem;
+
+    p {
+      width: 100%;
+      font-size: 1rem;
+    }
   }
 `;
 
-export const StyledContent = styled(Section.Content)`
-  display: flex;
-  flex-direction: column;
-  gap: ${Layout.GAP_XL};
+export const CardImage = styled.img`
+  max-width: 650px;
 
-  & > img {
-    max-width: 500px;
-
-    @media ${Breakpoint.LAPTOP} {
-      width: 60%;
-    }
-
-    @media ${Breakpoint.MOBILE_LG} {
-      width: 70%;
-    }
+  @media ${Breakpoint.LAPTOP} {
+    width: 60%;
   }
 
-  & > div {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    gap: ${Layout.GAP_LG};
-    text-align: center;
-
-    @media ${Breakpoint.LAPTOP} {
-      width: 100%;
-    }
-
-    & > p {
-      font-size: larger;
-    }
+  @media ${Breakpoint.MOBILE_LG} {
+    width: 70%;
   }
 `;

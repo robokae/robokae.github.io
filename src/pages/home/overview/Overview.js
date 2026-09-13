@@ -2,6 +2,7 @@ import {
   CardContent,
   CardGrid,
   IconContainer,
+  StyledCard,
   TextContainer,
 } from "./Overview.styles";
 import { Card, Icon } from "@robokae/robokae-ui";
@@ -19,7 +20,7 @@ const Overview = ({ data }) => {
         <CardGrid>
           {entries.map((entry, index) => {
             return (
-              <Card key={index}>
+              <StyledCard key={index}>
                 <CardContent>
                   <IconContainer index={index}>
                     <Icon
@@ -30,11 +31,11 @@ const Overview = ({ data }) => {
                     />
                   </IconContainer>
                   <TextContainer>
-                    <h5>{entry.title}</h5>
+                    <h4>{entry.title}</h4>
                     <p>{entry.description}</p>
                   </TextContainer>
                 </CardContent>
-              </Card>
+              </StyledCard>
             );
           })}
         </CardGrid>
