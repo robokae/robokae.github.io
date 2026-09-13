@@ -1,11 +1,27 @@
 import Card from "components/card/Card";
-import { Breakpoint } from "global/constants";
+import Section from "components/page/Section";
+import { Breakpoint, Layout } from "global/constants";
 import styled from "styled-components";
+
+export const StyledSection = styled(Section)`
+  width: 70%;
+  padding-top: 6rem;
+
+  @media ${Breakpoint.LAPTOP} {
+    width: 90%;
+    padding-top: ${Layout.PADDING_LG};
+  }
+
+  @media ${Breakpoint.MOBILE_LG} {
+    width: 100%;
+  }
+`;
 
 export const TextGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  font-size: larger;
 `;
 
 export const CardsContainer = styled.div`
