@@ -25,12 +25,12 @@ Header.Content = function HeaderContent({ children }) {
   );
 };
 
-Header.Brand = function HeaderBrand({ logo, url }) {
+Header.Logo = function HeaderLogo({ src, alt, url }) {
   const { handleLinkClick } = useHeaderContext();
 
   return (
     <Link to={url} underline={false} onClick={handleLinkClick}>
-      {logo}
+      <img src={src} alt={alt} />
     </Link>
   );
 };

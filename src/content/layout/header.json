@@ -1,6 +1,8 @@
 {
-  "brand": {
-    "logo": "ALEXANDER HOM",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg",
+    "alt": "Website logo",
     "url": "/"
   },
   "links": [
