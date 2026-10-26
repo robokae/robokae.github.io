@@ -7,12 +7,11 @@ export const Container = styled.footer`
   height: max-content;
   position: relative;
   bottom: 0;
-  padding: 1rem ${Layout.SECTION_PADDING};
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: auto;
-  background-color: ${({ theme }) => theme.footerColor};
+  border-top: 1px solid ${({ theme }) => theme.lineColor};
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0;
@@ -28,13 +27,32 @@ export const Content = styled.div`
   max-width: ${Layout.CONTENT_MAX_WIDTH};
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1.5rem;
-  padding: 2rem 0;
+  padding: ${Layout.SECTION_PADDING};
   font-size: 0.9rem;
 
-  @media ${Breakpoint.MOBILE_S} {
+  @media ${Breakpoint.MOBILE_LG} {
+    padding: ${Layout.SECTION_PADDING} ${Layout.SECTION_PADDING_SM};
+  }
+`;
+
+export const Logo = styled.img`
+  width: 56px;
+  height: 48px;
+
+  @media ${Breakpoint.MOBILE_LG} {
+    width: 42px;
+    height: 36px;
+  }
+`;
+
+export const DetailsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media ${Breakpoint.TABLET} {
+    flex-direction: column;
     gap: 1.5rem;
   }
 `;
@@ -43,19 +61,7 @@ export const LinkContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   gap: 1.5rem;
-
-  @media ${Breakpoint.MOBILE_S} {
-    padding: 0 ${Layout.SECTION_PADDING_SM};
-    display: grid;
-    justify-content: left;
-    grid-template-columns: max-content max-content;
-    grid-template-rows: 1fr 1fr;
-    grid-row-gap: 0.5rem;
-    grid-column-gap: 3rem;
-    grid-auto-flow: column;
-  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -69,14 +75,13 @@ export const StyledLink = styled(Link)`
 export const Caption = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: right;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
   color: ${({ theme }) => theme.secondaryFontColor};
 
-  @media ${Breakpoint.MOBILE_S} {
-    padding: 0 ${Layout.SECTION_PADDING_SM};
-    align-items: flex-start;
+  @media ${Breakpoint.TABLET} {
+    justify-content: left;
   }
 `;
